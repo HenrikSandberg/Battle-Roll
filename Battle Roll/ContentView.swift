@@ -1,16 +1,21 @@
-//
-//  ContentView.swift
-//  Battle Roll
-//
-//  Created by Henrik Anthony Odden Sandberg on 17/03/2020.
-//  Copyright © 2020 Henrik Anthony Odden Sandberg. All rights reserved.
-//
-
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var session = FirebaseSession()
     var body: some View {
-        Text("Hello, World!")
+        Group {
+            if session.session != nil {
+                Text("Hello World")
+            } else {
+                Login().environmentObject(session)
+            }
+        }
+        .onAppear(perform: getUser)
+    }
+    
+    //MARK: Functions
+    func getUser() {
+        session.listen()
     }
 }
 
@@ -19,3 +24,21 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+
+//TabView {
+//    InitativeList(characters: characters)
+//        .tabItem({
+//            Image(systemName: "circle")
+//            Text("First")
+//        })
+//        .tag(0)
+//    UserPage()
+//        .environmentObject(session)
+//        .font(.title)
+//        .tabItem({
+//            Image(systemName: "square")
+//            Text("Second")
+//        })
+//        .tag(1)
+//}

@@ -3,10 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF07FF0A24237D9D003F839F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07FF0924237D9D003F839F /* AppDelegate.swift */; };
+		AF07FF0C24237D9D003F839F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07FF0B24237D9D003F839F /* ContentView.swift */; };
+		AF07FF0F24237D9D003F839F /* Mac_Battle_Roll.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF07FF0D24237D9D003F839F /* Mac_Battle_Roll.xcdatamodeld */; };
+		AF07FF1124237D9E003F839F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF07FF1024237D9E003F839F /* Assets.xcassets */; };
+		AF07FF1424237D9E003F839F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF07FF1324237D9E003F839F /* Preview Assets.xcassets */; };
+		AF07FF1724237D9E003F839F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF07FF1524237D9E003F839F /* Main.storyboard */; };
+		AF07FF2324237D9F003F839F /* Mac_Battle_RollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07FF2224237D9F003F839F /* Mac_Battle_RollTests.swift */; };
+		AF07FF2E24237D9F003F839F /* Mac_Battle_RollUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF07FF2D24237D9F003F839F /* Mac_Battle_RollUITests.swift */; };
+		AF07FF3924237E02003F839F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF69A8D12420EA050049EED5 /* Assets.xcassets */; };
+		AF07FF3B24237F08003F839F /* CharacterModell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69A90524213A7F0049EED5 /* CharacterModell.swift */; };
+		AF07FF3C24237F08003F839F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50C1E7242247F30013D378 /* User.swift */; };
+		AF1F2E932422389300562D71 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF1F2E922422389300562D71 /* GoogleService-Info.plist */; };
+		AF50C1E8242247F30013D378 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF50C1E7242247F30013D378 /* User.swift */; };
 		AF69A8C92420EA020049EED5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69A8C82420EA020049EED5 /* AppDelegate.swift */; };
 		AF69A8CB2420EA020049EED5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69A8CA2420EA020049EED5 /* SceneDelegate.swift */; };
 		AF69A8CE2420EA020049EED5 /* Battle_Roll.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF69A8CC2420EA020049EED5 /* Battle_Roll.xcdatamodeld */; };
@@ -14,28 +27,56 @@
 		AF69A8D22420EA050049EED5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF69A8D12420EA050049EED5 /* Assets.xcassets */; };
 		AF69A8D52420EA050049EED5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF69A8D42420EA050049EED5 /* Preview Assets.xcassets */; };
 		AF69A8D82420EA050049EED5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF69A8D62420EA050049EED5 /* LaunchScreen.storyboard */; };
-		AF69A8E32420EA050049EED5 /* Battle_RollTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69A8E22420EA050049EED5 /* Battle_RollTests.swift */; };
-		AF69A8EE2420EA060049EED5 /* Battle_RollUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69A8ED2420EA060049EED5 /* Battle_RollUITests.swift */; };
+		AF69A8FE2420EA370049EED5 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69A8FD2420EA370049EED5 /* Profile.swift */; };
+		AF69A9002420F7F70049EED5 /* CharacterListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69A8FF2420F7F70049EED5 /* CharacterListItem.swift */; };
+		AF69A90224211FF30049EED5 /* InitativeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69A90124211FF30049EED5 /* InitativeList.swift */; };
+		AF69A90624213A7F0049EED5 /* CharacterModell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF69A90524213A7F0049EED5 /* CharacterModell.swift */; };
+		AFAE76C22422520F00007749 /* FirebaseSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE76C12422520F00007749 /* FirebaseSession.swift */; };
+		AFAE76C4242252D100007749 /* LogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE76C3242252D100007749 /* LogIn.swift */; };
+		AFAE76C824225D8700007749 /* AnimatedGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE76C724225D8700007749 /* AnimatedGradientView.swift */; };
+		AFB2EDFC2423BE0A005EF0CB /* UserPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2EDFB2423BE0A005EF0CB /* UserPage.swift */; };
+		AFB2EDFE2423C581005EF0CB /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB2EDFD2423C581005EF0CB /* Campaign.swift */; };
+		E44AE440E07EEAF2939784FD /* Pods_Battle_Roll.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A066DF6E61A3D177BE9AA31 /* Pods_Battle_Roll.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		AF69A8DF2420EA050049EED5 /* PBXContainerItemProxy */ = {
+		AF07FF1F24237D9F003F839F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF69A8BD2420EA020049EED5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AF69A8C42420EA020049EED5;
-			remoteInfo = "Battle Roll";
+			remoteGlobalIDString = AF07FF0624237D9D003F839F;
+			remoteInfo = "Mac Battle Roll";
 		};
-		AF69A8EA2420EA050049EED5 /* PBXContainerItemProxy */ = {
+		AF07FF2A24237D9F003F839F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = AF69A8BD2420EA020049EED5 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = AF69A8C42420EA020049EED5;
-			remoteInfo = "Battle Roll";
+			remoteGlobalIDString = AF07FF0624237D9D003F839F;
+			remoteInfo = "Mac Battle Roll";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		584DBD9DAD5219E3875AA9D2 /* Pods-Battle Roll.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Roll.debug.xcconfig"; path = "Target Support Files/Pods-Battle Roll/Pods-Battle Roll.debug.xcconfig"; sourceTree = "<group>"; };
+		5A066DF6E61A3D177BE9AA31 /* Pods_Battle_Roll.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Battle_Roll.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		983180F55FA589244EA3EEB7 /* Pods-Battle Roll.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Battle Roll.release.xcconfig"; path = "Target Support Files/Pods-Battle Roll/Pods-Battle Roll.release.xcconfig"; sourceTree = "<group>"; };
+		AF07FF0724237D9D003F839F /* Mac Battle Roll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mac Battle Roll.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF07FF0924237D9D003F839F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF07FF0B24237D9D003F839F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AF07FF0E24237D9D003F839F /* Mac_Battle_Roll.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Mac_Battle_Roll.xcdatamodel; sourceTree = "<group>"; };
+		AF07FF1024237D9E003F839F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF07FF1324237D9E003F839F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AF07FF1624237D9E003F839F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF07FF1824237D9E003F839F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF07FF1924237D9E003F839F /* Mac_Battle_Roll.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Mac_Battle_Roll.entitlements; sourceTree = "<group>"; };
+		AF07FF1E24237D9F003F839F /* Mac Battle RollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mac Battle RollTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF07FF2224237D9F003F839F /* Mac_Battle_RollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mac_Battle_RollTests.swift; sourceTree = "<group>"; };
+		AF07FF2424237D9F003F839F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF07FF2924237D9F003F839F /* Mac Battle RollUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mac Battle RollUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF07FF2D24237D9F003F839F /* Mac_Battle_RollUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mac_Battle_RollUITests.swift; sourceTree = "<group>"; };
+		AF07FF2F24237D9F003F839F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF1F2E922422389300562D71 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AF50C1E7242247F30013D378 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AF69A8C52420EA020049EED5 /* Battle Roll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Battle Roll.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF69A8C82420EA020049EED5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF69A8CA2420EA020049EED5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,46 +86,118 @@
 		AF69A8D42420EA050049EED5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF69A8D72420EA050049EED5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF69A8D92420EA050049EED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF69A8DE2420EA050049EED5 /* Battle RollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Battle RollTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF69A8E22420EA050049EED5 /* Battle_RollTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle_RollTests.swift; sourceTree = "<group>"; };
-		AF69A8E42420EA050049EED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF69A8E92420EA050049EED5 /* Battle RollUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Battle RollUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF69A8ED2420EA060049EED5 /* Battle_RollUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battle_RollUITests.swift; sourceTree = "<group>"; };
-		AF69A8EF2420EA060049EED5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF69A8FD2420EA370049EED5 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		AF69A8FF2420F7F70049EED5 /* CharacterListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterListItem.swift; sourceTree = "<group>"; };
+		AF69A90124211FF30049EED5 /* InitativeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitativeList.swift; sourceTree = "<group>"; };
+		AF69A90524213A7F0049EED5 /* CharacterModell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterModell.swift; sourceTree = "<group>"; };
+		AFAE76C12422520F00007749 /* FirebaseSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseSession.swift; sourceTree = "<group>"; };
+		AFAE76C3242252D100007749 /* LogIn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogIn.swift; sourceTree = "<group>"; };
+		AFAE76C724225D8700007749 /* AnimatedGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientView.swift; sourceTree = "<group>"; };
+		AFB2EDFB2423BE0A005EF0CB /* UserPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPage.swift; sourceTree = "<group>"; };
+		AFB2EDFD2423C581005EF0CB /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		AF07FF0424237D9D003F839F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF07FF1B24237D9F003F839F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF07FF2624237D9F003F839F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AF69A8C22420EA020049EED5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF69A8DB2420EA050049EED5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF69A8E62420EA050049EED5 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				E44AE440E07EEAF2939784FD /* Pods_Battle_Roll.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CFB245422866D9297BCF243 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				584DBD9DAD5219E3875AA9D2 /* Pods-Battle Roll.debug.xcconfig */,
+				983180F55FA589244EA3EEB7 /* Pods-Battle Roll.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		56A5ED01514EC4DB0906214E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5A066DF6E61A3D177BE9AA31 /* Pods_Battle_Roll.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF07FF0824237D9D003F839F /* Mac Battle Roll */ = {
+			isa = PBXGroup;
+			children = (
+				AF07FF0924237D9D003F839F /* AppDelegate.swift */,
+				AF07FF0B24237D9D003F839F /* ContentView.swift */,
+				AF07FF1024237D9E003F839F /* Assets.xcassets */,
+				AF07FF1524237D9E003F839F /* Main.storyboard */,
+				AF07FF1824237D9E003F839F /* Info.plist */,
+				AF07FF1924237D9E003F839F /* Mac_Battle_Roll.entitlements */,
+				AF07FF0D24237D9D003F839F /* Mac_Battle_Roll.xcdatamodeld */,
+				AF07FF1224237D9E003F839F /* Preview Content */,
+			);
+			path = "Mac Battle Roll";
+			sourceTree = "<group>";
+		};
+		AF07FF1224237D9E003F839F /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				AF07FF1324237D9E003F839F /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AF07FF2124237D9F003F839F /* Mac Battle RollTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF07FF2224237D9F003F839F /* Mac_Battle_RollTests.swift */,
+				AF07FF2424237D9F003F839F /* Info.plist */,
+			);
+			path = "Mac Battle RollTests";
+			sourceTree = "<group>";
+		};
+		AF07FF2C24237D9F003F839F /* Mac Battle RollUITests */ = {
+			isa = PBXGroup;
+			children = (
+				AF07FF2D24237D9F003F839F /* Mac_Battle_RollUITests.swift */,
+				AF07FF2F24237D9F003F839F /* Info.plist */,
+			);
+			path = "Mac Battle RollUITests";
+			sourceTree = "<group>";
+		};
 		AF69A8BC2420EA020049EED5 = {
 			isa = PBXGroup;
 			children = (
 				AF69A8C72420EA020049EED5 /* Battle Roll */,
-				AF69A8E12420EA050049EED5 /* Battle RollTests */,
-				AF69A8EC2420EA050049EED5 /* Battle RollUITests */,
+				AF07FF0824237D9D003F839F /* Mac Battle Roll */,
+				AF07FF2124237D9F003F839F /* Mac Battle RollTests */,
+				AF07FF2C24237D9F003F839F /* Mac Battle RollUITests */,
 				AF69A8C62420EA020049EED5 /* Products */,
+				1CFB245422866D9297BCF243 /* Pods */,
+				56A5ED01514EC4DB0906214E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,8 +205,9 @@
 			isa = PBXGroup;
 			children = (
 				AF69A8C52420EA020049EED5 /* Battle Roll.app */,
-				AF69A8DE2420EA050049EED5 /* Battle RollTests.xctest */,
-				AF69A8E92420EA050049EED5 /* Battle RollUITests.xctest */,
+				AF07FF0724237D9D003F839F /* Mac Battle Roll.app */,
+				AF07FF1E24237D9F003F839F /* Mac Battle RollTests.xctest */,
+				AF07FF2924237D9F003F839F /* Mac Battle RollUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,12 +215,15 @@
 		AF69A8C72420EA020049EED5 /* Battle Roll */ = {
 			isa = PBXGroup;
 			children = (
+				AF69A8FC2420EA200049EED5 /* Modell */,
+				AF69A8FB2420EA190049EED5 /* View */,
 				AF69A8C82420EA020049EED5 /* AppDelegate.swift */,
 				AF69A8CA2420EA020049EED5 /* SceneDelegate.swift */,
 				AF69A8CF2420EA020049EED5 /* ContentView.swift */,
 				AF69A8D12420EA050049EED5 /* Assets.xcassets */,
 				AF69A8D62420EA050049EED5 /* LaunchScreen.storyboard */,
 				AF69A8D92420EA050049EED5 /* Info.plist */,
+				AF1F2E922422389300562D71 /* GoogleService-Info.plist */,
 				AF69A8CC2420EA020049EED5 /* Battle_Roll.xcdatamodeld */,
 				AF69A8D32420EA050049EED5 /* Preview Content */,
 			);
@@ -121,34 +238,95 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		AF69A8E12420EA050049EED5 /* Battle RollTests */ = {
+		AF69A8FB2420EA190049EED5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AF69A8E22420EA050049EED5 /* Battle_RollTests.swift */,
-				AF69A8E42420EA050049EED5 /* Info.plist */,
+				AF69A8FD2420EA370049EED5 /* Profile.swift */,
+				AF69A8FF2420F7F70049EED5 /* CharacterListItem.swift */,
+				AF69A90124211FF30049EED5 /* InitativeList.swift */,
+				AFAE76C3242252D100007749 /* LogIn.swift */,
+				AFAE76C724225D8700007749 /* AnimatedGradientView.swift */,
+				AFB2EDFB2423BE0A005EF0CB /* UserPage.swift */,
 			);
-			path = "Battle RollTests";
+			path = View;
 			sourceTree = "<group>";
 		};
-		AF69A8EC2420EA050049EED5 /* Battle RollUITests */ = {
+		AF69A8FC2420EA200049EED5 /* Modell */ = {
 			isa = PBXGroup;
 			children = (
-				AF69A8ED2420EA060049EED5 /* Battle_RollUITests.swift */,
-				AF69A8EF2420EA060049EED5 /* Info.plist */,
+				AF69A90524213A7F0049EED5 /* CharacterModell.swift */,
+				AF50C1E7242247F30013D378 /* User.swift */,
+				AFAE76C12422520F00007749 /* FirebaseSession.swift */,
+				AFB2EDFD2423C581005EF0CB /* Campaign.swift */,
 			);
-			path = "Battle RollUITests";
+			name = Modell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		AF07FF0624237D9D003F839F /* Mac Battle Roll */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF07FF3624237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle Roll" */;
+			buildPhases = (
+				AF07FF0324237D9D003F839F /* Sources */,
+				AF07FF0424237D9D003F839F /* Frameworks */,
+				AF07FF0524237D9D003F839F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mac Battle Roll";
+			productName = "Mac Battle Roll";
+			productReference = AF07FF0724237D9D003F839F /* Mac Battle Roll.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF07FF1D24237D9F003F839F /* Mac Battle RollTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF07FF3724237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle RollTests" */;
+			buildPhases = (
+				AF07FF1A24237D9F003F839F /* Sources */,
+				AF07FF1B24237D9F003F839F /* Frameworks */,
+				AF07FF1C24237D9F003F839F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF07FF2024237D9F003F839F /* PBXTargetDependency */,
+			);
+			name = "Mac Battle RollTests";
+			productName = "Mac Battle RollTests";
+			productReference = AF07FF1E24237D9F003F839F /* Mac Battle RollTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AF07FF2824237D9F003F839F /* Mac Battle RollUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF07FF3824237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle RollUITests" */;
+			buildPhases = (
+				AF07FF2524237D9F003F839F /* Sources */,
+				AF07FF2624237D9F003F839F /* Frameworks */,
+				AF07FF2724237D9F003F839F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF07FF2B24237D9F003F839F /* PBXTargetDependency */,
+			);
+			name = "Mac Battle RollUITests";
+			productName = "Mac Battle RollUITests";
+			productReference = AF07FF2924237D9F003F839F /* Mac Battle RollUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		AF69A8C42420EA020049EED5 /* Battle Roll */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = AF69A8F22420EA060049EED5 /* Build configuration list for PBXNativeTarget "Battle Roll" */;
 			buildPhases = (
+				D01A8738EF834E2E108C51CA /* [CP] Check Pods Manifest.lock */,
 				AF69A8C12420EA020049EED5 /* Sources */,
 				AF69A8C22420EA020049EED5 /* Frameworks */,
 				AF69A8C32420EA020049EED5 /* Resources */,
+				BA531B5213E93281CDE5F79B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -158,42 +336,6 @@
 			productName = "Battle Roll";
 			productReference = AF69A8C52420EA020049EED5 /* Battle Roll.app */;
 			productType = "com.apple.product-type.application";
-		};
-		AF69A8DD2420EA050049EED5 /* Battle RollTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AF69A8F52420EA060049EED5 /* Build configuration list for PBXNativeTarget "Battle RollTests" */;
-			buildPhases = (
-				AF69A8DA2420EA050049EED5 /* Sources */,
-				AF69A8DB2420EA050049EED5 /* Frameworks */,
-				AF69A8DC2420EA050049EED5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AF69A8E02420EA050049EED5 /* PBXTargetDependency */,
-			);
-			name = "Battle RollTests";
-			productName = "Battle RollTests";
-			productReference = AF69A8DE2420EA050049EED5 /* Battle RollTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		AF69A8E82420EA050049EED5 /* Battle RollUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AF69A8F82420EA060049EED5 /* Build configuration list for PBXNativeTarget "Battle RollUITests" */;
-			buildPhases = (
-				AF69A8E52420EA050049EED5 /* Sources */,
-				AF69A8E62420EA050049EED5 /* Frameworks */,
-				AF69A8E72420EA050049EED5 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AF69A8EB2420EA050049EED5 /* PBXTargetDependency */,
-			);
-			name = "Battle RollUITests";
-			productName = "Battle RollUITests";
-			productReference = AF69A8E92420EA050049EED5 /* Battle RollUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -205,16 +347,19 @@
 				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Henrik Anthony Odden Sandberg";
 				TargetAttributes = {
+					AF07FF0624237D9D003F839F = {
+						CreatedOnToolsVersion = 11.4;
+					};
+					AF07FF1D24237D9F003F839F = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = AF07FF0624237D9D003F839F;
+					};
+					AF07FF2824237D9F003F839F = {
+						CreatedOnToolsVersion = 11.4;
+						TestTargetID = AF07FF0624237D9D003F839F;
+					};
 					AF69A8C42420EA020049EED5 = {
 						CreatedOnToolsVersion = 11.4;
-					};
-					AF69A8DD2420EA050049EED5 = {
-						CreatedOnToolsVersion = 11.4;
-						TestTargetID = AF69A8C42420EA020049EED5;
-					};
-					AF69A8E82420EA050049EED5 = {
-						CreatedOnToolsVersion = 11.4;
-						TestTargetID = AF69A8C42420EA020049EED5;
 					};
 				};
 			};
@@ -232,83 +377,168 @@
 			projectRoot = "";
 			targets = (
 				AF69A8C42420EA020049EED5 /* Battle Roll */,
-				AF69A8DD2420EA050049EED5 /* Battle RollTests */,
-				AF69A8E82420EA050049EED5 /* Battle RollUITests */,
+				AF07FF0624237D9D003F839F /* Mac Battle Roll */,
+				AF07FF1D24237D9F003F839F /* Mac Battle RollTests */,
+				AF07FF2824237D9F003F839F /* Mac Battle RollUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		AF07FF0524237D9D003F839F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF07FF1724237D9E003F839F /* Main.storyboard in Resources */,
+				AF07FF1424237D9E003F839F /* Preview Assets.xcassets in Resources */,
+				AF07FF3924237E02003F839F /* Assets.xcassets in Resources */,
+				AF07FF1124237D9E003F839F /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF07FF1C24237D9F003F839F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF07FF2724237D9F003F839F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AF69A8C32420EA020049EED5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AF69A8D82420EA050049EED5 /* LaunchScreen.storyboard in Resources */,
+				AF1F2E932422389300562D71 /* GoogleService-Info.plist in Resources */,
 				AF69A8D52420EA050049EED5 /* Preview Assets.xcassets in Resources */,
 				AF69A8D22420EA050049EED5 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AF69A8DC2420EA050049EED5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF69A8E72420EA050049EED5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		BA531B5213E93281CDE5F79B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Battle Roll/Pods-Battle Roll-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Battle Roll/Pods-Battle Roll-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Battle Roll/Pods-Battle Roll-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D01A8738EF834E2E108C51CA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Battle Roll-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
+		AF07FF0324237D9D003F839F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF07FF0F24237D9D003F839F /* Mac_Battle_Roll.xcdatamodeld in Sources */,
+				AF07FF0C24237D9D003F839F /* ContentView.swift in Sources */,
+				AF07FF3B24237F08003F839F /* CharacterModell.swift in Sources */,
+				AF07FF3C24237F08003F839F /* User.swift in Sources */,
+				AF07FF0A24237D9D003F839F /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF07FF1A24237D9F003F839F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF07FF2324237D9F003F839F /* Mac_Battle_RollTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF07FF2524237D9F003F839F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF07FF2E24237D9F003F839F /* Mac_Battle_RollUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		AF69A8C12420EA020049EED5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AF69A8C92420EA020049EED5 /* AppDelegate.swift in Sources */,
+				AFB2EDFC2423BE0A005EF0CB /* UserPage.swift in Sources */,
+				AFAE76C824225D8700007749 /* AnimatedGradientView.swift in Sources */,
+				AF69A8FE2420EA370049EED5 /* Profile.swift in Sources */,
+				AFAE76C4242252D100007749 /* LogIn.swift in Sources */,
+				AF69A90624213A7F0049EED5 /* CharacterModell.swift in Sources */,
+				AF69A9002420F7F70049EED5 /* CharacterListItem.swift in Sources */,
+				AF69A90224211FF30049EED5 /* InitativeList.swift in Sources */,
+				AF50C1E8242247F30013D378 /* User.swift in Sources */,
+				AFB2EDFE2423C581005EF0CB /* Campaign.swift in Sources */,
 				AF69A8CE2420EA020049EED5 /* Battle_Roll.xcdatamodeld in Sources */,
 				AF69A8D02420EA020049EED5 /* ContentView.swift in Sources */,
 				AF69A8CB2420EA020049EED5 /* SceneDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF69A8DA2420EA050049EED5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF69A8E32420EA050049EED5 /* Battle_RollTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF69A8E52420EA050049EED5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF69A8EE2420EA060049EED5 /* Battle_RollUITests.swift in Sources */,
+				AFAE76C22422520F00007749 /* FirebaseSession.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		AF69A8E02420EA050049EED5 /* PBXTargetDependency */ = {
+		AF07FF2024237D9F003F839F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AF69A8C42420EA020049EED5 /* Battle Roll */;
-			targetProxy = AF69A8DF2420EA050049EED5 /* PBXContainerItemProxy */;
+			target = AF07FF0624237D9D003F839F /* Mac Battle Roll */;
+			targetProxy = AF07FF1F24237D9F003F839F /* PBXContainerItemProxy */;
 		};
-		AF69A8EB2420EA050049EED5 /* PBXTargetDependency */ = {
+		AF07FF2B24237D9F003F839F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AF69A8C42420EA020049EED5 /* Battle Roll */;
-			targetProxy = AF69A8EA2420EA050049EED5 /* PBXContainerItemProxy */;
+			target = AF07FF0624237D9D003F839F /* Mac Battle Roll */;
+			targetProxy = AF07FF2A24237D9F003F839F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		AF07FF1524237D9E003F839F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF07FF1624237D9E003F839F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		AF69A8D62420EA050049EED5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -320,6 +550,144 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		AF07FF3024237D9F003F839F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mac Battle Roll/Mac_Battle_Roll.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Mac Battle Roll/Preview Content\"";
+				DEVELOPMENT_TEAM = 8LJBM9LES6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Mac Battle Roll/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-Roll";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		AF07FF3124237D9F003F839F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Mac Battle Roll/Mac_Battle_Roll.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"Mac Battle Roll/Preview Content\"";
+				DEVELOPMENT_TEAM = 8LJBM9LES6;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Mac Battle Roll/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-Roll";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		AF07FF3224237D9F003F839F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8LJBM9LES6;
+				INFOPLIST_FILE = "Mac Battle RollTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-RollTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mac Battle Roll.app/Contents/MacOS/Mac Battle Roll";
+			};
+			name = Debug;
+		};
+		AF07FF3324237D9F003F839F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8LJBM9LES6;
+				INFOPLIST_FILE = "Mac Battle RollTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-RollTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mac Battle Roll.app/Contents/MacOS/Mac Battle Roll";
+			};
+			name = Release;
+		};
+		AF07FF3424237D9F003F839F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8LJBM9LES6;
+				INFOPLIST_FILE = "Mac Battle RollUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-RollUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Mac Battle Roll";
+			};
+			name = Debug;
+		};
+		AF07FF3524237D9F003F839F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 8LJBM9LES6;
+				INFOPLIST_FILE = "Mac Battle RollUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-RollUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Mac Battle Roll";
+			};
+			name = Release;
+		};
 		AF69A8F02420EA060049EED5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -370,7 +738,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -424,7 +792,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -436,19 +804,23 @@
 		};
 		AF69A8F32420EA060049EED5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 584DBD9DAD5219E3875AA9D2 /* Pods-Battle Roll.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Battle Roll/Battle Roll.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Battle Roll/Preview Content\"";
 				DEVELOPMENT_TEAM = 8LJBM9LES6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Battle Roll/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Battle-Roll";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -456,111 +828,58 @@
 		};
 		AF69A8F42420EA060049EED5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 983180F55FA589244EA3EEB7 /* Pods-Battle Roll.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Battle Roll/Battle Roll.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Battle Roll/Preview Content\"";
 				DEVELOPMENT_TEAM = 8LJBM9LES6;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Battle Roll/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Battle-Roll";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		AF69A8F62420EA060049EED5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LJBM9LES6;
-				INFOPLIST_FILE = "Battle RollTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Battle-RollTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Battle Roll.app/Battle Roll";
-			};
-			name = Debug;
-		};
-		AF69A8F72420EA060049EED5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LJBM9LES6;
-				INFOPLIST_FILE = "Battle RollTests/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Battle-RollTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Battle Roll.app/Battle Roll";
-			};
-			name = Release;
-		};
-		AF69A8F92420EA060049EED5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LJBM9LES6;
-				INFOPLIST_FILE = "Battle RollUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Battle-RollUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Battle Roll";
-			};
-			name = Debug;
-		};
-		AF69A8FA2420EA060049EED5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8LJBM9LES6;
-				INFOPLIST_FILE = "Battle RollUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Battle-RollUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Battle Roll";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		AF07FF3624237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle Roll" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF07FF3024237D9F003F839F /* Debug */,
+				AF07FF3124237D9F003F839F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF07FF3724237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle RollTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF07FF3224237D9F003F839F /* Debug */,
+				AF07FF3324237D9F003F839F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF07FF3824237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle RollUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF07FF3424237D9F003F839F /* Debug */,
+				AF07FF3524237D9F003F839F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		AF69A8C02420EA020049EED5 /* Build configuration list for PBXProject "Battle Roll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -579,27 +898,19 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF69A8F52420EA060049EED5 /* Build configuration list for PBXNativeTarget "Battle RollTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AF69A8F62420EA060049EED5 /* Debug */,
-				AF69A8F72420EA060049EED5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AF69A8F82420EA060049EED5 /* Build configuration list for PBXNativeTarget "Battle RollUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AF69A8F92420EA060049EED5 /* Debug */,
-				AF69A8FA2420EA060049EED5 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
+		AF07FF0D24237D9D003F839F /* Mac_Battle_Roll.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF07FF0E24237D9D003F839F /* Mac_Battle_Roll.xcdatamodel */,
+			);
+			currentVersion = AF07FF0E24237D9D003F839F /* Mac_Battle_Roll.xcdatamodel */;
+			path = Mac_Battle_Roll.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
 		AF69A8CC2420EA020049EED5 /* Battle_Roll.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
