@@ -1,4 +1,97 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
+    <entity name="Warscroll" representedClassName="Warscroll" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="NO" attributeType="String"/>
+        <attribute name="move" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="health" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="control" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="save" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isDestroyed" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="damageAllocated" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="iconName" optional="YES" attributeType="String"/>
+        <attribute name="unitType" optional="YES" attributeType="String"/>
+        <relationship name="abilities" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Ability" inverseName="warscroll" inverseEntity="Ability"/>
+        <relationship name="weapons" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Weapon" inverseName="warscroll" inverseEntity="Weapon"/>
+        <relationship name="army" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SpearheadArmy" inverseName="warscrolls" inverseEntity="SpearheadArmy"/>
+    </entity>
+    <entity name="Ability" representedClassName="Ability" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="NO" attributeType="String"/>
+        <attribute name="abilityDescription" optional="NO" attributeType="String"/>
+        <attribute name="phase" optional="NO" attributeType="String"/>
+        <attribute name="timing" optional="NO" attributeType="String"/>
+        <attribute name="usageLimit" optional="NO" attributeType="String"/>
+        <attribute name="hasBeenUsedThisTurn" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="hasBeenUsedThisGame" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isPassive" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="sortOrder" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="warscroll" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Warscroll" inverseName="abilities" inverseEntity="Warscroll"/>
+    </entity>
+    <entity name="Weapon" representedClassName="Weapon" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="NO" attributeType="String"/>
+        <attribute name="attacks" optional="NO" attributeType="String"/>
+        <attribute name="hit" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wound" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rend" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="damage" optional="NO" attributeType="String"/>
+        <attribute name="isMelee" optional="NO" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES"/>
+        <attribute name="range" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="abilities" optional="YES" attributeType="String"/>
+        <relationship name="warscroll" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Warscroll" inverseName="weapons" inverseEntity="Warscroll"/>
+    </entity>
+    <entity name="SpearheadArmy" representedClassName="SpearheadArmy" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="NO" attributeType="String"/>
+        <attribute name="faction" optional="NO" attributeType="String"/>
+        <attribute name="traitName" optional="YES" attributeType="String"/>
+        <attribute name="traitDescription" optional="YES" attributeType="String"/>
+        <relationship name="warscrolls" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Warscroll" inverseName="army" inverseEntity="Warscroll"/>
+    </entity>
+    <entity name="GameRecord" representedClassName="GameRecord" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="date" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="season" optional="NO" attributeType="String"/>
+        <attribute name="boardLayout" optional="NO" attributeType="String"/>
+        <attribute name="myArmyName" optional="NO" attributeType="String"/>
+        <attribute name="mySpearheadName" optional="NO" attributeType="String"/>
+        <attribute name="opponentArmyName" optional="NO" attributeType="String"/>
+        <attribute name="opponentSpearheadName" optional="NO" attributeType="String"/>
+        <attribute name="myFinalScore" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="opponentFinalScore" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="didIWin" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="isComplete" optional="NO" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <relationship name="rounds" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="RoundRecord" inverseName="game" inverseEntity="RoundRecord"/>
+    </entity>
+    <entity name="RoundRecord" representedClassName="RoundRecord" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="roundNumber" optional="NO" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+        <attribute name="whoWonPriority" optional="NO" attributeType="String"/>
+        <attribute name="whoWentFirst" optional="NO" attributeType="String"/>
+        <attribute name="underdogAtStart" optional="NO" attributeType="String"/>
+        <attribute name="myScoreThisRound" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="opponentScoreThisRound" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameRecord" inverseName="rounds" inverseEntity="GameRecord"/>
+    </entity>
+    <entity name="BattleTactic" representedClassName="BattleTactic" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="NO" attributeType="String"/>
+        <attribute name="tacticDescription" optional="NO" attributeType="String"/>
+        <attribute name="victoryPoints" optional="NO" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="season" optional="NO" attributeType="String"/>
+    </entity>
+    <entity name="Twist" representedClassName="Twist" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="NO" attributeType="String"/>
+        <attribute name="twistDescription" optional="NO" attributeType="String"/>
+        <attribute name="season" optional="NO" attributeType="String"/>
+        <attribute name="roundNumber" optional="NO" attributeType="Integer 16" defaultValueString="1" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="SeasonPack" representedClassName="SeasonPack" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="NO" attributeType="String"/>
+        <attribute name="seasonDescription" optional="YES" attributeType="String"/>
+        <attribute name="boardLayouts" optional="YES" attributeType="Transformable"/>
+    </entity>
 </model>

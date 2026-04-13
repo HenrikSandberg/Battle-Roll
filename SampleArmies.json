@@ -1,0 +1,215 @@
+[
+  {
+    "id": "a1b2c3d4-e5f6-4a5b-9c8d-123456789abc",
+    "name": "Stormcast Eternals - Hammers of Sigmar",
+    "faction": "Stormcast Eternals",
+    "armyTrait": {
+      "name": "We Cannot Fail",
+      "description": "Once per battle round, you can re-roll a single hit roll, wound roll, or save roll for a friendly Hammers of Sigmar unit.",
+      "phase": null
+    },
+    "units": [
+      {
+        "id": "a1b2c3d4-e5f6-4a5b-9c8d-123456789001",
+        "name": "Lord-Vigilant on Gryph-stalker",
+        "move": 9,
+        "health": 12,
+        "control": 2,
+        "save": 3,
+        "unitType": "Cavalry Hero",
+        "weapons": [
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678a001",
+            "name": "Razor Beak and Claws",
+            "attacks": "4",
+            "hit": 3,
+            "wound": 3,
+            "rend": 2,
+            "damage": "2",
+            "range": null,
+            "abilities": null
+          },
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678a002",
+            "name": "Warden's Halberd",
+            "attacks": "4",
+            "hit": 3,
+            "wound": 3,
+            "rend": 1,
+            "damage": "2",
+            "range": null,
+            "abilities": "Charge (+1 Damage)"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678b001",
+            "name": "Astral Compass",
+            "description": "Once per battle, at the start of your movement phase, you can pick this unit. Remove it from the battlefield and set it up again more than 9\" from all enemy units.",
+            "phase": "Movement",
+            "timing": "Start of Phase",
+            "usageLimit": "Once Per Game",
+            "isPassive": false
+          },
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678b002",
+            "name": "Lord of the Vanguard",
+            "description": "Add 1 to run rolls and charge rolls for friendly Stormcast Eternals units wholly within 12\" of this unit.",
+            "phase": "Movement",
+            "timing": "During Phase",
+            "usageLimit": "Unlimited",
+            "isPassive": true
+          }
+        ]
+      },
+      {
+        "id": "a1b2c3d4-e5f6-4a5b-9c8d-123456789002",
+        "name": "Liberators",
+        "move": 5,
+        "health": 10,
+        "control": 1,
+        "save": 3,
+        "unitType": "Infantry",
+        "weapons": [
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678a003",
+            "name": "Warhammer",
+            "attacks": "2",
+            "hit": 3,
+            "wound": 3,
+            "rend": 1,
+            "damage": "1",
+            "range": null,
+            "abilities": null
+          },
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678a004",
+            "name": "Warblade",
+            "attacks": "3",
+            "hit": 3,
+            "wound": 4,
+            "rend": 0,
+            "damage": "1",
+            "range": null,
+            "abilities": null
+          }
+        ],
+        "abilities": [
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678b003",
+            "name": "Lay Low the Tyrants",
+            "description": "Add 1 to wound rolls for attacks made by this unit that target enemy Heroes.",
+            "phase": "Combat",
+            "timing": "During Phase",
+            "usageLimit": "Unlimited",
+            "isPassive": true
+          },
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678b004",
+            "name": "Shield Wall",
+            "description": "This unit has Ward (6+).",
+            "phase": "Combat",
+            "timing": "During Phase",
+            "usageLimit": "Unlimited",
+            "isPassive": true
+          }
+        ]
+      },
+      {
+        "id": "a1b2c3d4-e5f6-4a5b-9c8d-123456789003",
+        "name": "Vindictors",
+        "move": 5,
+        "health": 10,
+        "control": 1,
+        "save": 3,
+        "unitType": "Infantry",
+        "weapons": [
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678a005",
+            "name": "Stormspear",
+            "attacks": "2",
+            "hit": 3,
+            "wound": 3,
+            "rend": 1,
+            "damage": "1",
+            "range": null,
+            "abilities": "Charge (+1 Damage)"
+          }
+        ],
+        "abilities": [
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678b005",
+            "name": "Champion",
+            "description": "This unit includes a Vindictor-Prime. Add 1 to the Attacks characteristic of that model's melee weapons.",
+            "phase": "Combat",
+            "timing": "During Phase",
+            "usageLimit": "Unlimited",
+            "isPassive": true
+          },
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678b006",
+            "name": "Aetheric Channelling",
+            "description": "This unit can use 2 Shield Bash abilities per phase.",
+            "phase": "Combat",
+            "timing": "During Phase",
+            "usageLimit": "Unlimited",
+            "isPassive": true
+          }
+        ]
+      },
+      {
+        "id": "a1b2c3d4-e5f6-4a5b-9c8d-123456789004",
+        "name": "Prosecutors with Stormcall Javelins",
+        "move": 12,
+        "health": 8,
+        "control": 1,
+        "save": 4,
+        "unitType": "Cavalry",
+        "weapons": [
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678a006",
+            "name": "Stormcall Javelin",
+            "attacks": "2",
+            "hit": 3,
+            "wound": 3,
+            "rend": 0,
+            "damage": "1",
+            "range": 12,
+            "abilities": "Crit (Auto-wound)"
+          },
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678a007",
+            "name": "Celestial Hammers",
+            "attacks": "2",
+            "hit": 4,
+            "wound": 3,
+            "rend": 0,
+            "damage": "1",
+            "range": null,
+            "abilities": null
+          }
+        ],
+        "abilities": [
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678b007",
+            "name": "Heralds of Righteousness",
+            "description": "This unit can use Shoot and/or Charge abilities even if it used a Retreat ability in the same turn.",
+            "phase": "Movement",
+            "timing": "During Phase",
+            "usageLimit": "Unlimited",
+            "isPassive": true
+          },
+          {
+            "id": "a1b2c3d4-e5f6-4a5b-9c8d-12345678b008",
+            "name": "Blazing Meteors",
+            "description": "Add 1 to wound rolls for this unit's shooting attacks if it charged in the same turn.",
+            "phase": "Shooting",
+            "timing": "During Phase",
+            "usageLimit": "Unlimited",
+            "isPassive": true
+          }
+        ]
+      }
+    ]
+  }
+]

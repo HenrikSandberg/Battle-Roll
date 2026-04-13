@@ -1,0 +1,233 @@
+{
+  "name": "Fangs of the Blood God",
+  "faction": "Blades of Khorne",
+  "general": "Karanak",
+  "battleTraits": [
+    {
+      "name": "The Quarry",
+      "description": "If no quarry exists, pick an enemy unit to be the quarry.",
+      "phase": "Hero",
+      "timing": "Start of Battle Round",
+      "usageLimit": "Unlimited",
+      "isPassive": false
+    },
+    {
+      "name": "Blood-Drenched",
+      "description": "Pick friendly unit that slew models this turn. Melee weapons gain Crit (Mortal) for rest of battle.",
+      "phase": "Battleshock",
+      "timing": "End of Any Turn",
+      "usageLimit": "Unlimited",
+      "isPassive": false
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "The Scent of Blood",
+      "description": "+1 Hit and +1 Wound against damaged units.",
+      "phase": "Combat",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    },
+    {
+      "name": "Savagery Upon Savagery",
+      "description": "+1 Attacks for target unit (General gets +D3 instead).",
+      "phase": "Combat",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Battle",
+      "isPassive": false
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Sustained by Gore",
+      "description": "Heal (D3).",
+      "phase": "Battleshock",
+      "timing": "End of Any Turn",
+      "usageLimit": "Unlimited",
+      "isPassive": false,
+      "attachedTo": "Karanak"
+    },
+    {
+      "name": "Killing Pounce",
+      "description": "Roll 3D6 for charge, must finish in combat with the quarry.",
+      "phase": "Charge",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Battle",
+      "isPassive": false,
+      "attachedTo": "Karanak"
+    },
+    {
+      "name": "Evasive Hunter",
+      "description": "-1 Hit and -1 Wound for shooting attacks targeting general.",
+      "phase": "Shooting",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true,
+      "attachedTo": "Karanak"
+    },
+    {
+      "name": "Furious Bites",
+      "description": "If in combat with quarry, inflict D3 mortal damage on quarry.",
+      "phase": "Battleshock",
+      "timing": "End of Any Turn",
+      "usageLimit": "Unlimited",
+      "isPassive": false,
+      "attachedTo": "Karanak"
+    }
+  ],
+  "warscrolls": [
+    {
+      "name": "Karanak",
+      "move": 8,
+      "health": 7,
+      "control": 2,
+      "save": 4,
+      "unitType": "Hero",
+      "isGeneral": true,
+      "weapons": [
+        {
+          "name": "Savage Mauling",
+          "attacks": "6",
+          "hit": 3,
+          "wound": 3,
+          "rend": 1,
+          "damage": "2",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Stalk the Prey",
+          "description": "Move D6\". Must end closer to quarry.",
+          "phase": "Hero",
+          "timing": "During Phase",
+          "usageLimit": "Unlimited",
+          "isPassive": false
+        },
+        {
+          "name": "Anti-HERO",
+          "description": "+1 Rend against HERO units.",
+          "phase": "Combat",
+          "timing": "Passive",
+          "usageLimit": "Unlimited",
+          "isPassive": true
+        },
+        {
+          "name": "Ward (6+)",
+          "description": "WARD (6+)",
+          "phase": "Combat",
+          "timing": "Passive",
+          "usageLimit": "Unlimited",
+          "isPassive": true
+        }
+      ]
+    },
+    {
+      "name": "Flesh Hounds (A)",
+      "move": 8,
+      "health": 2,
+      "control": 1,
+      "save": 6,
+      "unitType": "Cavalry",
+      "count": 5,
+      "weapons": [
+        {
+          "name": "Blood-dark Claws",
+          "attacks": "2",
+          "hit": 4,
+          "wound": 3,
+          "rend": 0,
+          "damage": "1",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Unflagging Hunters",
+          "description": "+1 to charge rolls.",
+          "phase": "Charge",
+          "timing": "Passive",
+          "usageLimit": "Unlimited",
+          "isPassive": true
+        },
+        {
+          "name": "Ward (6+)",
+          "description": "WARD (6+)",
+          "phase": "Combat",
+          "timing": "Passive",
+          "usageLimit": "Unlimited",
+          "isPassive": true
+        }
+      ]
+    },
+    {
+      "name": "Flesh Hounds (B)",
+      "move": 8,
+      "health": 2,
+      "control": 1,
+      "save": 6,
+      "unitType": "Cavalry",
+      "count": 5,
+      "weapons": [
+        {
+          "name": "Blood-dark Claws",
+          "attacks": "2",
+          "hit": 4,
+          "wound": 3,
+          "rend": 0,
+          "damage": "1",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Unflagging Hunters",
+          "description": "+1 to charge rolls.",
+          "phase": "Charge",
+          "timing": "Passive",
+          "usageLimit": "Unlimited",
+          "isPassive": true
+        },
+        {
+          "name": "Ward (6+)",
+          "description": "WARD (6+)",
+          "phase": "Combat",
+          "timing": "Passive",
+          "usageLimit": "Unlimited",
+          "isPassive": true
+        }
+      ]
+    },
+    {
+      "name": "Claws of Karanak",
+      "move": 6,
+      "health": 1,
+      "control": 1,
+      "save": 4,
+      "unitType": "Infantry",
+      "count": 8,
+      "weapons": [
+        {
+          "name": "Vicious Blades",
+          "attacks": "2",
+          "hit": 4,
+          "wound": 4,
+          "rend": 0,
+          "damage": "1",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Pack Hunters",
+          "description": "If in combat with same enemy as Flesh Hounds, score Crits on 5+.",
+          "phase": "Combat",
+          "timing": "During Phase",
+          "usageLimit": "Unlimited",
+          "isPassive": false
+        }
+      ]
+    }
+  ]
+}

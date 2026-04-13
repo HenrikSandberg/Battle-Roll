@@ -1,0 +1,232 @@
+{
+  "name": "Castelite Company",
+  "faction": "Cities of Sigmar",
+  "general": "Freeguild Cavalier-Marshal",
+  "battleTraits": [
+    {
+      "name": "The Officer's Order",
+      "description": "Once Per Round. Hide a tactic card. Use command \"for free\" and return to hand.",
+      "phase": "Hero",
+      "timing": "Start of Battle Round",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "For Sigmar, Charge!",
+      "description": "CAVALRY units have STRIKE-FIRST if they charged.",
+      "phase": "Combat",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    },
+    {
+      "name": "Ironweld Discipline",
+      "description": "3+. Great Cannon can use 'Shoot' ability immediately.",
+      "phase": "Shooting",
+      "timing": "Enemy Shooting Phase",
+      "usageLimit": "Unlimited",
+      "isPassive": false
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Flask of Lethisian Darkwater",
+      "description": "Heal (D6).",
+      "phase": "Hero",
+      "timing": "Start of Any Turn",
+      "usageLimit": "Once Per Battle",
+      "isPassive": false,
+      "attachedTo": "Freeguild Cavalier-Marshal"
+    },
+    {
+      "name": "Brazier of Holy Flame",
+      "description": "Return D3 slain Steelhelms within combat range.",
+      "phase": "Battleshock",
+      "timing": "End of Any Turn",
+      "usageLimit": "Unlimited",
+      "isPassive": false,
+      "attachedTo": "Freeguild Cavalier-Marshal"
+    },
+    {
+      "name": "Heirloom Blade",
+      "description": "+1 Rend for Master-forged Longsword.",
+      "phase": "Combat",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true,
+      "attachedTo": "Freeguild Cavalier-Marshal"
+    },
+    {
+      "name": "Glimmering",
+      "description": "Re-roll 1 Hit, Wound, or Save per phase.",
+      "phase": "Combat",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true,
+      "attachedTo": "Freeguild Cavalier-Marshal"
+    }
+  ],
+  "warscrolls": [
+    {
+      "name": "Freeguild Cavalier-Marshal",
+      "move": 10,
+      "health": 7,
+      "control": 2,
+      "save": 4,
+      "unitType": "Hero",
+      "isGeneral": true,
+      "weapons": [
+        {
+          "name": "Master-forged Longsword",
+          "attacks": "5",
+          "hit": 3,
+          "wound": 3,
+          "rend": 1,
+          "damage": "2",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Decisive Commander",
+          "description": "2+. Return D3 Steelhelms OR add 3 to Steelhelms' Control.",
+          "phase": "Hero",
+          "timing": "During Phase",
+          "usageLimit": "Unlimited",
+          "isPassive": false
+        }
+      ]
+    },
+    {
+      "name": "Freeguild Steelhelms (A)",
+      "move": 5,
+      "health": 1,
+      "control": 1,
+      "save": 5,
+      "unitType": "Infantry",
+      "count": 5,
+      "weapons": [
+        {
+          "name": "Steelhelm Weapons",
+          "attacks": "2",
+          "hit": 4,
+          "wound": 4,
+          "rend": 0,
+          "damage": "1",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Consecrate the Land",
+          "description": "3+ on controlled objective. Gain WARD (6+) while contesting.",
+          "phase": "Movement",
+          "timing": "During Phase",
+          "usageLimit": "Unlimited",
+          "isPassive": false
+        }
+      ]
+    },
+    {
+      "name": "Freeguild Steelhelms (B)",
+      "move": 5,
+      "health": 1,
+      "control": 1,
+      "save": 5,
+      "unitType": "Infantry",
+      "count": 5,
+      "weapons": [
+        {
+          "name": "Steelhelm Weapons",
+          "attacks": "2",
+          "hit": 4,
+          "wound": 4,
+          "rend": 0,
+          "damage": "1",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Consecrate the Land",
+          "description": "3+ on controlled objective. Gain WARD (6+) while contesting.",
+          "phase": "Movement",
+          "timing": "During Phase",
+          "usageLimit": "Unlimited",
+          "isPassive": false
+        }
+      ]
+    },
+    {
+      "name": "Freeguild Cavaliers",
+      "move": 10,
+      "health": 3,
+      "control": 1,
+      "save": 4,
+      "unitType": "Cavalry",
+      "count": 5,
+      "weapons": [
+        {
+          "name": "Cavalier's Blade",
+          "attacks": "3",
+          "hit": 3,
+          "wound": 4,
+          "rend": 1,
+          "damage": "1",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Devastating Charge",
+          "description": "If charged, roll dice. 2+: D3 mortal damage.",
+          "phase": "Charge",
+          "timing": "During Phase",
+          "usageLimit": "Unlimited",
+          "isPassive": false
+        }
+      ]
+    },
+    {
+      "name": "Ironweld Great Cannon",
+      "move": 3,
+      "health": 8,
+      "control": 2,
+      "save": 5,
+      "unitType": "War Machine",
+      "count": 1,
+      "weapons": [
+        {
+          "name": "Cannonball",
+          "attacks": "1",
+          "hit": 4,
+          "wound": 2,
+          "rend": 2,
+          "damage": "D6",
+          "isMelee": false
+        },
+        {
+          "name": "Grapeshot",
+          "attacks": "3D6",
+          "hit": 5,
+          "wound": 4,
+          "rend": 1,
+          "damage": "1",
+          "isMelee": false
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Shot and Shell",
+          "description": "Choose Cannonball (requires no move) or Grapeshot.",
+          "phase": "Shooting",
+          "timing": "Passive",
+          "usageLimit": "Unlimited",
+          "isPassive": true
+        }
+      ]
+    }
+  ]
+}

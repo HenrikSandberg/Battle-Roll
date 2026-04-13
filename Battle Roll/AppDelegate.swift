@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Firebase
 import CoreData
 
 @UIApplicationMain
@@ -16,8 +15,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        //Firebase
-        FirebaseApp.configure()
+        // Clear and reload spearhead data on each launch (to prevent duplicates)
+        print("🚀 AppDelegate: Clearing old spearheads...")
+        SpearheadLoader.shared.deleteAllSpearheads()
+
+        print("🚀 AppDelegate: Loading spearhead data...")
+        SpearheadLoader.shared.loadAllSpearheads()
+        print("✅ AppDelegate: Spearhead loading complete")
         return true
     }
 

@@ -1,0 +1,247 @@
+{
+  "name": "Bloodbound Gore Pilgrims",
+  "faction": "Blades of Khorne",
+  "general": "Slaughterpriest",
+  "battleTraits": [
+    {
+      "name": "The Blood Tithe",
+      "description": "Gain 1 Blood Tithe point each time a unit is destroyed.",
+      "phase": "Hero",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    },
+    {
+      "name": "Heads Must Roll",
+      "description": "Spend 3 BT. Pick 3 units. +1 Rend characteristic for melee weapons until next turn.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Unlimited",
+      "isPassive": false
+    },
+    {
+      "name": "Murderlust",
+      "description": "Spend 1 BT. Pick D3 units. Each moves D6\".",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Unlimited",
+      "isPassive": false
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Favoured of Khorne",
+      "description": "Roll dice. 2+: Gain 1 BT point.",
+      "phase": "Hero",
+      "timing": "Start of Your Turn",
+      "usageLimit": "Unlimited",
+      "isPassive": false
+    },
+    {
+      "name": "Blood-Woken Runes",
+      "description": "WARD (5+) if unit has used a FIGHT ability in the same phase.",
+      "phase": "Combat",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Resanguination",
+      "description": "Chanting 3+. Heal (D3) visible unit within 16\".",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Unlimited",
+      "isPassive": false,
+      "attachedTo": "Slaughterpriest"
+    },
+    {
+      "name": "Headhunter",
+      "description": "Target enemy HERO in combat. General gets STRIKE-FIRST but must target that HERO.",
+      "phase": "Combat",
+      "timing": "During Phase",
+      "usageLimit": "Unlimited",
+      "isPassive": false,
+      "attachedTo": "Slaughterpriest"
+    },
+    {
+      "name": "The Crimson Plate",
+      "description": "General has WARD (5+).",
+      "phase": "Combat",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true,
+      "attachedTo": "Slaughterpriest"
+    },
+    {
+      "name": "Unholy Flames",
+      "description": "Chanting 4+. +1 Rend for melee weapons of unit within 16\" until next turn.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Unlimited",
+      "isPassive": false,
+      "attachedTo": "Slaughterpriest"
+    }
+  ],
+  "warscrolls": [
+    {
+      "name": "Slaughterpriest",
+      "move": 5,
+      "health": 6,
+      "control": 2,
+      "save": 4,
+      "unitType": "Hero",
+      "isGeneral": true,
+      "weapons": [
+        {
+          "name": "Wrath-forged Blade",
+          "attacks": "4",
+          "hit": 3,
+          "wound": 3,
+          "rend": 1,
+          "damage": "2",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Blood Boil",
+          "description": "Chanting 4+. Inflict D3 mortal damage on enemy within 16\".",
+          "phase": "Hero",
+          "timing": "During Phase",
+          "usageLimit": "Unlimited",
+          "isPassive": false
+        },
+        {
+          "name": "Blood Sacrifice",
+          "description": "Roll dice on friendly unit in combat range. 2+: Inflict D3 mortal damage on target; gain 1 BT point.",
+          "phase": "Hero",
+          "timing": "During Phase",
+          "usageLimit": "Unlimited",
+          "isPassive": false
+        }
+      ]
+    },
+    {
+      "name": "Mighty Skullcrushers",
+      "move": 8,
+      "health": 5,
+      "control": 2,
+      "save": 3,
+      "unitType": "Cavalry",
+      "count": 3,
+      "weapons": [
+        {
+          "name": "Ensorcelled Weapons",
+          "attacks": "6",
+          "hit": 3,
+          "wound": 3,
+          "rend": 1,
+          "damage": "2",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Brass Stampede",
+          "description": "If charged, roll dice on enemy within 1\". 2+: 1 mortal damage.",
+          "phase": "Charge",
+          "timing": "During Phase",
+          "usageLimit": "Unlimited",
+          "isPassive": false
+        }
+      ]
+    },
+    {
+      "name": "Blood Warriors (A)",
+      "move": 5,
+      "health": 2,
+      "control": 1,
+      "save": 4,
+      "unitType": "Infantry",
+      "count": 5,
+      "weapons": [
+        {
+          "name": "Goreaxe",
+          "attacks": "2",
+          "hit": 3,
+          "wound": 3,
+          "rend": 1,
+          "damage": "1",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "No Respite",
+          "description": "When model is slain, on 4+ inflict 1 mortal damage on enemy unit in combat.",
+          "phase": "Combat",
+          "timing": "Passive",
+          "usageLimit": "Unlimited",
+          "isPassive": true
+        }
+      ]
+    },
+    {
+      "name": "Blood Warriors (B)",
+      "move": 5,
+      "health": 2,
+      "control": 1,
+      "save": 4,
+      "unitType": "Infantry",
+      "count": 5,
+      "weapons": [
+        {
+          "name": "Goreaxe",
+          "attacks": "2",
+          "hit": 3,
+          "wound": 3,
+          "rend": 1,
+          "damage": "1",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "No Respite",
+          "description": "When model is slain, on 4+ inflict 1 mortal damage on enemy unit in combat.",
+          "phase": "Combat",
+          "timing": "Passive",
+          "usageLimit": "Unlimited",
+          "isPassive": true
+        }
+      ]
+    },
+    {
+      "name": "Bloodreavers",
+      "move": 5,
+      "health": 1,
+      "control": 1,
+      "save": 6,
+      "unitType": "Infantry",
+      "count": 10,
+      "weapons": [
+        {
+          "name": "Reaver Blades",
+          "attacks": "2",
+          "hit": 4,
+          "wound": 4,
+          "rend": 0,
+          "damage": "1",
+          "isMelee": true
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Frenzied Devotion",
+          "description": "If within 8\" of general, return D3 slain models.",
+          "phase": "Battleshock",
+          "timing": "End of Any Turn",
+          "usageLimit": "Unlimited",
+          "isPassive": false
+        }
+      ]
+    }
+  ]
+}
