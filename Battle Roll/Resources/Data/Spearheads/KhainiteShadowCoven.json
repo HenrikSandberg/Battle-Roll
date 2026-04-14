@@ -1,0 +1,35 @@
+{
+  "name": "Khainite Shadow Coven",
+  "faction": "Daughters of Khaine",
+  "general": "Slaughter Queen on Cauldron of Blood",
+  "battleTraits": [
+    {
+      "name": "Shadowmasked",
+      "description": "Enemy units subtract 1 from Hit and Wound rolls when attacking friendly units in the Charge phase.",
+      "phase": "Charge",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Consecrated Revulsion",
+      "description": "Pick a friendly unit. Add +1 to Save rolls until next turn.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    },
+    {
+      "name": "Dance of Death",
+      "description": "Pick a friendly unit in combat. That unit can move 2D6\" during the enemy Combat phase before attacks are made.",
+      "phase": "Combat",
+      "timing": "Enemy Turn",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    }
+  ],
+  "enhancements": [],
+  "warscrolls": []
+}

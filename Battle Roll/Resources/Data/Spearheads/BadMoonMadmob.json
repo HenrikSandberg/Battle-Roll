@@ -1,0 +1,35 @@
+{
+  "name": "Bad Moon Madmob",
+  "faction": "Gloomspite Gitz",
+  "general": "Loonboss",
+  "battleTraits": [
+    {
+      "name": "Light of the Bad Moon",
+      "description": "Friendly units in your territory add +1 to Save rolls. Friendly units in enemy territory add +1 to Wound rolls.",
+      "phase": "Hero",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "I'm Da Boss",
+      "description": "Pick a friendly unit. Either return D3 slain models OR add +1 to Hit rolls until next turn.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    },
+    {
+      "name": "Netters",
+      "description": "Pick an enemy unit in combat. That unit subtracts 1 from Hit rolls until end of turn.",
+      "phase": "Combat",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    }
+  ],
+  "enhancements": [],
+  "warscrolls": []
+}

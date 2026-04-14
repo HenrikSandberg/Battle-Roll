@@ -5,9 +5,9 @@
   "battleTraits": [
     {
       "name": "The Officer's Order",
-      "description": "Once Per Round. Hide a tactic card. Use command \"for free\" and return to hand.",
-      "phase": "Hero",
-      "timing": "Start of Battle Round",
+      "description": "Once per round, you can reuse a command card that has already been played this round.",
+      "phase": "Start of Turn",
+      "timing": "Start of Round",
       "usageLimit": "Once Per Turn",
       "isPassive": false
     }
@@ -43,7 +43,7 @@
     {
       "name": "Brazier of Holy Flame",
       "description": "Return D3 slain Steelhelms within combat range.",
-      "phase": "Battleshock",
+      "phase": "End of Turn",
       "timing": "End of Any Turn",
       "usageLimit": "Unlimited",
       "isPassive": false,

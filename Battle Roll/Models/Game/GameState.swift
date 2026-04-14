@@ -6,7 +6,7 @@ class GameState: ObservableObject {
     // MARK: - Published Properties
 
     /// Current active phase in the battle round
-    @Published var currentPhase: GamePhase = .hero
+    @Published var currentPhase: GamePhase = .startOfTurn
 
     /// Current battle round number (starts at 1)
     @Published var currentRound: Int = 1
@@ -35,9 +35,15 @@ class GameState: ObservableObject {
     func advancePhase() {
         let nextPhase = currentPhase.next()
 
-        // If we're wrapping back to Hero, increment round
-        if nextPhase == .hero && currentPhase == .battleshock {
+        // If we're wrapping back to Start of Turn, increment round
+        if nextPhase == .startOfTurn && currentPhase == .endOfTurn {
             currentRound += 1
+
+            // Check if game should end after round 4
+            if currentRound > 4 {
+                endGame()
+                return
+            }
         }
 
         currentPhase = nextPhase
@@ -72,7 +78,7 @@ class GameState: ObservableObject {
 
     /// Start a new game
     func startGame() {
-        currentPhase = .hero
+        currentPhase = .startOfTurn
         currentRound = 1
         commandPoints = 0
         victoryPoints = 0
@@ -87,7 +93,7 @@ class GameState: ObservableObject {
 
     /// Reset to initial state
     func reset() {
-        currentPhase = .hero
+        currentPhase = .startOfTurn
         currentRound = 1
         commandPoints = 0
         victoryPoints = 0

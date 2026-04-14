@@ -1,18 +1,21 @@
 import Foundation
 import SwiftUI
 
-/// Represents the six phases of a Warhammer Age of Sigmar battle round
+/// Represents the seven phases of a Warhammer Age of Sigmar: Spearhead battle round
 enum GamePhase: String, CaseIterable, Codable {
+    case startOfTurn = "Start of Turn"
     case hero = "Hero"
     case movement = "Movement"
     case shooting = "Shooting"
     case charge = "Charge"
     case combat = "Combat"
-    case battleshock = "Battleshock"
+    case endOfTurn = "End of Turn"
 
     /// Icon name for each phase (using SF Symbols)
     var iconName: String {
         switch self {
+        case .startOfTurn:
+            return "sunrise.fill"
         case .hero:
             return "star.fill"
         case .movement:
@@ -23,14 +26,16 @@ enum GamePhase: String, CaseIterable, Codable {
             return "bolt.fill"
         case .combat:
             return "dice.fill"
-        case .battleshock:
-            return "exclamationmark.triangle.fill"
+        case .endOfTurn:
+            return "moon.fill"
         }
     }
 
     /// Color associated with each phase for UI display
     var displayColor: Color {
         switch self {
+        case .startOfTurn:
+            return .cyan
         case .hero:
             return .purple
         case .movement:
@@ -41,8 +46,8 @@ enum GamePhase: String, CaseIterable, Codable {
             return .red
         case .combat:
             return .pink
-        case .battleshock:
-            return .gray
+        case .endOfTurn:
+            return .indigo
         }
     }
 
@@ -50,7 +55,7 @@ enum GamePhase: String, CaseIterable, Codable {
     func next() -> GamePhase {
         let allPhases = GamePhase.allCases
         guard let currentIndex = allPhases.firstIndex(of: self) else {
-            return .hero
+            return .startOfTurn
         }
         let nextIndex = (currentIndex + 1) % allPhases.count
         return allPhases[nextIndex]

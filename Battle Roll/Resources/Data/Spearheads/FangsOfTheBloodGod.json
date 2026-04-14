@@ -5,16 +5,16 @@
   "battleTraits": [
     {
       "name": "The Quarry",
-      "description": "If no quarry exists, pick an enemy unit to be the quarry.",
-      "phase": "Hero",
-      "timing": "Start of Battle Round",
+      "description": "At the start of the round, if no quarry exists, mark an enemy unit as the quarry.",
+      "phase": "Start of Turn",
+      "timing": "Start of Round",
       "usageLimit": "Unlimited",
       "isPassive": false
     },
     {
       "name": "Blood-Drenched",
-      "description": "Pick friendly unit that slew models this turn. Melee weapons gain Crit (Mortal) for rest of battle.",
-      "phase": "Battleshock",
+      "description": "At the end of any turn, pick a friendly unit that slew enemy models this turn. That unit's melee weapons gain Crit (Mortal) for the rest of the battle.",
+      "phase": "End of Turn",
       "timing": "End of Any Turn",
       "usageLimit": "Unlimited",
       "isPassive": false
@@ -42,7 +42,7 @@
     {
       "name": "Sustained by Gore",
       "description": "Heal (D3).",
-      "phase": "Battleshock",
+      "phase": "End of Turn",
       "timing": "End of Any Turn",
       "usageLimit": "Unlimited",
       "isPassive": false,
@@ -69,7 +69,7 @@
     {
       "name": "Furious Bites",
       "description": "If in combat with quarry, inflict D3 mortal damage on quarry.",
-      "phase": "Battleshock",
+      "phase": "End of Turn",
       "timing": "End of Any Turn",
       "usageLimit": "Unlimited",
       "isPassive": false,

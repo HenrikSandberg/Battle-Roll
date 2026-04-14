@@ -1,0 +1,35 @@
+{
+  "name": "Tzaangor Warflock",
+  "faction": "Disciples of Tzeentch",
+  "general": "Tzaangor Shaman",
+  "battleTraits": [
+    {
+      "name": "Predict the Future",
+      "description": "Look at the top 3 cards of the Battle Tactic deck. Rearrange them in any order.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Mutative Aura",
+      "description": "Pick an enemy unit within 18\". Until end of turn, that unit suffers 1 mortal damage for each unmodified Hit roll of 1.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    },
+    {
+      "name": "Eldritch Raiders",
+      "description": "Friendly units in enemy territory add +1 to Wound rolls.",
+      "phase": "Combat",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    }
+  ],
+  "enhancements": [],
+  "warscrolls": []
+}

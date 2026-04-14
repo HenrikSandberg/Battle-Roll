@@ -1,0 +1,35 @@
+{
+  "name": "Charnel Watch",
+  "faction": "Flesh-Eater Courts",
+  "general": "Abhorrant Gorewarden",
+  "battleTraits": [
+    {
+      "name": "Delusions and Madness",
+      "description": "At the start of each round, roll a die and gain a buff: 1-2: +1 Save, 3-4: +1 to Run and Charge, 5-6: +1 to Hit rolls.",
+      "phase": "Start of Turn",
+      "timing": "Start of Round",
+      "usageLimit": "Unlimited",
+      "isPassive": false
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Sound the Pursuit",
+      "description": "Pick a friendly unit. That unit can roll 3D6 for charge rolls until next turn.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    },
+    {
+      "name": "Unholy Chorus",
+      "description": "Pick an enemy unit within 12\". Reduce that unit's Control characteristic by 1 until end of turn.",
+      "phase": "Shooting",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    }
+  ],
+  "enhancements": [],
+  "warscrolls": []
+}

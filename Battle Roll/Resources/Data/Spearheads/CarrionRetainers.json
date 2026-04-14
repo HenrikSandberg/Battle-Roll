@@ -1,0 +1,35 @@
+{
+  "name": "Carrion Retainers",
+  "faction": "Flesh-Eater Courts",
+  "general": "Abhorrant Archregent",
+  "battleTraits": [
+    {
+      "name": "Noble Deeds",
+      "description": "Earn Noble Deeds points when friendly units destroy enemy units. Spend points to return slain models to friendly units.",
+      "phase": "Hero",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Deranged Transformation",
+      "description": "Pick a friendly unit. Add +2 to Move characteristic and +1 to Wound rolls until next turn.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    },
+    {
+      "name": "Victory Feast",
+      "description": "If a friendly unit destroyed an enemy unit this turn, heal D6 wounds allocated to a friendly unit.",
+      "phase": "End of Turn",
+      "timing": "End of Your Turn",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    }
+  ],
+  "enhancements": [],
+  "warscrolls": []
+}

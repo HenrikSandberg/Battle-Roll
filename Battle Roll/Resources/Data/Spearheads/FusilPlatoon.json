@@ -1,0 +1,35 @@
+{
+  "name": "Fusil Platoon",
+  "faction": "Cities of Sigmar",
+  "general": "Fusil-Major on Ogor Warhulk",
+  "battleTraits": [
+    {
+      "name": "Fortify Position",
+      "description": "Units that did not move in the movement phase reduce enemy Rend by 1 when attacked.",
+      "phase": "Combat",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Mark Targets",
+      "description": "Pick a visible enemy unit. Friendly units add +1 to Hit rolls when shooting that target until end of turn.",
+      "phase": "Shooting",
+      "timing": "Start of Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    },
+    {
+      "name": "Blazing Weapons",
+      "description": "Pick a friendly unit. Melee weapons gain Crit (Mortal) until next turn.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    }
+  ],
+  "enhancements": [],
+  "warscrolls": []
+}

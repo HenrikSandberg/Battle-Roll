@@ -3,11 +3,6 @@ import SwiftUI
 import Combine
 import CoreData
 
-enum PlayerSide: String, Codable {
-    case me = "Me"
-    case opponent = "Opponent"
-}
-
 struct PlayerSetup: Codable {
     let armyName: String
     let spearheadName: String
@@ -26,8 +21,9 @@ class GameStateManager: ObservableObject {
     // Round and Turn State
     @Published var currentRound: Int = 1
     @Published var currentTurn: PlayerSide = .me
-    @Published var currentPhase: GamePhase = .hero
-    @Published var underdog: PlayerSide = .me
+    @Published var currentPhase: GamePhase = .startOfTurn
+    @Published var underdog: PlayerSide? = nil
+    @Published var isAttacker: Bool = true // Round 1: attacker chooses who goes first
 
     // Battle Tactics and Twists
     @Published var currentTwist: Twist?
@@ -45,9 +41,11 @@ class GameStateManager: ObservableObject {
         let roundNumber: Int
         var whoWonPriority: PlayerSide?
         var whoWentFirst: PlayerSide?
-        var underdogAtStart: PlayerSide
+        var underdogAtStart: PlayerSide?
         var myScoreThisRound: Int = 0
         var opponentScoreThisRound: Int = 0
+        var myPriorityRoll: Int?
+        var opponentPriorityRoll: Int?
     }
 
     // MARK: - Game Setup
@@ -58,7 +56,8 @@ class GameStateManager: ObservableObject {
         opponentArmy: String,
         opponentSpearhead: String,
         season: String,
-        boardLayout: String
+        boardLayout: String,
+        isAttacker: Bool = true
     ) {
         self.mySetup = PlayerSetup(armyName: myArmy, spearheadName: mySpearhead)
         self.opponentSetup = PlayerSetup(armyName: opponentArmy, spearheadName: opponentSpearhead)
@@ -66,11 +65,19 @@ class GameStateManager: ObservableObject {
         self.boardLayout = boardLayout
         self.currentRound = 1
         self.currentTurn = .me
-        self.currentPhase = .hero
-        self.underdog = .me
+        self.currentPhase = .startOfTurn
+        self.underdog = nil
+        self.isAttacker = isAttacker
         self.roundRecords = []
         self.isGameActive = true
         self.gameRecordId = UUID()
+
+        // Create initial round record
+        let initialRound = RoundData(
+            roundNumber: 1,
+            underdogAtStart: nil
+        )
+        roundRecords.append(initialRound)
     }
 
     // MARK: - Phase Management
@@ -100,8 +107,8 @@ class GameStateManager: ObservableObject {
         // Reset ability usage for "once per turn" abilities
         resetTurnAbilities()
 
-        // Reset to hero phase for next turn
-        currentPhase = .hero
+        // Reset to start of turn phase for next turn
+        currentPhase = .startOfTurn
 
         // Switch player or end round
         if currentTurn == .me {
@@ -162,20 +169,27 @@ class GameStateManager: ObservableObject {
     // MARK: - Round Management
 
     func endRound() {
+        // Game ends after round 4
+        if currentRound >= 4 {
+            endGame()
+            return
+        }
+
         // Determine underdog for next round
         if let myScore = mySetup?.score, let oppScore = opponentSetup?.score {
             if myScore < oppScore {
                 underdog = .me
             } else if oppScore < myScore {
                 underdog = .opponent
+            } else {
+                underdog = nil // Tied
             }
-            // If tied, underdog doesn't change
         }
 
         // Move to next round
         currentRound += 1
         currentTurn = .me // Will be determined by priority roll
-        currentPhase = .hero
+        currentPhase = .startOfTurn
 
         // Create new round record
         let newRound = RoundData(
@@ -230,6 +244,66 @@ class GameStateManager: ObservableObject {
         } else {
             return opponentSetup?.canPickNewTactic ?? true
         }
+    }
+
+    // MARK: - Priority Roll System
+
+    /// Roll priority for rounds 2-4
+    func rollPriority(myRoll: Int, opponentRoll: Int) -> PriorityRoll {
+        let roll = PriorityRoll(myRoll: myRoll, opponentRoll: opponentRoll)
+
+        // Update round record
+        if var current = getCurrentRoundRecord() {
+            current.myPriorityRoll = myRoll
+            current.opponentPriorityRoll = opponentRoll
+            current.whoWonPriority = roll.winner
+            updateCurrentRoundRecord(current)
+        }
+
+        return roll
+    }
+
+    /// For round 1, attacker chooses who goes first
+    func attackerChoosesFirstPlayer(_ player: PlayerSide) {
+        setFirstPlayer(player)
+    }
+
+    /// For rounds 2-4 tie-breaker: previous first player chooses
+    func previousFirstPlayerChooses(_ player: PlayerSide) {
+        setFirstPlayer(player)
+    }
+
+    // MARK: - End of Turn Scoring
+
+    /// Score objectives at end of turn
+    func scoreObjectives(for player: PlayerSide, scoring: ObjectiveScoring) {
+        let points = scoring.totalVP
+
+        if player == .me {
+            mySetup?.score += points
+            if var current = getCurrentRoundRecord() {
+                current.myScoreThisRound += points
+                updateCurrentRoundRecord(current)
+            }
+        } else {
+            opponentSetup?.score += points
+            if var current = getCurrentRoundRecord() {
+                current.opponentScoreThisRound += points
+                updateCurrentRoundRecord(current)
+            }
+        }
+    }
+
+    // MARK: - Twist Management
+
+    /// Draw a Twist card for the current round
+    func drawTwist(_ twist: Twist) {
+        currentTwist = twist
+    }
+
+    /// Clear the current Twist
+    func clearTwist() {
+        currentTwist = nil
     }
 
     // MARK: - Game Completion

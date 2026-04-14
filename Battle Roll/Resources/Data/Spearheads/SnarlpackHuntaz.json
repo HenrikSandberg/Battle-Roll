@@ -1,0 +1,35 @@
+{
+  "name": "Snarlpack Huntaz",
+  "faction": "Gloomspite Gitz",
+  "general": "Snarlboss",
+  "battleTraits": [
+    {
+      "name": "Fast as Frazzlegit",
+      "description": "Friendly units can charge after retreating. Units do not take mortal damage when retreating.",
+      "phase": "Charge",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Great Snarlin Howl",
+      "description": "Pick a friendly unit with mounts. Add +1 to Attacks and +1 to Rend for mount weapons until next turn.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    },
+    {
+      "name": "Careening Destruction",
+      "description": "Pick a friendly mounted unit. Move through an enemy unit. Roll a die for each model passed over. On a 4+, inflict 1 mortal damage.",
+      "phase": "Movement",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    }
+  ],
+  "enhancements": [],
+  "warscrolls": []
+}

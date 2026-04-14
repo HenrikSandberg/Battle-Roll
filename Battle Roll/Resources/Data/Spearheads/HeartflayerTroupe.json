@@ -1,0 +1,35 @@
+{
+  "name": "Heartflayer Troupe",
+  "faction": "Daughters of Khaine",
+  "general": "Melusai Ironscale",
+  "battleTraits": [
+    {
+      "name": "Blood Rites",
+      "description": "Cumulative buffs each round: Round 1: +1 to Run rolls. Round 2: +1 to Charge rolls. Round 3: +1 to Hit rolls. Round 4: +1 to Wound rolls.",
+      "phase": "Hero",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "All-Out Slaughter",
+      "description": "Pick a friendly unit. Add +1 to Attacks characteristic of melee weapons until next turn.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    },
+    {
+      "name": "Heartseekers",
+      "description": "Units that did not move in the movement phase have Crit (5+) for melee weapons.",
+      "phase": "Combat",
+      "timing": "Passive",
+      "usageLimit": "Unlimited",
+      "isPassive": true
+    }
+  ],
+  "enhancements": [],
+  "warscrolls": []
+}

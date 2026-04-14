@@ -236,7 +236,7 @@
         {
           "name": "Frenzied Devotion",
           "description": "If within 8\" of general, return D3 slain models.",
-          "phase": "Battleshock",
+          "phase": "End of Turn",
           "timing": "End of Any Turn",
           "usageLimit": "Unlimited",
           "isPassive": false

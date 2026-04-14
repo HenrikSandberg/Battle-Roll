@@ -1,0 +1,35 @@
+{
+  "name": "Fluxblade Coven",
+  "faction": "Disciples of Tzeentch",
+  "general": "Magister on Disc of Tzeentch",
+  "battleTraits": [
+    {
+      "name": "Masters of Destiny",
+      "description": "At the start of Round 1, roll 9 Destiny Dice (D6). Store these values. You may replace any roll during the game with a Destiny Die result.",
+      "phase": "Start of Turn",
+      "timing": "Round 1 Only",
+      "usageLimit": "Once Per Game",
+      "isPassive": false
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Bolt of Change",
+      "description": "Pick a visible enemy unit within 18\". Roll a die. On a 2+, inflict D3 mortal damage. For each model slain, return 1 slain model to a friendly unit.",
+      "phase": "Hero",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    },
+    {
+      "name": "Slashing Fins",
+      "description": "Pick a friendly unit with Fly. Move over an enemy unit. Roll a die for each model in that enemy unit. On a 5+, inflict 1 mortal damage.",
+      "phase": "Movement",
+      "timing": "During Phase",
+      "usageLimit": "Once Per Turn",
+      "isPassive": false
+    }
+  ],
+  "enhancements": [],
+  "warscrolls": []
+}
