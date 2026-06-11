@@ -1,0 +1,208 @@
+{
+  "id": "fusil-platoon",
+  "name": "Fusil Platoon",
+  "faction": "Cities of Sigmar",
+  "grandAlliance": "Order",
+  "battleTraits": [
+    {
+      "name": "Fortify Position",
+      "effect": "Subtract 1 from the Rend characteristic of weapons used for attacks that target friendly Castelite units if they did not use a Move ability in the same turn.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Well Provisioned",
+      "declare": "Pick a friendly non-Hero unit to be the target.",
+      "effect": "Roll a dice. On a 3+, add 1 to wound rolls for that unit's shooting attacks for the rest of the phase.",
+      "timingText": "Once Per Turn (Army), Your Shooting Phase",
+      "phase": "shooting",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerTurnArmy"
+    },
+    {
+      "name": "Respected Leader",
+      "effect": "Friendly Wildercorps Hunters units gain the Reinforcements keyword.",
+      "timingText": "Once Per Battle, Deployment Phase",
+      "phase": "deployment",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Adept Tactician",
+      "declare": "Pick 2 friendly Freeguild Fusiliers units that have been destroyed and have not already been replaced.",
+      "effect": "Set up a single replacement Freeguild Fusiliers unit with 10 models more than 6\" from all enemy units.",
+      "timingText": "Once Per Battle, Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Shield Bash",
+      "declare": "Pick an enemy Infantry, War Machine or Cavalry unit in combat with your general to be the target.",
+      "effect": "Roll a dice. On a 3+, the target must immediately use the 'Retreat' ability as if it were the enemy movement phase.",
+      "timingText": "Once Per Turn, Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerTurn"
+    },
+    {
+      "name": "Brace!",
+      "effect": "Your general has Ward (5+).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Point-Blank Volley",
+      "declare": "Pick an enemy unit in combat with your general to be the target.",
+      "effect": "Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+      "timingText": "Once Per Turn, Enemy Combat Phase",
+      "phase": "combat",
+      "turn": "enemy",
+      "window": "during",
+      "frequency": "oncePerTurn"
+    }
+  ],
+  "units": [
+    {
+      "name": "Fusil-Major on Ogor Warhulk",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "5\"",
+      "health": 8,
+      "save": "3+",
+      "control": 2,
+      "keywords": ["Hero", "Infantry", "Castelite"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Long-Fusil", "range": "24\"", "attacks": "3", "hit": "3+", "wound": "3+", "rend": "1", "damage": "2", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Warhulk's Mace", "attacks": "4", "hit": "4+", "wound": "2+", "rend": "2", "damage": "2", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Mark Targets",
+          "declare": "Pick an enemy unit that was targeted by this unit's shooting attacks this turn.",
+          "effect": "Add 1 to hit rolls for shooting attacks made by friendly units that target that unit for the rest of the turn.",
+          "timingText": "Your Shooting Phase",
+          "phase": "shooting",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Alchemite Warforger",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "5\"",
+      "health": 5,
+      "save": "5+",
+      "control": 2,
+      "keywords": ["Hero", "Wizard", "Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Tongstaff", "attacks": "3", "hit": "4+", "wound": "4+", "rend": "1", "damage": "D3", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Blazing Weapons",
+          "declare": "Pick a friendly unit wholly within 12\" of this unit to be the target, then make a casting roll of 2D6.",
+          "effect": "On a 6+, the target's melee weapons have Crit (Mortal) until the start of your next turn.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Freeguild Fusiliers",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 5,
+      "move": "5\"",
+      "health": 1,
+      "save": "4+",
+      "control": 1,
+      "keywords": ["Infantry", "Castelite", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [
+        { "name": "Fusil-cannon", "range": "18\"", "attacks": "2", "hit": "4+", "wound": "4+", "rend": "1", "damage": "1", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Bayonet", "attacks": "1", "hit": "4+", "wound": "4+", "rend": "-", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Blackpowder Squire",
+          "effect": "While this unit has the Blackpowder Squire token, its ranged weapons have Shoot in Combat. (One Fusiliers unit starts the battle with the token.)",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        },
+        {
+          "name": "Can't Stop!",
+          "declare": "Pick another friendly Freeguild Fusiliers unit to be the target.",
+          "effect": "Remove this unit's Blackpowder Squire token, then give it to the target.",
+          "timingText": "Once Per Turn (Army), Your Shooting Phase",
+          "phase": "shooting",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "oncePerTurnArmy"
+        }
+      ]
+    },
+    {
+      "name": "Wildercorps Hunters",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 11,
+      "move": "5\"",
+      "health": 1,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Hunting Crossbow", "range": "15\"", "attacks": "2", "hit": "4+", "wound": "4+", "rend": "1", "damage": "1", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Hunting Weapons", "attacks": "2", "hit": "4+", "wound": "4+", "rend": "-", "damage": "1", "abilities": [] },
+        { "name": "Trailhound's Ferocious Bite (4 hounds + Warden)", "attacks": "2", "hit": "4+", "wound": "3+", "rend": "-", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Expert Trackers",
+          "effect": "This unit can use the 'Normal Move' ability as if it were your movement phase.",
+          "timingText": "Deployment Phase",
+          "phase": "deployment",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    }
+  ]
+}

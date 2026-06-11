@@ -1,0 +1,170 @@
+{
+  "id": "fangs-of-the-blood-god",
+  "name": "Fangs of the Blood God",
+  "faction": "Blades of Khorne",
+  "grandAlliance": "Chaos",
+  "battleTraits": [
+    {
+      "name": "The Quarry",
+      "effect": "If no enemy units are the quarry, pick an enemy unit to be the quarry (you can pick an enemy unit in reserve).",
+      "timingText": "Start of Battle Round",
+      "phase": "startOfRound",
+      "turn": "any",
+      "window": "start",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Blood-Drenched",
+      "declare": "Pick a friendly unit that slew any enemy models using a Fight ability this turn to be the target.",
+      "effect": "For the rest of the battle, the target's melee weapons have Crit (Mortal).",
+      "timingText": "Once Per Turn, End of Any Turn",
+      "phase": "endOfTurn",
+      "turn": "any",
+      "window": "end",
+      "frequency": "oncePerTurn"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "The Scent of Blood",
+      "effect": "Add 1 to hit rolls and 1 to wound rolls for combat attacks that target an enemy unit that had any damage points allocated to it this turn.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Savagery Upon Savagery",
+      "declare": "Pick a friendly unit in combat to be the target.",
+      "effect": "For the rest of the turn, add 1 to the Attacks characteristic of the target's melee weapons (add D3 instead if the target is a Hero).",
+      "timingText": "Once Per Battle, Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Sustained by Gore",
+      "effect": "Heal (D3) your general.",
+      "timingText": "End of Any Turn",
+      "phase": "endOfTurn",
+      "turn": "any",
+      "window": "end",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Evasive Hunter",
+      "effect": "Subtract 1 from hit rolls and wound rolls for shooting attacks that target your general.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Killing Pounce",
+      "effect": "For the rest of the turn, when making charge rolls for your general, you can roll an additional dice (to a maximum of 3), but if you do they must finish that charge in combat with the quarry.",
+      "timingText": "Once Per Battle, Any Charge Phase",
+      "phase": "charge",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Furious Bites",
+      "effect": "If your general is in combat with the quarry, inflict D3 mortal damage on the quarry.",
+      "timingText": "End of Any Turn",
+      "phase": "endOfTurn",
+      "turn": "any",
+      "window": "end",
+      "frequency": "unlimited"
+    }
+  ],
+  "units": [
+    {
+      "name": "Karanak",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "8\"",
+      "health": 7,
+      "save": "5+",
+      "control": 2,
+      "keywords": ["Hero", "Beast", "Ward (6+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Savage Maws and Goreslick Claws", "attacks": "6", "hit": "4+", "wound": "3+", "rend": "1", "damage": "2", "abilities": ["Anti-Hero (+1 Rend)"] }
+      ],
+      "abilities": [
+        {
+          "name": "Stalk the Prey",
+          "effect": "This unit can move D6\". It cannot end that move in combat unless it was in combat at the start of that move, and if there is an enemy quarry on the battlefield it must end that move closer to the quarry.",
+          "timingText": "Any Hero Phase",
+          "phase": "hero",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Flesh Hounds",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 5,
+      "move": "8\"",
+      "health": 2,
+      "save": "6+",
+      "control": 1,
+      "keywords": ["Beast", "Ward (6+)", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Blood-dark Claws", "attacks": "4", "hit": "4+", "wound": "3+", "rend": "-", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Unflagging Hunters",
+          "effect": "Add 1 to charge rolls for this unit.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    },
+    {
+      "name": "Claws of Karanak",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 8,
+      "move": "6\"",
+      "health": 1,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Weapons of the Hunt", "attacks": "3", "hit": "4+", "wound": "3+", "rend": "-", "damage": "1", "abilities": ["Crit (2 Hits)"] }
+      ],
+      "abilities": [
+        {
+          "name": "Pack Hunters",
+          "declare": "Pick an enemy unit in combat with both this unit and a friendly Flesh Hounds unit to be the target.",
+          "effect": "For the rest of the turn, this unit's combat attacks that target that enemy unit score critical hits on unmodified hit rolls of 5+.",
+          "timingText": "Any Combat Phase",
+          "phase": "combat",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    }
+  ]
+}
