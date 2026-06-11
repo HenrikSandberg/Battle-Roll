@@ -1,0 +1,243 @@
+{
+  "id": "fire-and-jade",
+  "name": "Fire and Jade",
+  "battlefieldSize": "30\" x 22\"",
+  "realms": [
+    {
+      "id": "aqshy",
+      "name": "Aqshy",
+      "subtitle": "The Realm of Fire",
+      "twists": [
+        {
+          "name": "Ring of Fire",
+          "effect": "The underdog (or the roll-off winner if there is no underdog) picks 1 objective. That objective cannot be contested or controlled this battle round. In addition, at the end of each turn this round, after victory points are scored, inflict D3 mortal damage on each unit that has any models on that objective (roll for each unit)."
+        },
+        {
+          "name": "Let the Blood Flow",
+          "effect": "This battle round, each player scores 1 extra victory point at the end of their turn for each enemy unit destroyed during that turn. In addition, if there is an underdog, they pick 1 friendly unit: add 1 to hit rolls for that unit's combat attacks this battle round."
+        },
+        {
+          "name": "Bloodmarked",
+          "effect": "The underdog picks 1 unit from each army to be bloodmarked (if there is no underdog, each player picks 1 enemy unit). This battle round, a player scores 1 extra victory point at the end of their turn if the enemy bloodmarked unit was destroyed."
+        },
+        {
+          "name": "Reclaim Aqshy",
+          "effect": "The underdog picks 2 objectives (if there is no underdog, each player picks 1 objective). This battle round, each player scores 1 extra victory point at the end of their turn for each of those objectives they control."
+        },
+        {
+          "name": "Mount the Attack",
+          "effect": "This battle round, each player scores 1 extra victory point at the end of their turn for each objective they control that their opponent controlled at the start of that turn. In addition, if there is an underdog, they pick 1 friendly unit: that unit's melee weapons gain Charge (+1 Damage) this battle round."
+        },
+        {
+          "name": "Wreathed in Smoke",
+          "effect": "The underdog (or the roll-off winner if there is no underdog) picks 1 objective. Until the end of the battle round, only unmodified hit rolls of 6 score hits against units contesting that objective."
+        }
+      ]
+    },
+    {
+      "id": "ghyran",
+      "name": "Ghyran",
+      "subtitle": "The Realm of Life",
+      "twists": [
+        {
+          "name": "Reclaim Ghyran",
+          "effect": "The underdog picks 2 objectives (if there is no underdog, each player picks 1 objective). This battle round, each player scores 1 extra victory point at the end of their turn for each of those objectives they control."
+        },
+        {
+          "name": "Alarielle's Blessing",
+          "effect": "The underdog (or the roll-off winner if there is no underdog) picks one effect: either pick 1 friendly unit to gain Ward (6+) this battle round (or add 1 to its ward rolls if it already has one), or Heal (D3) up to 3 different friendly units."
+        },
+        {
+          "name": "Take the Land",
+          "effect": "This battle round, each player scores 1 extra victory point at the end of their turn if more friendly models than enemy models are contesting the large terrain feature in enemy territory. In addition, if there is an underdog, they add 1 to wound rolls for friendly units' attacks against units on terrain features this battle round."
+        },
+        {
+          "name": "Grasping Vines",
+          "effect": "The underdog (or the roll-off winner if there is no underdog) picks 1 enemy unit. That unit is ensnared: until the end of the battle round, halve its Move characteristic and roll 1 fewer dice when making charge rolls for it."
+        },
+        {
+          "name": "The Grandfather's Blessing",
+          "effect": "The underdog (or the roll-off winner if there is no underdog) picks one effect, applied to an enemy unit they pick until the end of the battle round: either subtract 1 from save rolls for that unit, or ward rolls cannot be made for that unit."
+        },
+        {
+          "name": "Lifespring",
+          "effect": "The underdog (or the roll-off winner if there is no underdog) picks 1 objective to be the lifespring. This battle round, each player scores 1 extra victory point at the end of their turn if they control it. In addition, at the end of each turn, Heal (1) each unit contesting it."
+        }
+      ]
+    }
+  ],
+  "battleTactics": [
+    {
+      "name": "War of Attrition",
+      "tactic": "Complete at the end of your turn if any enemy units were destroyed this turn and more enemy units than friendly units were destroyed this turn.",
+      "command": {
+        "name": "Stand Guard",
+        "timingText": "Enemy Hero Phase",
+        "phase": "hero",
+        "turn": "enemy",
+        "window": "during",
+        "effect": "Pick a friendly unit. That unit has Strike-First this turn."
+      }
+    },
+    {
+      "name": "Raid",
+      "tactic": "Complete at the end of your turn if any friendly units are wholly within enemy territory and not in combat.",
+      "command": {
+        "name": "Steel Defence",
+        "timingText": "Reaction: Opponent declared an Attack ability",
+        "phase": "any",
+        "turn": "any",
+        "window": "reaction",
+        "effect": "A friendly unit targeted by that attack ignores the Rend characteristic of attacks that target it this phase."
+      }
+    },
+    {
+      "name": "Take the Flanks",
+      "tactic": "Complete at the end of your turn if there are any friendly units within 3\" of one short battlefield edge and any friendly units within 3\" of the other short battlefield edge.",
+      "command": {
+        "name": "Redeploy",
+        "timingText": "Enemy Movement Phase",
+        "phase": "movement",
+        "turn": "enemy",
+        "window": "during",
+        "effect": "Pick a friendly unit that is not in combat. It can move up to D6\" but cannot move into combat during any part of that move."
+      }
+    },
+    {
+      "name": "Take Without Warning",
+      "tactic": "Complete at the end of your turn if you control an objective that your opponent controlled at the start of this turn and no friendly units contesting it used a Fight ability this turn.",
+      "command": {
+        "name": "Fight to the Last",
+        "timingText": "Reaction: Opponent declared an Attack ability",
+        "phase": "any",
+        "turn": "any",
+        "window": "reaction",
+        "effect": "A friendly unit targeted by that attack has Ward (5+) this phase."
+      }
+    },
+    {
+      "name": "Hold Ground",
+      "tactic": "Complete at the end of your turn if more friendly models than enemy models are contesting the large terrain feature in your territory.",
+      "command": {
+        "name": "Rise to the Challenge",
+        "timingText": "Any Combat Phase",
+        "phase": "combat",
+        "turn": "any",
+        "window": "during",
+        "effect": "Pick a friendly Hero. Heal (D6) that Hero."
+      }
+    },
+    {
+      "name": "Cut Off the Head",
+      "tactic": "Complete at the end of your turn if the enemy general was slain this turn, or if the enemy general was slain previously and any enemy units were destroyed this turn.",
+      "command": {
+        "name": "Counter-charge",
+        "timingText": "Enemy Charge Phase",
+        "phase": "charge",
+        "turn": "enemy",
+        "window": "during",
+        "effect": "Pick a friendly unit that is not in combat. It can use a Charge ability as if it were your charge phase."
+      }
+    },
+    {
+      "name": "The Ignax Dais",
+      "tactic": "Complete at the end of your turn if you control the Ignax objective.",
+      "command": {
+        "name": "Forward to Victory",
+        "timingText": "Reaction: You declared a Charge ability",
+        "phase": "charge",
+        "turn": "yours",
+        "window": "reaction",
+        "effect": "You can re-roll the charge roll for that unit."
+      }
+    },
+    {
+      "name": "The Behemat Dais",
+      "tactic": "Complete at the end of your turn if you control the Behemat objective.",
+      "command": {
+        "name": "Scroll of Arcane Bolt",
+        "timingText": "Any Hero Phase",
+        "phase": "hero",
+        "turn": "any",
+        "window": "during",
+        "effect": "Pick a friendly Hero, then pick a visible enemy unit within 12\" of them and roll a dice. On a 2+, inflict D3 mortal damage on that unit."
+      }
+    },
+    {
+      "name": "The Dracothion Dais",
+      "tactic": "Complete at the end of your turn if you control the Dracothion objective.",
+      "command": {
+        "name": "Go to Ground",
+        "timingText": "Reaction: Opponent declared a Shoot ability",
+        "phase": "shooting",
+        "turn": "enemy",
+        "window": "reaction",
+        "effect": "Pick a friendly unit targeted by that shooting attack. Until the end of the phase, only unmodified hit rolls of 6 score hits against it, but it has Strike-Last this turn."
+      }
+    },
+    {
+      "name": "Raze",
+      "tactic": "Complete at the end of your turn if any friendly units are within 3\" of the long battlefield edge in enemy territory.",
+      "command": {
+        "name": "Inspiring Presence",
+        "timingText": "Any Hero Phase",
+        "phase": "hero",
+        "turn": "any",
+        "window": "during",
+        "effect": "Pick a friendly Hero and roll a dice. Add the result to that Hero's control score for the rest of the turn."
+      }
+    },
+    {
+      "name": "Attack on Two Fronts",
+      "tactic": "Complete at the end of your turn if you control 2 or more objectives that your opponent controlled at the start of this turn.",
+      "command": {
+        "name": "Call Reinforcements",
+        "timingText": "Any Movement Phase",
+        "phase": "movement",
+        "turn": "any",
+        "window": "during",
+        "effect": "Pick a destroyed friendly Infantry or Cavalry unit that had 5 or more models. Set up a replacement unit of D3 models wholly within 6\" of a battlefield edge and more than 6\" from all enemy units."
+      }
+    },
+    {
+      "name": "Do Not Waver",
+      "tactic": "Complete at the end of your turn if any friendly units used a Fight ability this turn and no friendly units were destroyed this turn.",
+      "command": {
+        "name": "Fall Back and Rally",
+        "timingText": "Reaction: You declared a Retreat ability",
+        "phase": "movement",
+        "turn": "yours",
+        "window": "reaction",
+        "effect": "No mortal damage is inflicted on the retreating unit. In addition, roll a dice for each slain model from that unit: on a 5+, return 1 slain model to it."
+      }
+    }
+  ],
+  "modules": [
+    {
+      "id": "desolation",
+      "name": "Desolation of the Mortal Realms",
+      "summary": "Optional rules module: desolate objectives and terrain you control to earn desolation points, then spend them to manipulate your battle tactic deck.",
+      "abilities": [
+        {
+          "name": "Desolate the Land",
+          "timingText": "Any Hero Phase",
+          "phase": "hero",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited",
+          "declare": "Pick each objective and terrain feature you control that is being contested by a friendly unit to be a target.",
+          "effect": "For the rest of the battle, each target is being desolated by you and is no longer being desolated by your opponent (if it had been). Use tokens to mark who is desolating what."
+        },
+        {
+          "name": "Fuel for Conquest",
+          "timingText": "Once Per Turn, Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "oncePerTurn",
+          "effect": "Gain desolation points equal to the number of objectives and terrain features currently being desolated by you (cumulative, not lost at end of turn). Then spend any number of points, any effect any number of times: 1pt – draw 1 battle tactic card, then discard 1 from your hand. 2pts – return 1 battle tactic from your hand to the bottom of your deck, then draw 1. 3pts – randomly pick 1 battle tactic in your opponent's hand; they return it to the bottom of their deck and draw another. 4pts – return 1 battle tactic you previously completed or discarded to your deck and shuffle it. 5pts – return 1 battle tactic from your hand to the bottom of your deck, then look at the top 3 cards of your deck, add 1 to your hand and return the other 2 to the bottom."
+        }
+      ]
+    }
+  ]
+}

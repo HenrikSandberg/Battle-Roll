@@ -3,123 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 77;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		AF75D07B2F8CD6EB00ED6FDF /* AnimatedGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D06E2F8CD6EB00ED6FDF /* AnimatedGradientView.swift */; };
-		AF75D07C2F8CD6EB00ED6FDF /* Warscroll+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D05B2F8CD6EB00ED6FDF /* Warscroll+Extensions.swift */; };
-		AF75D07D2F8CD6EB00ED6FDF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0512F8CD6EB00ED6FDF /* ContentView.swift */; };
-		AF75D07E2F8CD6EB00ED6FDF /* PhaseAbilitiesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0702F8CD6EB00ED6FDF /* PhaseAbilitiesView.swift */; };
-		AF75D07F2F8CD6EB00ED6FDF /* Battle_Roll.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0502F8CD6EB00ED6FDF /* Battle_Roll.xcdatamodeld */; };
-		AF75D0802F8CD6EB00ED6FDF /* Ability+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0592F8CD6EB00ED6FDF /* Ability+Extensions.swift */; };
-		AF75D0812F8CD6EB00ED6FDF /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0552F8CD6EB00ED6FDF /* GameState.swift */; };
-		AF75D0822F8CD6EB00ED6FDF /* AbilityTiming.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D05A2F8CD6EB00ED6FDF /* AbilityTiming.swift */; };
-		AF75D0832F8CD6EB00ED6FDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D04A2F8CD6EB00ED6FDF /* AppDelegate.swift */; };
-		AF75D0842F8CD6EB00ED6FDF /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0682F8CD6EB00ED6FDF /* DataService.swift */; };
-		AF75D0852F8CD6EB00ED6FDF /* GamePhase.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0542F8CD6EB00ED6FDF /* GamePhase.swift */; };
-		AF75D0862F8CD6EB00ED6FDF /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0692F8CD6EB00ED6FDF /* PersistenceController.swift */; };
-		AF75D0872F8CD6EB00ED6FDF /* PhaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D06A2F8CD6EB00ED6FDF /* PhaseManager.swift */; };
-		AF75D0882F8CD6EB00ED6FDF /* PhaseEngineMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0712F8CD6EB00ED6FDF /* PhaseEngineMainView.swift */; };
-		AF75D0892F8CD6EB00ED6FDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0672F8CD6EB00ED6FDF /* SceneDelegate.swift */; };
-		AF75D08A2F8CD6EB00ED6FDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF75D04B2F8CD6EB00ED6FDF /* Assets.xcassets */; };
-		AF75D08B2F8CD6EB00ED6FDF /* WARSCROLL_IMPLEMENTATION.md in Resources */ = {isa = PBXBuildFile; fileRef = AF75D05E2F8CD6EB00ED6FDF /* WARSCROLL_IMPLEMENTATION.md */; };
-		AF75D08C2F8CD6EB00ED6FDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF75D04D2F8CD6EB00ED6FDF /* LaunchScreen.storyboard */; };
-		AF75D08E2F8CD6EB00ED6FDF /* PHASE_ENGINE_QUICK_REF.md in Resources */ = {isa = PBXBuildFile; fileRef = AF75D05D2F8CD6EB00ED6FDF /* PHASE_ENGINE_QUICK_REF.md */; };
-		AF75D08F2F8CD6EB00ED6FDF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF75D0602F8CD6EB00ED6FDF /* Preview Assets.xcassets */; };
-		AF75D0902F8CD7A100ED6FDF /* GameStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0912F8CD7A100ED6FDF /* GameStateManager.swift */; };
-		AF75D0922F8CD7B200ED6FDF /* GameSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0932F8CD7B200ED6FDF /* GameSetupView.swift */; };
-		AF75D0942F8CD7C300ED6FDF /* ArmySelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0952F8CD7C300ED6FDF /* ArmySelectionView.swift */; };
-		AF75D0962F8CD7D400ED6FDF /* SeasonSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0972F8CD7D400ED6FDF /* SeasonSelectionView.swift */; };
-		AF75D0982F8CD7E500ED6FDF /* GameDashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D0992F8CD7E500ED6FDF /* GameDashboardView.swift */; };
-		AF75D09A2F8CD7F600ED6FDF /* GameHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D09B2F8CD7F600ED6FDF /* GameHistoryView.swift */; };
-		1BC406F11384488395B04EE487007305 /* GameRecordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E57039774D78439694039D6262C4677E /* GameRecordService.swift */; };
-		AF75D09D2F8CD9A100ED6FDF /* SpearheadLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF75D09E2F8CD9A100ED6FDF /* SpearheadLoader.swift */; };
-		AF75D09F2F8CD9B200ED6FDF /* BloodBoundGorePilgrims.json in Resources */ = {isa = PBXBuildFile; fileRef = AF75D0A02F8CD9B200ED6FDF /* BloodBoundGorePilgrims.json */; };
-		AF75D0A22F8CDA1000ED6FDF /* FangsOfTheBloodGod.json in Resources */ = {isa = PBXBuildFile; fileRef = AF75D0A32F8CDA1000ED6FDF /* FangsOfTheBloodGod.json */; };
-		AF75D0A42F8CDA2000ED6FDF /* CasteliteCompany.json in Resources */ = {isa = PBXBuildFile; fileRef = AF75D0A52F8CDA2000ED6FDF /* CasteliteCompany.json */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		AF07FF1F24237D9F003F839F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AF69A8BD2420EA020049EED5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AF07FF0624237D9D003F839F;
-			remoteInfo = "Mac Battle Roll";
-		};
-		AF07FF2A24237D9F003F839F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = AF69A8BD2420EA020049EED5 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = AF07FF0624237D9D003F839F;
-			remoteInfo = "Mac Battle Roll";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		AF07FF0724237D9D003F839F /* Mac Battle Roll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mac Battle Roll.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF07FF1E24237D9F003F839F /* Mac Battle RollTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mac Battle RollTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF07FF2924237D9F003F839F /* Mac Battle RollUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mac Battle RollUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF69A8C52420EA020049EED5 /* Battle Roll.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Battle Roll.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF75D04A2F8CD6EB00ED6FDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF75D04B2F8CD6EB00ED6FDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AF75D04C2F8CD6EB00ED6FDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		AF75D04F2F8CD6EB00ED6FDF /* Battle Roll.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Battle Roll.entitlements"; sourceTree = "<group>"; };
-		AF75D0512F8CD6EB00ED6FDF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		AF75D0522F8CD6EB00ED6FDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AF75D0542F8CD6EB00ED6FDF /* GamePhase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePhase.swift; sourceTree = "<group>"; };
-		AF75D0552F8CD6EB00ED6FDF /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
-		AF75D0592F8CD6EB00ED6FDF /* Ability+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ability+Extensions.swift"; sourceTree = "<group>"; };
-		AF75D05A2F8CD6EB00ED6FDF /* AbilityTiming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityTiming.swift; sourceTree = "<group>"; };
-		AF75D05B2F8CD6EB00ED6FDF /* Warscroll+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Warscroll+Extensions.swift"; sourceTree = "<group>"; };
-		AF75D05D2F8CD6EB00ED6FDF /* PHASE_ENGINE_QUICK_REF.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = PHASE_ENGINE_QUICK_REF.md; sourceTree = "<group>"; };
-		AF75D05E2F8CD6EB00ED6FDF /* WARSCROLL_IMPLEMENTATION.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = WARSCROLL_IMPLEMENTATION.md; sourceTree = "<group>"; };
-		AF75D0602F8CD6EB00ED6FDF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		AF75D0672F8CD6EB00ED6FDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AF75D0682F8CD6EB00ED6FDF /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
-		AF75D0692F8CD6EB00ED6FDF /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		AF75D06A2F8CD6EB00ED6FDF /* PhaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseManager.swift; sourceTree = "<group>"; };
-		AF75D06E2F8CD6EB00ED6FDF /* AnimatedGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientView.swift; sourceTree = "<group>"; };
-		AF75D0702F8CD6EB00ED6FDF /* PhaseAbilitiesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseAbilitiesView.swift; sourceTree = "<group>"; };
-		AF75D0712F8CD6EB00ED6FDF /* PhaseEngineMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhaseEngineMainView.swift; sourceTree = "<group>"; };
-		AF75D07A2F8CD6EB00ED6FDF /* Battle_Roll.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Battle_Roll.xcdatamodel; sourceTree = "<group>"; };
-		AF75D0912F8CD7A100ED6FDF /* GameStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStateManager.swift; sourceTree = "<group>"; };
-		AF75D0932F8CD7B200ED6FDF /* GameSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSetupView.swift; sourceTree = "<group>"; };
-		AF75D0952F8CD7C300ED6FDF /* ArmySelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArmySelectionView.swift; sourceTree = "<group>"; };
-		AF75D0972F8CD7D400ED6FDF /* SeasonSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonSelectionView.swift; sourceTree = "<group>"; };
-		AF75D0992F8CD7E500ED6FDF /* GameDashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDashboardView.swift; sourceTree = "<group>"; };
-		AF75D09B2F8CD7F600ED6FDF /* GameHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryView.swift; sourceTree = "<group>"; };
-		E57039774D78439694039D6262C4677E /* GameRecordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRecordService.swift; sourceTree = "<group>"; };
-		AF75D09E2F8CD9A100ED6FDF /* SpearheadLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpearheadLoader.swift; sourceTree = "<group>"; };
-		AF75D0A02F8CD9B200ED6FDF /* BloodBoundGorePilgrims.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BloodBoundGorePilgrims.json; sourceTree = "<group>"; };
-		AF75D0A32F8CDA1000ED6FDF /* FangsOfTheBloodGod.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FangsOfTheBloodGod.json; sourceTree = "<group>"; };
-		AF75D0A52F8CDA2000ED6FDF /* CasteliteCompany.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CasteliteCompany.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		BB10000000000000000000A1 /* Battle Roll */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Battle Roll";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
-		AF07FF0424237D9D003F839F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF07FF1B24237D9F003F839F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF07FF2624237D9F003F839F /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF69A8C22420EA020049EED5 /* Frameworks */ = {
+		BB10000000000000000000A2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -132,7 +32,7 @@
 		AF69A8BC2420EA020049EED5 = {
 			isa = PBXGroup;
 			children = (
-				AF69A8C72420EA020049EED5 /* Battle Roll */,
+				BB10000000000000000000A1 /* Battle Roll */,
 				AF69A8C62420EA020049EED5 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -141,336 +41,27 @@
 			isa = PBXGroup;
 			children = (
 				AF69A8C52420EA020049EED5 /* Battle Roll.app */,
-				AF07FF0724237D9D003F839F /* Mac Battle Roll.app */,
-				AF07FF1E24237D9F003F839F /* Mac Battle RollTests.xctest */,
-				AF07FF2924237D9F003F839F /* Mac Battle RollUITests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		AF69A8C72420EA020049EED5 /* Battle Roll */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D04A2F8CD6EB00ED6FDF /* AppDelegate.swift */,
-				AF75D04B2F8CD6EB00ED6FDF /* Assets.xcassets */,
-				AF75D04E2F8CD6EB00ED6FDF /* Base.lproj */,
-				AF75D04F2F8CD6EB00ED6FDF /* Battle Roll.entitlements */,
-				AF75D0502F8CD6EB00ED6FDF /* Battle_Roll.xcdatamodeld */,
-				AF75D0512F8CD6EB00ED6FDF /* ContentView.swift */,
-				AF75D0522F8CD6EB00ED6FDF /* Info.plist */,
-				AF75D05F2F8CD6EB00ED6FDF /* Models */,
-				AF75D0612F8CD6EB00ED6FDF /* Preview Content */,
-				AF75D0662F8CD6EB00ED6FDF /* Resources */,
-				AF75D0672F8CD6EB00ED6FDF /* SceneDelegate.swift */,
-				AF75D06B2F8CD6EB00ED6FDF /* Services */,
-				AF75D06D2F8CD6EB00ED6FDF /* Utilities */,
-				AF75D06F2F8CD6EB00ED6FDF /* View */,
-				AF75D0792F8CD6EB00ED6FDF /* Views */,
-			);
-			path = "Battle Roll";
-			sourceTree = "<group>";
-		};
-		AF75D04E2F8CD6EB00ED6FDF /* Base.lproj */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D04D2F8CD6EB00ED6FDF /* LaunchScreen.storyboard */,
-			);
-			path = Base.lproj;
-			sourceTree = "<group>";
-		};
-		AF75D0532F8CD6EB00ED6FDF /* Army */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Army;
-			sourceTree = "<group>";
-		};
-		AF75D0562F8CD6EB00ED6FDF /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0542F8CD6EB00ED6FDF /* GamePhase.swift */,
-				AF75D0552F8CD6EB00ED6FDF /* GameState.swift */,
-				AF75D0912F8CD7A100ED6FDF /* GameStateManager.swift */,
-			);
-			path = Game;
-			sourceTree = "<group>";
-		};
-		AF75D0572F8CD6EB00ED6FDF /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
-			sourceTree = "<group>";
-		};
-		AF75D0582F8CD6EB00ED6FDF /* Season */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Season;
-			sourceTree = "<group>";
-		};
-		AF75D05C2F8CD6EB00ED6FDF /* Warscroll */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0592F8CD6EB00ED6FDF /* Ability+Extensions.swift */,
-				AF75D05A2F8CD6EB00ED6FDF /* AbilityTiming.swift */,
-				AF75D05B2F8CD6EB00ED6FDF /* Warscroll+Extensions.swift */,
-			);
-			path = Warscroll;
-			sourceTree = "<group>";
-		};
-		AF75D05F2F8CD6EB00ED6FDF /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0532F8CD6EB00ED6FDF /* Army */,
-				AF75D0562F8CD6EB00ED6FDF /* Game */,
-				AF75D0572F8CD6EB00ED6FDF /* Protocols */,
-				AF75D0582F8CD6EB00ED6FDF /* Season */,
-				AF75D05C2F8CD6EB00ED6FDF /* Warscroll */,
-				AF75D05D2F8CD6EB00ED6FDF /* PHASE_ENGINE_QUICK_REF.md */,
-				AF75D05E2F8CD6EB00ED6FDF /* WARSCROLL_IMPLEMENTATION.md */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		AF75D0612F8CD6EB00ED6FDF /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0602F8CD6EB00ED6FDF /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		AF75D0622F8CD6EB00ED6FDF /* FireAndJade */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FireAndJade;
-			sourceTree = "<group>";
-		};
-		AF75D0632F8CD6EB00ED6FDF /* SandAndBone */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SandAndBone;
-			sourceTree = "<group>";
-		};
-		AF75D0642F8CD6EB00ED6FDF /* SeasonPacks */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0622F8CD6EB00ED6FDF /* FireAndJade */,
-				AF75D0632F8CD6EB00ED6FDF /* SandAndBone */,
-			);
-			path = SeasonPacks;
-			sourceTree = "<group>";
-		};
-		AF75D0652F8CD6EB00ED6FDF /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0642F8CD6EB00ED6FDF /* SeasonPacks */,
-				AF75D0A12F8CD9C300ED6FDF /* Spearheads */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
-		AF75D0662F8CD6EB00ED6FDF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0652F8CD6EB00ED6FDF /* Data */,
-			);
-			path = Resources;
-			sourceTree = "<group>";
-		};
-		AF75D06B2F8CD6EB00ED6FDF /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0682F8CD6EB00ED6FDF /* DataService.swift */,
-				E57039774D78439694039D6262C4677E /* GameRecordService.swift */,
-				AF75D0692F8CD6EB00ED6FDF /* PersistenceController.swift */,
-				AF75D06A2F8CD6EB00ED6FDF /* PhaseManager.swift */,
-				AF75D09E2F8CD9A100ED6FDF /* SpearheadLoader.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		AF75D06C2F8CD6EB00ED6FDF /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		AF75D06D2F8CD6EB00ED6FDF /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D06C2F8CD6EB00ED6FDF /* Extensions */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		AF75D06F2F8CD6EB00ED6FDF /* View */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D06E2F8CD6EB00ED6FDF /* AnimatedGradientView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		AF75D0722F8CD6EB00ED6FDF /* Battle */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0702F8CD6EB00ED6FDF /* PhaseAbilitiesView.swift */,
-				AF75D0712F8CD6EB00ED6FDF /* PhaseEngineMainView.swift */,
-			);
-			path = Battle;
-			sourceTree = "<group>";
-		};
-		AF75D0732F8CD6EB00ED6FDF /* Battlefield */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Battlefield;
-			sourceTree = "<group>";
-		};
-		AF75D0742F8CD6EB00ED6FDF /* Components */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
-		AF75D09C2F8CD80700ED6FDF /* Game */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0992F8CD7E500ED6FDF /* GameDashboardView.swift */,
-				AF75D09B2F8CD7F600ED6FDF /* GameHistoryView.swift */,
-			);
-			path = Game;
-			sourceTree = "<group>";
-		};
-		AF75D0752F8CD6EB00ED6FDF /* History */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = History;
-			sourceTree = "<group>";
-		};
-		AF75D0762F8CD6EB00ED6FDF /* Main */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
-		AF75D0772F8CD6EB00ED6FDF /* Setup */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0932F8CD7B200ED6FDF /* GameSetupView.swift */,
-				AF75D0952F8CD7C300ED6FDF /* ArmySelectionView.swift */,
-				AF75D0972F8CD7D400ED6FDF /* SeasonSelectionView.swift */,
-			);
-			path = Setup;
-			sourceTree = "<group>";
-		};
-		AF75D0782F8CD6EB00ED6FDF /* Units */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Units;
-			sourceTree = "<group>";
-		};
-		AF75D0792F8CD6EB00ED6FDF /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0722F8CD6EB00ED6FDF /* Battle */,
-				AF75D0732F8CD6EB00ED6FDF /* Battlefield */,
-				AF75D0742F8CD6EB00ED6FDF /* Components */,
-				AF75D09C2F8CD80700ED6FDF /* Game */,
-				AF75D0752F8CD6EB00ED6FDF /* History */,
-				AF75D0762F8CD6EB00ED6FDF /* Main */,
-				AF75D0772F8CD6EB00ED6FDF /* Setup */,
-				AF75D0782F8CD6EB00ED6FDF /* Units */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		AF75D0A12F8CD9C300ED6FDF /* Spearheads */ = {
-			isa = PBXGroup;
-			children = (
-				AF75D0A02F8CD9B200ED6FDF /* BloodBoundGorePilgrims.json */,
-				AF75D0A52F8CDA2000ED6FDF /* CasteliteCompany.json */,
-				AF75D0A32F8CDA1000ED6FDF /* FangsOfTheBloodGod.json */,
-			);
-			path = Spearheads;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AF07FF0624237D9D003F839F /* Mac Battle Roll */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AF07FF3624237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle Roll" */;
-			buildPhases = (
-				AF07FF0324237D9D003F839F /* Sources */,
-				AF07FF0424237D9D003F839F /* Frameworks */,
-				AF07FF0524237D9D003F839F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Mac Battle Roll";
-			productName = "Mac Battle Roll";
-			productReference = AF07FF0724237D9D003F839F /* Mac Battle Roll.app */;
-			productType = "com.apple.product-type.application";
-		};
-		AF07FF1D24237D9F003F839F /* Mac Battle RollTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AF07FF3724237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle RollTests" */;
-			buildPhases = (
-				AF07FF1A24237D9F003F839F /* Sources */,
-				AF07FF1B24237D9F003F839F /* Frameworks */,
-				AF07FF1C24237D9F003F839F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AF07FF2024237D9F003F839F /* PBXTargetDependency */,
-			);
-			name = "Mac Battle RollTests";
-			productName = "Mac Battle RollTests";
-			productReference = AF07FF1E24237D9F003F839F /* Mac Battle RollTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		AF07FF2824237D9F003F839F /* Mac Battle RollUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AF07FF3824237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle RollUITests" */;
-			buildPhases = (
-				AF07FF2524237D9F003F839F /* Sources */,
-				AF07FF2624237D9F003F839F /* Frameworks */,
-				AF07FF2724237D9F003F839F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AF07FF2B24237D9F003F839F /* PBXTargetDependency */,
-			);
-			name = "Mac Battle RollUITests";
-			productName = "Mac Battle RollUITests";
-			productReference = AF07FF2924237D9F003F839F /* Mac Battle RollUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 		AF69A8C42420EA020049EED5 /* Battle Roll */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF69A8F22420EA060049EED5 /* Build configuration list for PBXNativeTarget "Battle Roll" */;
+			buildConfigurationList = AF69A8E72420EA040049EED5 /* Build configuration list for PBXNativeTarget "Battle Roll" */;
 			buildPhases = (
-				AF69A8C12420EA020049EED5 /* Sources */,
-				AF69A8C22420EA020049EED5 /* Frameworks */,
-				AF69A8C32420EA020049EED5 /* Resources */,
+				BB10000000000000000000A3 /* Sources */,
+				BB10000000000000000000A2 /* Frameworks */,
+				BB10000000000000000000A4 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				BB10000000000000000000A1 /* Battle Roll */,
 			);
 			name = "Battle Roll";
 			productName = "Battle Roll";
@@ -484,28 +75,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				LastSwiftUpdateCheck = 1140;
+				LastSwiftUpdateCheck = 2640;
 				LastUpgradeCheck = 2640;
-				ORGANIZATIONNAME = "Henrik Anthony Odden Sandberg";
 				TargetAttributes = {
-					AF07FF0624237D9D003F839F = {
-						CreatedOnToolsVersion = 11.4;
-					};
-					AF07FF1D24237D9F003F839F = {
-						CreatedOnToolsVersion = 11.4;
-						TestTargetID = AF07FF0624237D9D003F839F;
-					};
-					AF07FF2824237D9F003F839F = {
-						CreatedOnToolsVersion = 11.4;
-						TestTargetID = AF07FF0624237D9D003F839F;
-					};
 					AF69A8C42420EA020049EED5 = {
 						CreatedOnToolsVersion = 11.4;
 					};
 				};
 			};
 			buildConfigurationList = AF69A8C02420EA020049EED5 /* Build configuration list for PBXProject "Battle Roll" */;
-			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -513,278 +91,45 @@
 				Base,
 			);
 			mainGroup = AF69A8BC2420EA020049EED5;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			productRefGroup = AF69A8C62420EA020049EED5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				AF69A8C42420EA020049EED5 /* Battle Roll */,
-				AF07FF0624237D9D003F839F /* Mac Battle Roll */,
-				AF07FF1D24237D9F003F839F /* Mac Battle RollTests */,
-				AF07FF2824237D9F003F839F /* Mac Battle RollUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		AF07FF0524237D9D003F839F /* Resources */ = {
+		BB10000000000000000000A4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF07FF1C24237D9F003F839F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF07FF2724237D9F003F839F /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF69A8C32420EA020049EED5 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF75D08A2F8CD6EB00ED6FDF /* Assets.xcassets in Resources */,
-				AF75D08B2F8CD6EB00ED6FDF /* WARSCROLL_IMPLEMENTATION.md in Resources */,
-				AF75D08C2F8CD6EB00ED6FDF /* LaunchScreen.storyboard in Resources */,
-				AF75D08E2F8CD6EB00ED6FDF /* PHASE_ENGINE_QUICK_REF.md in Resources */,
-				AF75D08F2F8CD6EB00ED6FDF /* Preview Assets.xcassets in Resources */,
-				AF75D09F2F8CD9B200ED6FDF /* BloodBoundGorePilgrims.json in Resources */,
-				AF75D0A22F8CDA1000ED6FDF /* FangsOfTheBloodGod.json in Resources */,
-				AF75D0A42F8CDA2000ED6FDF /* CasteliteCompany.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		AF07FF0324237D9D003F839F /* Sources */ = {
+		BB10000000000000000000A3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF07FF1A24237D9F003F839F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF07FF2524237D9F003F839F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AF69A8C12420EA020049EED5 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				AF75D07B2F8CD6EB00ED6FDF /* AnimatedGradientView.swift in Sources */,
-				AF75D07C2F8CD6EB00ED6FDF /* Warscroll+Extensions.swift in Sources */,
-				AF75D07D2F8CD6EB00ED6FDF /* ContentView.swift in Sources */,
-				AF75D07E2F8CD6EB00ED6FDF /* PhaseAbilitiesView.swift in Sources */,
-				AF75D07F2F8CD6EB00ED6FDF /* Battle_Roll.xcdatamodeld in Sources */,
-				AF75D0802F8CD6EB00ED6FDF /* Ability+Extensions.swift in Sources */,
-				AF75D0812F8CD6EB00ED6FDF /* GameState.swift in Sources */,
-				AF75D0822F8CD6EB00ED6FDF /* AbilityTiming.swift in Sources */,
-				AF75D0832F8CD6EB00ED6FDF /* AppDelegate.swift in Sources */,
-				AF75D0842F8CD6EB00ED6FDF /* DataService.swift in Sources */,
-				AF75D0852F8CD6EB00ED6FDF /* GamePhase.swift in Sources */,
-				AF75D0862F8CD6EB00ED6FDF /* PersistenceController.swift in Sources */,
-				AF75D0872F8CD6EB00ED6FDF /* PhaseManager.swift in Sources */,
-				AF75D0882F8CD6EB00ED6FDF /* PhaseEngineMainView.swift in Sources */,
-				AF75D0892F8CD6EB00ED6FDF /* SceneDelegate.swift in Sources */,
-				AF75D0902F8CD7A100ED6FDF /* GameStateManager.swift in Sources */,
-				AF75D0922F8CD7B200ED6FDF /* GameSetupView.swift in Sources */,
-				AF75D0942F8CD7C300ED6FDF /* ArmySelectionView.swift in Sources */,
-				AF75D0962F8CD7D400ED6FDF /* SeasonSelectionView.swift in Sources */,
-				AF75D0982F8CD7E500ED6FDF /* GameDashboardView.swift in Sources */,
-				AF75D09A2F8CD7F600ED6FDF /* GameHistoryView.swift in Sources */,
-				1BC406F11384488395B04EE487007305 /* GameRecordService.swift in Sources */,
-				AF75D09D2F8CD9A100ED6FDF /* SpearheadLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		AF07FF2024237D9F003F839F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AF07FF0624237D9D003F839F /* Mac Battle Roll */;
-			targetProxy = AF07FF1F24237D9F003F839F /* PBXContainerItemProxy */;
-		};
-		AF07FF2B24237D9F003F839F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = AF07FF0624237D9D003F839F /* Mac Battle Roll */;
-			targetProxy = AF07FF2A24237D9F003F839F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AF75D04D2F8CD6EB00ED6FDF /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF75D04C2F8CD6EB00ED6FDF /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		AF07FF3024237D9F003F839F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Mac Battle Roll/Mac_Battle_Roll.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Mac Battle Roll/Preview Content\"";
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Mac Battle Roll/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-Roll";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		AF07FF3124237D9F003F839F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Mac Battle Roll/Mac_Battle_Roll.entitlements";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Mac Battle Roll/Preview Content\"";
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Mac Battle Roll/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-Roll";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		AF07FF3224237D9F003F839F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				INFOPLIST_FILE = "Mac Battle RollTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-RollTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mac Battle Roll.app/Contents/MacOS/Mac Battle Roll";
-			};
-			name = Debug;
-		};
-		AF07FF3324237D9F003F839F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				INFOPLIST_FILE = "Mac Battle RollTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-RollTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Mac Battle Roll.app/Contents/MacOS/Mac Battle Roll";
-			};
-			name = Release;
-		};
-		AF07FF3424237D9F003F839F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				INFOPLIST_FILE = "Mac Battle RollUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-RollUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "Mac Battle Roll";
-			};
-			name = Debug;
-		};
-		AF07FF3524237D9F003F839F /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				DEAD_CODE_STRIPPING = YES;
-				INFOPLIST_FILE = "Mac Battle RollUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-					"@loader_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Mac-Battle-RollUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx;
-				SWIFT_VERSION = 5.0;
-				TEST_TARGET_NAME = "Mac Battle Roll";
-			};
-			name = Release;
-		};
-		AF69A8F02420EA060049EED5 /* Debug */ = {
+		AF69A8E22420EA040049EED5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -803,7 +148,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -812,10 +156,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 8LJBM9LES6;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -835,20 +177,19 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		AF69A8F12420EA060049EED5 /* Release */ = {
+		AF69A8E32420EA040049EED5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -867,7 +208,6 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -876,10 +216,8 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 8LJBM9LES6;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -892,62 +230,72 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		AF69A8F32420EA060049EED5 /* Debug */ = {
+		AF69A8E52420EA040049EED5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Battle Roll/Battle Roll.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Battle Roll/Preview Content\"";
+				DEVELOPMENT_TEAM = 8LJBM9LES6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Battle Roll/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Spearhead Battle tracker";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Spearhead Strategist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Battle-Roll";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		AF69A8F42420EA060049EED5 /* Release */ = {
+		AF69A8E62420EA040049EED5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Battle Roll/Battle Roll.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Battle Roll/Preview Content\"";
+				DEVELOPMENT_TEAM = 8LJBM9LES6;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = "Battle Roll/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "Spearhead Battle tracker";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Spearhead Strategist";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.henrik.sandberg.Battle-Roll";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -956,65 +304,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AF07FF3624237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle Roll" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AF07FF3024237D9F003F839F /* Debug */,
-				AF07FF3124237D9F003F839F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AF07FF3724237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle RollTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AF07FF3224237D9F003F839F /* Debug */,
-				AF07FF3324237D9F003F839F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AF07FF3824237D9F003F839F /* Build configuration list for PBXNativeTarget "Mac Battle RollUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AF07FF3424237D9F003F839F /* Debug */,
-				AF07FF3524237D9F003F839F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		AF69A8C02420EA020049EED5 /* Build configuration list for PBXProject "Battle Roll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF69A8F02420EA060049EED5 /* Debug */,
-				AF69A8F12420EA060049EED5 /* Release */,
+				AF69A8E22420EA040049EED5 /* Debug */,
+				AF69A8E32420EA040049EED5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF69A8F22420EA060049EED5 /* Build configuration list for PBXNativeTarget "Battle Roll" */ = {
+		AF69A8E72420EA040049EED5 /* Build configuration list for PBXNativeTarget "Battle Roll" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AF69A8F32420EA060049EED5 /* Debug */,
-				AF69A8F42420EA060049EED5 /* Release */,
+				AF69A8E52420EA040049EED5 /* Debug */,
+				AF69A8E62420EA040049EED5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		AF75D0502F8CD6EB00ED6FDF /* Battle_Roll.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				AF75D07A2F8CD6EB00ED6FDF /* Battle_Roll.xcdatamodel */,
-			);
-			currentVersion = AF75D07A2F8CD6EB00ED6FDF /* Battle_Roll.xcdatamodel */;
-			path = Battle_Roll.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = AF69A8BD2420EA020049EED5 /* Project object */;
 }
