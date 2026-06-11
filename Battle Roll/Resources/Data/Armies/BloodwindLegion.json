@@ -1,0 +1,202 @@
+{
+  "id": "bloodwind-legion",
+  "name": "Bloodwind Legion",
+  "faction": "Slaves to Darkness",
+  "grandAlliance": "Chaos",
+  "battleTraits": [
+    {
+      "name": "Eye of the Gods",
+      "declare": "Pick a friendly unit that is either contesting an objective not controlled by your opponent and not in combat, or destroyed an enemy unit this turn.",
+      "effect": "Roll once on the Eye of the Gods table; the unit gains the matching passive ability for the rest of the battle (kept alongside earlier rolls; duplicates are not cumulative). 1: no effect. 2: Ward (6+). 3: +1 to run rolls. 4: -1 to wound rolls for attacks targeting this unit. 5: +1 Rend to melee weapons. 6: pick any ability from the table.",
+      "timingText": "Once Per Turn, End of Any Turn",
+      "phase": "endOfTurn",
+      "turn": "any",
+      "window": "end",
+      "frequency": "oncePerTurn"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "The Dread Banner",
+      "declare": "Pick a friendly Chaos Warriors or Chaos Knights unit.",
+      "effect": "You can immediately roll on the Eye of the Gods table for that unit.",
+      "timingText": "Once Per Battle, Start of the First Battle Round",
+      "phase": "startOfRound",
+      "turn": "any",
+      "window": "start",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Fierce Conquerors",
+      "effect": "Add 3 to the control scores of friendly Chaos Warriors units.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Mark of Khorne",
+      "effect": "Add 1 to the Rend characteristic of your general's melee weapons if they charged in the same turn.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Mark of Slaanesh",
+      "effect": "Your general has Strike-First.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Mark of Tzeentch",
+      "declare": "Pick a friendly unit on the battlefield (not your general).",
+      "effect": "Remove that unit from the battlefield and set it up again wholly within 6\" of your general and more than 6\" from all enemy units. It cannot use Move abilities for the rest of the phase.",
+      "timingText": "Once Per Battle, Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Mark of Nurgle",
+      "effect": "Subtract 1 from wound rolls for combat attacks that target your general.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "units": [
+    {
+      "name": "Chaos Lord",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "5\"",
+      "health": 6,
+      "save": "3+",
+      "control": 2,
+      "keywords": ["Hero", "Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Reaperblade", "attacks": "5", "hit": "3+", "wound": "3+", "rend": "1", "damage": "2", "abilities": ["Crit (Mortal)"] }
+      ],
+      "abilities": [
+        {
+          "name": "Favoured of the Pantheon",
+          "effect": "Roll a dice. On a 4+, you can roll on the Eye of the Gods table for this unit.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        },
+        {
+          "name": "Iron-Willed Champion",
+          "declare": "Pick a friendly unit wholly within 12\" of this unit (not this unit) to be the target and roll a dice.",
+          "effect": "On a 2+, add 1 to hit rolls for attacks made by the target unit this phase.",
+          "timingText": "Any Combat Phase",
+          "phase": "combat",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Chaos Chariot",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "10\"",
+      "health": 7,
+      "save": "4+",
+      "control": 2,
+      "keywords": ["War Machine"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Chaos War-flail", "attacks": "6", "hit": "3+", "wound": "3+", "rend": "-", "damage": "1", "abilities": [] },
+        { "name": "Driver's Lashing Whip", "attacks": "2", "hit": "4+", "wound": "4+", "rend": "-", "damage": "1", "abilities": [] },
+        { "name": "Warhorses' Trampling Hooves", "attacks": "4", "hit": "5+", "wound": "3+", "rend": "-", "damage": "1", "abilities": ["Companion"] }
+      ],
+      "abilities": [
+        {
+          "name": "Swift Death",
+          "declare": "If this unit charged this phase, pick an enemy unit within 1\" of it to be the target and roll a dice.",
+          "effect": "On a 2+, inflict D3 mortal damage on the target.",
+          "timingText": "Your Charge Phase",
+          "phase": "charge",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Chaos Warriors",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 5,
+      "move": "5\"",
+      "health": 2,
+      "save": "3+",
+      "control": 1,
+      "keywords": ["Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Rune-etched Halberd", "attacks": "2", "hit": "3+", "wound": "3+", "rend": "1", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Bringers of Desolation",
+          "effect": "Add 1 to wound rolls for combat attacks made by this unit that target an enemy unit contesting an objective you do not control.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    },
+    {
+      "name": "Chaos Knights",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 5,
+      "move": "10\"",
+      "health": 4,
+      "save": "3+",
+      "control": 1,
+      "keywords": ["Cavalry"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Cursed Lance", "attacks": "3", "hit": "3+", "wound": "3+", "rend": "1", "damage": "1", "abilities": ["Charge (+1 Damage)"] },
+        { "name": "Chaos Steed's Trampling Hooves", "attacks": "2", "hit": "5+", "wound": "3+", "rend": "-", "damage": "1", "abilities": ["Companion"] }
+      ],
+      "abilities": [
+        {
+          "name": "Impaling Charge",
+          "effect": "Add 1 to the Rend characteristic of this unit's Cursed Lances if it charged in the same turn.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    }
+  ]
+}

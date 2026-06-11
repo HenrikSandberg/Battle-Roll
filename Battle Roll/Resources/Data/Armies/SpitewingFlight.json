@@ -1,0 +1,212 @@
+{
+  "id": "spitewing-flight",
+  "name": "Spitewing Flight",
+  "faction": "Sylvaneth",
+  "grandAlliance": "Order",
+  "battleTraits": [
+    {
+      "name": "Target of Vengeance",
+      "declare": "If there is no enemy quarry on the battlefield, pick an enemy unit on the battlefield to be the target.",
+      "effect": "The target is the quarry for the rest of the battle.",
+      "timingText": "Once Per Battle Round (Army), Start of Battle Round",
+      "phase": "startOfRound",
+      "turn": "any",
+      "window": "start",
+      "frequency": "oncePerTurnArmy"
+    },
+    {
+      "name": "Song of the Hunt",
+      "effect": "You gain 1 chord each time an enemy quarry is destroyed. Cumulative effects: 1 chord – add 1 to run and charge rolls for friendly units within 9\" of the quarry. 2 chords – also add 1 to hit rolls for friendly units' attacks within 9\" of the quarry. 3+ chords – also add 1 to wound rolls for friendly units' attacks within 9\" of the quarry.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Airborne Cohesion",
+      "effect": "Friendly units have a coherency range of 2\".",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Leaves on the Wind",
+      "declare": "Pick a friendly unit that is in combat to be the target.",
+      "effect": "The target can immediately use the Retreat ability as if it were your movement phase, and no mortal damage is inflicted on it if it does so.",
+      "timingText": "Once Per Battle (Army), End of Any Turn",
+      "phase": "endOfTurn",
+      "turn": "any",
+      "window": "end",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Lifebringers",
+      "effect": "Heal (D3) each friendly unit.",
+      "timingText": "Once Per Turn (Army), End of Any Turn",
+      "phase": "endOfTurn",
+      "turn": "any",
+      "window": "end",
+      "frequency": "oncePerTurnArmy"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Head of the Hunt",
+      "effect": "Add 1 to the Rend characteristic of your general's melee weapons while the enemy quarry is within 9\" of and visible to them.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Zephyrkin",
+      "effect": "If your general charged this turn, they can move up to 2D6\" after their Fight ability has been resolved. They cannot end that move in combat.",
+      "timingText": "Reaction: You declared a Fight ability for your general",
+      "phase": "combat",
+      "turn": "any",
+      "window": "reaction",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Bold Spirit",
+      "effect": "For the rest of the turn, add 1 to wound rolls for friendly units' combat attacks while they are within your general's combat range.",
+      "timingText": "Once Per Battle (Army), Any Hero Phase",
+      "phase": "hero",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Cunning Pursuer",
+      "effect": "While your general is in combat, add 1 to charge rolls for friendly units wholly within 12\" of them. Add 2 instead while your general is in combat with the quarry.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "units": [
+    {
+      "name": "Arch-Revenant",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "12\"",
+      "health": 6,
+      "save": "4+",
+      "control": 2,
+      "keywords": ["Hero", "Infantry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Arch-Revenant's Glaive", "attacks": "5", "hit": "3+", "wound": "4+", "rend": "1", "damage": "2", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Heartwood Hunting Horn",
+          "declare": "Pick a visible friendly unit wholly within 12\" of this unit to be the target.",
+          "effect": "Until the start of your next turn, when determining which 'Song of the Hunt' effects apply to the target, you count as having 1 additional chord.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Gossamid Archers",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 5,
+      "move": "12\"",
+      "health": 2,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Gossamid Bow", "range": "12\"", "attacks": "2", "hit": "3+", "wound": "4+", "rend": "1", "damage": "1", "abilities": ["Shoot in Combat"] }
+      ],
+      "meleeWeapons": [
+        { "name": "Cruel Talons", "attacks": "1", "hit": "3+", "wound": "4+", "rend": "-", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Zephyrspites",
+          "effect": "After the declared Shoot ability has been resolved, this unit can move up to D6\". It cannot move into combat during any part of that move.",
+          "timingText": "Reaction: You declared a Shoot ability for this unit",
+          "phase": "shooting",
+          "turn": "any",
+          "window": "reaction",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Spiterider Lancers",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "12\"",
+      "health": 5,
+      "save": "4+",
+      "control": 2,
+      "keywords": ["Cavalry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Spiterider Lance", "attacks": "3", "hit": "3+", "wound": "4+", "rend": "1", "damage": "1", "abilities": ["Charge (+1 Damage)"] },
+        { "name": "Dragonspite's Mandibles", "attacks": "3", "hit": "4+", "wound": "3+", "rend": "1", "damage": "2", "abilities": ["Companion"] }
+      ],
+      "abilities": [
+        {
+          "name": "Spiterider Charge",
+          "declare": "If this unit charged this phase, pick a visible enemy unit within 1\" of it to be the target.",
+          "effect": "Roll a D3. Add 1 to the roll if the target is the enemy quarry. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+          "timingText": "Any Charge Phase",
+          "phase": "charge",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Revenant Seekers",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "12\"",
+      "health": 5,
+      "save": "4+",
+      "control": 2,
+      "keywords": ["Cavalry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Seeker's Sickle", "attacks": "3", "hit": "3+", "wound": "4+", "rend": "1", "damage": "1", "abilities": ["Crit (Mortal)"] },
+        { "name": "Dragonspite's Mandibles", "attacks": "3", "hit": "4+", "wound": "3+", "rend": "1", "damage": "2", "abilities": ["Companion"] }
+      ],
+      "abilities": [
+        {
+          "name": "Deafening Drone",
+          "declare": "If this unit did not charge this turn, pick an enemy unit in combat with it to be the target.",
+          "effect": "Roll a dice. If the roll exceeds the target's Control characteristic, subtract 1 from the Attacks characteristic of the target's melee weapons for the rest of the turn.",
+          "timingText": "Any Combat Phase",
+          "phase": "combat",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    }
+  ]
+}

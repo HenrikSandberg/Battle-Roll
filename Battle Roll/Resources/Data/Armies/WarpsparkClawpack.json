@@ -1,0 +1,205 @@
+{
+  "id": "warpspark-clawpack",
+  "name": "Warpspark Clawpack",
+  "faction": "Skaven",
+  "grandAlliance": "Chaos",
+  "battleTraits": [
+    {
+      "name": "Always Three Clawsteps Ahead",
+      "declare": "Pick a friendly unit that is not in combat.",
+      "effect": "That unit can use the 'Normal Move' ability as if it were your movement phase.",
+      "timingText": "Once Per Phase, Enemy Movement Phase",
+      "phase": "movement",
+      "turn": "enemy",
+      "window": "during",
+      "frequency": "oncePerPhase"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Warpstone-Laced Armour",
+      "effect": "Used by your Stormfiends unit: it has Ward (5+) for the rest of the turn.",
+      "timingText": "Once Per Battle, Reaction: Opponent declared an Attack ability targeting your Stormfiends",
+      "phase": "any",
+      "turn": "enemy",
+      "window": "reaction",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Endless Swarm of Rats",
+      "effect": "When a friendly Clanrats unit uses its 'Seething Swarm' ability, you can return D6 slain models to that unit instead of D3.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Skilled Manipulator",
+      "effect": "Your general has Ward (4+) while they are within 1\" of any friendly Clanrats units.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Skitterleap",
+      "declare": "Make a casting roll of 2D6.",
+      "effect": "On a 6+, remove your general from the battlefield and set them up again more than 6\" from all enemy units. They cannot use Move abilities in the following movement phase.",
+      "timingText": "Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Cage of Warp Lightning",
+      "declare": "Pick a visible enemy unit within 6\" of your general and roll a dice.",
+      "effect": "On a 2+, the enemy unit has Strike-Last this phase. On a 1, inflict 1 mortal damage on your general.",
+      "timingText": "Once Per Battle, Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Scurry Away",
+      "effect": "Roll a dice. On a 3+, this unit (your general) can immediately use the 'Retreat' ability as if it were your movement phase. If it does so, no mortal damage is inflicted on it.",
+      "timingText": "Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "unlimited"
+    }
+  ],
+  "units": [
+    {
+      "name": "Grey Seer",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "6\"",
+      "health": 5,
+      "save": "6+",
+      "control": 2,
+      "keywords": ["Hero", "Wizard", "Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Warpstone Staff", "attacks": "3", "hit": "4+", "wound": "4+", "rend": "1", "damage": "D3", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Will of the Horned Rat",
+          "declare": "Pick a friendly unit wholly within 13\" of this unit to be the target, then roll a dice.",
+          "effect": "On a 3+, add the roll to the target's control score until the start of your next turn.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        },
+        {
+          "name": "Wither",
+          "declare": "Pick a visible enemy unit within 13\" of this unit to be the target, then make a casting roll of 2D6.",
+          "effect": "On a 6+, inflict D3 mortal damage on the target.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Stormfiends",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "6\"",
+      "health": 6,
+      "save": "4+",
+      "control": 2,
+      "keywords": ["Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Ratling Cannons (1 model)", "range": "15\"", "attacks": "3D6", "hit": "4+", "wound": "3+", "rend": "1", "damage": "1", "abilities": [] },
+        { "name": "Windlaunchers (1 model)", "range": "15\"", "attacks": "3", "hit": "4+", "wound": "3+", "rend": "2", "damage": "D3", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Shock Gauntlets (1 model)", "attacks": "4", "hit": "4+", "wound": "2+", "rend": "1", "damage": "2", "abilities": [] },
+        { "name": "Clubbing Blows (2 models)", "attacks": "4", "hit": "4+", "wound": "2+", "rend": "-", "damage": "2", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Shock Gauntlets",
+          "effect": "Each time an attack made with this unit's Shock Gauntlets scores a critical hit, that attack scores D6 hits instead of 1 (make a wound roll for each hit).",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    },
+    {
+      "name": "Warp Lightning Cannon",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "3\"",
+      "health": 8,
+      "save": "4+",
+      "control": 2,
+      "keywords": ["War Machine"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Warp Lightning Blast", "range": "20\"", "attacks": "2D6", "hit": "4+", "wound": "-", "rend": "-", "damage": "special", "abilities": ["See Warp Lightning Blast ability"] }
+      ],
+      "meleeWeapons": [
+        { "name": "Crew's Teeth and Knives", "attacks": "D6", "hit": "4+", "wound": "5+", "rend": "-", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Warp Lightning Blast",
+          "effect": "Each attack made with this weapon in a single phase must target the same enemy unit. Each hit inflicts 1 mortal damage on the target and the attack sequence ends.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    },
+    {
+      "name": "Clanrats",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 10,
+      "move": "6\"",
+      "health": 1,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Rusty Blade", "attacks": "2", "hit": "4+", "wound": "5+", "rend": "-", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Seething Swarm",
+          "effect": "You can return D3 slain models to this unit.",
+          "timingText": "End of Any Turn",
+          "phase": "endOfTurn",
+          "turn": "any",
+          "window": "end",
+          "frequency": "unlimited"
+        }
+      ]
+    }
+  ]
+}
