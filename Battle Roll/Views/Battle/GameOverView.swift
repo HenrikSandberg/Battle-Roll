@@ -13,7 +13,8 @@ struct GameOverView: View {
             VStack(spacing: 24) {
                 Image(systemName: "trophy.fill")
                     .font(.system(size: 64))
-                    .foregroundStyle(.yellow)
+                    .foregroundStyle(SpearheadTheme.goldGradient)
+                    .shadow(color: SpearheadTheme.gold.opacity(0.6), radius: 12)
 
                 if let winner = state.winner() {
                     Text("\(state[winner].name) wins!")
@@ -55,7 +56,7 @@ struct GameOverView: View {
                         .font(.headline)
                         .padding()
                         .frame(maxWidth: .infinity)
-                        .background(Color.accentColor, in: RoundedRectangle(cornerRadius: 12))
+                        .background(SpearheadTheme.fireGradient, in: RoundedRectangle(cornerRadius: 12))
                         .foregroundStyle(.white)
                 }
                 .padding(.horizontal)
@@ -69,6 +70,7 @@ struct GameOverView: View {
             Text(state[side].name).font(.headline)
             Text("\(state[side].totalVP)")
                 .font(.system(size: 44, weight: .black, design: .rounded))
+                .foregroundStyle(side.themeColor)
             Text(session.army(for: side).name)
                 .font(.caption)
                 .foregroundStyle(.secondary)

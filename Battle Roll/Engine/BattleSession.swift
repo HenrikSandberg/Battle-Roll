@@ -124,10 +124,31 @@ final class BattleSession: ObservableObject {
         var hand = state[side].handCount
         while hand < 3 {
             let deck = season.battleTactics.map(\.name).filter { tacticLocation($0, for: side) == .inDeck }
-            guard let card = deck.randomElement() else { break }
+            guard deck.count > state[side].hiddenHandCount, let card = deck.randomElement() else { break }
             state[side].tacticLocations[card] = .inHand
             hand += 1
         }
+    }
+
+    /// Cards still in the unrevealed pool for `side` (the deck, which may include their hidden hand).
+    func deckCount(for side: PlayerSide) -> Int {
+        season.battleTactics.filter { tacticLocation($0.name, for: side) == .inDeck }.count
+    }
+
+    /// Track `side`'s hand face down: you know how many cards they hold, not which.
+    /// Clamped so known + hidden never exceeds 3 and hidden never exceeds the deck.
+    func setHiddenHandCount(_ count: Int, for side: PlayerSide) {
+        let maxHidden = min(deckCount(for: side), 3 - state[side].knownHandCount)
+        state[side].hiddenHandCount = max(0, min(count, maxHidden))
+    }
+
+    /// One of `side`'s face-down cards is revealed to be `card` (they used its
+    /// command, scored it, or discarded it). Moves it out of the hidden hand.
+    func revealHiddenTactic(_ card: String, as location: TacticCardLocation, for side: PlayerSide) {
+        guard state[side].hiddenHandCount > 0,
+              tacticLocation(card, for: side) == .inDeck else { return }
+        state[side].hiddenHandCount -= 1
+        setTactic(card, to: location, for: side)
     }
 
     // MARK: - Phases & turns
@@ -186,7 +207,12 @@ final class BattleSession: ObservableObject {
                                              source: "Objectives", points: objectiveVP))
         }
         for card in tacticsCompleted {
-            setTactic(card, to: .scored, for: side)
+            // A card scored from a face-down hand is revealed at this moment.
+            if tacticLocation(card, for: side) == .inDeck, state[side].hiddenHandCount > 0 {
+                revealHiddenTactic(card, as: .scored, for: side)
+            } else {
+                setTactic(card, to: .scored, for: side)
+            }
         }
         if twistExtraVP != 0 {
             state[side].vpLog.append(VPEntry(round: state.round, player: side,

@@ -166,7 +166,7 @@ struct AbilityRow: View {
                 if ability.window == .start {
                     Image(systemName: "bell.fill")
                         .font(.caption)
-                        .foregroundStyle(.yellow)
+                        .foregroundStyle(SpearheadTheme.gold)
                 }
                 Text(ability.name)
                     .font(.subheadline.bold())
@@ -183,7 +183,7 @@ struct AbilityRow: View {
             }
             Text(ability.timingText)
                 .font(.caption2.weight(.semibold))
-                .foregroundStyle(.purple)
+                .foregroundStyle(SpearheadTheme.arcane)
             if let declare = ability.declare {
                 abilityDetail("Declare", declare)
             }

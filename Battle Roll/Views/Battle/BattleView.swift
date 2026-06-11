@@ -19,7 +19,7 @@ struct BattleView: View {
             VStack(spacing: 0) {
                 scoreboard
                 if let twist = session.currentTwist {
-                    TwistBanner(twist: twist)
+                    TwistBanner(twist: twist, realmID: session.realm.id)
                 }
                 PhaseBar(phase: state.phase)
                 Divider()
@@ -108,20 +108,26 @@ struct BattleView: View {
     private func scoreCell(_ side: PlayerSide) -> some View {
         let p = state[side]
         let isActive = state.activePlayer == side && state.stage != .startOfRound
+        let color = side.themeColor
         return VStack(spacing: 2) {
             Text(p.name)
                 .font(.subheadline.weight(isActive ? .bold : .regular))
                 .lineLimit(1)
             Text("\(p.totalVP) VP")
                 .font(.title2.bold().monospacedDigit())
+                .foregroundStyle(color)
             Text("Hand: \(p.handCount) · Tactics: \(p.scoredTacticCount)")
                 .font(.caption2)
                 .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity)
         .padding(8)
-        .background(isActive ? Color.accentColor.opacity(0.15) : Color.clear,
+        .background(color.opacity(isActive ? 0.18 : 0.06),
                     in: RoundedRectangle(cornerRadius: 10))
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .strokeBorder(isActive ? color : Color.clear, lineWidth: 1.5)
+        )
     }
 
     private var turnControls: some View {
@@ -144,7 +150,7 @@ struct BattleView: View {
                         .font(.headline)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 10)
-                        .background(Color.accentColor, in: Capsule())
+                        .background(SpearheadTheme.fireGradient, in: Capsule())
                         .foregroundStyle(.white)
                 }
             } else {
@@ -155,7 +161,8 @@ struct BattleView: View {
                         .font(.headline)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 10)
-                        .background(Color.accentColor.opacity(0.15), in: Capsule())
+                        .background(state.phase.themeColor.opacity(0.15), in: Capsule())
+                        .foregroundStyle(state.phase.themeColor)
                 }
             }
 
@@ -184,13 +191,14 @@ struct PhaseBar: View {
                 VStack(spacing: 3) {
                     Image(systemName: p.symbolName)
                         .font(.system(size: 14, weight: p == phase ? .bold : .regular))
+                        .foregroundStyle(p == phase ? Color.white : p.themeColor)
                     Text(p.shortName)
                         .font(.system(size: 9, weight: p == phase ? .bold : .regular))
+                        .foregroundStyle(p == phase ? Color.white : Color.secondary)
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 6)
-                .foregroundStyle(p == phase ? Color.white : .secondary)
-                .background(p == phase ? Color.accentColor : Color.clear,
+                .background(p == phase ? p.themeColor : Color.clear,
                             in: RoundedRectangle(cornerRadius: 8))
             }
         }
@@ -201,6 +209,7 @@ struct PhaseBar: View {
 
 struct TwistBanner: View {
     let twist: TwistCard
+    let realmID: String
     @State private var expanded = false
 
     var body: some View {
@@ -223,7 +232,8 @@ struct TwistBanner: View {
             }
             .padding(10)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.purple.opacity(0.15))
+            .foregroundStyle(.white)
+            .background(SpearheadTheme.realmGradient(realmID))
         }
         .buttonStyle(.plain)
     }

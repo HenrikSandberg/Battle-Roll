@@ -2,6 +2,11 @@ import SwiftUI
 
 /// Manage one player's battle tactic cards: which are in hand, scored,
 /// spent as commands or discarded. Mirrors the physical deck.
+///
+/// Your own hand is tracked card by card. An opponent's hand can be tracked
+/// face down ("hidden cards"): you only know how many they hold, and you
+/// reveal which card it was when they use a command, or when they score or
+/// discard it at the end of their turn.
 struct TacticHandView: View {
     @ObservedObject var session: BattleSession
     let side: PlayerSide
@@ -25,8 +30,19 @@ struct TacticHandView: View {
                         .buttonStyle(.bordered)
                         .disabled(player.handCount >= 3)
                     }
+                    HStack {
+                        Label("Hidden cards: \(player.hiddenHandCount)",
+                              systemImage: "questionmark.square.dashed")
+                            .foregroundStyle(player.hiddenHandCount > 0 ? SpearheadTheme.arcane : Color.primary)
+                        Spacer()
+                        Stepper("Hidden cards", value: Binding(
+                            get: { player.hiddenHandCount },
+                            set: { session.setHiddenHandCount($0, for: side) }
+                        ), in: 0...3)
+                        .labelsHidden()
+                    }
                 } footer: {
-                    Text("Mark the cards you physically drew, or let the app draw for you. Swipe a card for actions.")
+                    Text("Track your own hand card by card. If this is your opponent and you can't see their cards, add hidden cards instead — then swipe a card in the deck to reveal it when they use its command or discard it. Scored cards are revealed in their end-of-turn scoring.")
                 }
 
                 tacticSection("In hand", .inHand)
@@ -51,12 +67,18 @@ struct TacticHandView: View {
             session.tacticLocation($0.name, for: side) == location
         }
         if !cards.isEmpty {
-            Section(title) {
+            Section {
                 ForEach(cards) { card in
                     TacticCardRow(card: card)
                         .swipeActions(edge: .trailing, allowsFullSwipe: false) {
                             actions(for: card, at: location)
                         }
+                }
+            } header: {
+                if location == .inDeck && player.hiddenHandCount > 0 {
+                    Text("\(title) — may include their \(player.hiddenHandCount) hidden card\(player.hiddenHandCount == 1 ? "" : "s")")
+                } else {
+                    Text(title)
                 }
             }
         }
@@ -66,8 +88,18 @@ struct TacticHandView: View {
     private func actions(for card: BattleTacticCard, at location: TacticCardLocation) -> some View {
         switch location {
         case .inDeck:
-            Button("To hand") { session.setTactic(card.name, to: .inHand, for: side) }
-                .tint(.blue)
+            if player.hiddenHandCount > 0 {
+                // Revealing a hidden card: it was in their hand all along.
+                Button("Used command") { session.revealHiddenTactic(card.name, as: .usedAsCommand, for: side) }
+                    .tint(.orange)
+                Button("Discarded") { session.revealHiddenTactic(card.name, as: .discarded, for: side) }
+                    .tint(.gray)
+                Button("Show in hand") { session.revealHiddenTactic(card.name, as: .inHand, for: side) }
+                    .tint(.blue)
+            } else {
+                Button("To hand") { session.setTactic(card.name, to: .inHand, for: side) }
+                    .tint(.blue)
+            }
         case .inHand:
             Button("Command") { session.setTactic(card.name, to: .usedAsCommand, for: side) }
                 .tint(.orange)
@@ -88,8 +120,10 @@ struct TacticCardRow: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
             Text(card.name).font(.subheadline.bold())
-            Text("Tactic: ").font(.caption.bold()) + Text(card.tactic).font(.caption)
-            (Text("Command — \(card.command.name) (\(card.command.timingText)): ").font(.caption.bold())
+            (Text("Tactic: ").font(.caption.bold()).foregroundColor(SpearheadTheme.jade)
+                + Text(card.tactic).font(.caption))
+            (Text("Command — \(card.command.name) (\(card.command.timingText)): ")
+                .font(.caption.bold()).foregroundColor(SpearheadTheme.flame)
                 + Text(card.command.effect).font(.caption))
         }
         .padding(.vertical, 3)

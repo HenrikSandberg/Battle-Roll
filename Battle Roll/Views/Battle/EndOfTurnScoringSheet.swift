@@ -2,6 +2,9 @@ import SwiftUI
 
 /// Official end-of-turn scoring: up to 3 objective VP, 1 VP per completed
 /// battle tactic, plus any extra VP granted by the current twist.
+///
+/// If the active player's hand was tracked face down (an opponent), this is
+/// the moment their scored cards are revealed — pick them from the deck list.
 struct EndOfTurnScoringSheet: View {
     @ObservedObject var session: BattleSession
     @Environment(\.dismiss) private var dismiss
@@ -20,6 +23,21 @@ struct EndOfTurnScoringSheet: View {
             + completedTactics.count + twistExtra
     }
 
+    private var knownHand: [BattleTacticCard] {
+        season.battleTactics.filter { session.tacticLocation($0.name, for: side) == .inHand }
+    }
+
+    private var unrevealedDeck: [BattleTacticCard] {
+        season.battleTactics.filter { session.tacticLocation($0.name, for: side) == .inDeck }
+    }
+
+    /// How many of the selected tactics come from the face-down hand.
+    private var hiddenSelectedCount: Int {
+        completedTactics.filter { name in
+            session.tacticLocation(name, for: side) == .inDeck
+        }.count
+    }
+
     var body: some View {
         NavigationStack {
             Form {
@@ -30,31 +48,25 @@ struct EndOfTurnScoringSheet: View {
                 }
 
                 Section("Battle tactics completed this turn (+1 VP each)") {
-                    let hand = season.battleTactics.filter {
-                        session.tacticLocation($0.name, for: side) == .inHand
-                    }
-                    if hand.isEmpty {
+                    if knownHand.isEmpty && state[side].hiddenHandCount == 0 {
                         Text("No cards in hand.")
                             .foregroundStyle(.secondary)
                     }
-                    ForEach(hand) { card in
-                        Button {
-                            if completedTactics.contains(card.name) {
-                                completedTactics.remove(card.name)
-                            } else {
-                                completedTactics.insert(card.name)
-                            }
-                        } label: {
-                            HStack(alignment: .firstTextBaseline) {
-                                Image(systemName: completedTactics.contains(card.name)
-                                      ? "checkmark.circle.fill" : "circle")
-                                VStack(alignment: .leading, spacing: 2) {
-                                    Text(card.name).font(.subheadline.bold())
-                                    Text(card.tactic).font(.caption).foregroundStyle(.secondary)
-                                }
-                            }
+                    ForEach(knownHand) { card in
+                        tacticRow(card, disabled: false)
+                    }
+                }
+
+                if state[side].hiddenHandCount > 0 {
+                    Section {
+                        ForEach(unrevealedDeck) { card in
+                            tacticRow(card, disabled: !completedTactics.contains(card.name)
+                                      && hiddenSelectedCount >= state[side].hiddenHandCount)
                         }
-                        .buttonStyle(.plain)
+                    } header: {
+                        Text("Hidden hand — \(state[side].hiddenHandCount) face-down card\(state[side].hiddenHandCount == 1 ? "" : "s")")
+                    } footer: {
+                        Text("\(state[side].name)'s hand is tracked face down. Pick the card(s) they revealed and scored this turn — they'll move out of the hidden hand.")
                     }
                 }
 
@@ -91,6 +103,30 @@ struct EndOfTurnScoringSheet: View {
                 }
             }
         }
+    }
+
+    private func tacticRow(_ card: BattleTacticCard, disabled: Bool) -> some View {
+        Button {
+            if completedTactics.contains(card.name) {
+                completedTactics.remove(card.name)
+            } else {
+                completedTactics.insert(card.name)
+            }
+        } label: {
+            HStack(alignment: .firstTextBaseline) {
+                Image(systemName: completedTactics.contains(card.name)
+                      ? "checkmark.circle.fill" : "circle")
+                    .foregroundStyle(completedTactics.contains(card.name)
+                                     ? SpearheadTheme.jade : Color.secondary)
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(card.name).font(.subheadline.bold())
+                    Text(card.tactic).font(.caption).foregroundStyle(.secondary)
+                }
+            }
+        }
+        .buttonStyle(.plain)
+        .disabled(disabled)
+        .opacity(disabled ? 0.4 : 1)
     }
 
     private var season: SeasonPack { session.season }

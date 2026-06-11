@@ -13,16 +13,20 @@ struct HomeView: View {
                     VStack(spacing: 8) {
                         Image(systemName: "shield.lefthalf.filled")
                             .font(.system(size: 52))
-                            .foregroundStyle(.tint)
+                            .foregroundStyle(SpearheadTheme.goldGradient)
+                            .shadow(color: SpearheadTheme.gold.opacity(0.5), radius: 8)
                         Text("Spearhead Strategist")
                             .font(.title.bold())
+                            .foregroundStyle(.white)
                         Text("\(dataStore.armies.count) armies · \(dataStore.seasons.count) season pack\(dataStore.seasons.count == 1 ? "" : "s") loaded")
                             .font(.caption)
-                            .foregroundStyle(.secondary)
+                            .foregroundStyle(.white.opacity(0.85))
                     }
                     .frame(maxWidth: .infinity)
-                    .padding(.vertical, 12)
+                    .padding(.vertical, 24)
+                    .background(SpearheadTheme.fireGradient, in: RoundedRectangle(cornerRadius: 16))
                     .listRowBackground(Color.clear)
+                    .listRowInsets(EdgeInsets())
                 }
 
                 Section {

@@ -10,6 +10,7 @@ struct BattleRollApp: App {
             HomeView()
                 .environmentObject(dataStore)
                 .environmentObject(sessionStore)
+                .tint(SpearheadTheme.ember)
         }
     }
 }
