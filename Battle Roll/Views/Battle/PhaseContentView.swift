@@ -185,9 +185,9 @@ struct AbilityRow: View {
                 .font(.caption2.weight(.semibold))
                 .foregroundStyle(.purple)
             if let declare = ability.declare {
-                Text("Declare: ").font(.caption.bold()) + Text(declare).font(.caption)
+                abilityDetail("Declare", declare)
             }
-            Text("Effect: ").font(.caption.bold()) + Text(ability.effect).font(.caption)
+            abilityDetail("Effect", ability.effect)
             HStack {
                 Text(sourceLabel)
                     .font(.caption2)
@@ -205,6 +205,15 @@ struct AbilityRow: View {
         }
         .padding(.vertical, 4)
         .opacity(used ? 0.5 : 1)
+    }
+
+    private func abilityDetail(_ label: String, _ value: String) -> some View {
+        HStack(alignment: .firstTextBaseline, spacing: 0) {
+            Text("\(label): ")
+                .font(.caption.bold())
+            Text(value)
+                .font(.caption)
+        }
     }
 
     private var badgeColor: Color {
