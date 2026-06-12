@@ -1,0 +1,244 @@
+{
+  "id": "sand-and-bone",
+  "name": "Sand and Bone",
+  "battlefieldSize": "30\" x 22\"",
+  "realms": [
+    {
+      "id": "dolorum",
+      "name": "Dolorum",
+      "subtitle": "Shyish – The Bone Shore",
+      "twists": [
+        {
+          "name": "Haunted Locus",
+          "effect": "The underdog reveals the Icon of Nulahmia. If there is no underdog, the players roll off and the winner reveals the Icon of Nulahmia. The player that reveals the Icon of Nulahmia places the Icon of Nulahmia terrain feature anywhere on the battlefield, more than 3\" from each other terrain feature, more than 3\" from all units (friendly and enemy) and not touching an objective."
+        },
+        {
+          "name": "Overpowering Grief",
+          "effect": "The underdog picks an objective. If there is no underdog, the players roll off and the winner picks an objective. That objective is no longer controlled by any player and cannot be controlled this battle round."
+        },
+        {
+          "name": "Savage Mourning",
+          "effect": "Each player scores 1 victory point at the end of their turn for each friendly unit that is in combat with any enemy units. If there is an underdog, at the end of their turn, if there are more destroyed friendly units than destroyed enemy units, they score 1 additional victory point."
+        },
+        {
+          "name": "Survivor's Grief",
+          "effect": "Each player scores 1 victory point at the end of their turn for each friendly unit that is destroyed or that is a replacement unit. If there is an underdog, they can pick 1 friendly unit. If there is no underdog, the players roll off and the winner can pick a friendly unit. That unit can use Charge abilities even if they used a Retreat or Run ability in the same turn."
+        },
+        {
+          "name": "Banish Your Fears",
+          "effect": "Each player scores 1 extra victory point at the end of their turn for each objective they control that was controlled by their opponent at the start of their turn. In addition, if there is an underdog, they can pick 1 friendly unit. That unit's melee weapons have Anti-charge (+1 Rend) for the rest of the battle round."
+        },
+        {
+          "name": "Darkened Skies",
+          "effect": "The underdog picks 1 objective. If there is no underdog, the players roll off and the winner picks an objective. For the rest of the battle round, that objective is treated as being contested by a friendly unit of the player that picked it. That unit has a control score of 1 that cannot be modified. Note: if there are any enemy units contesting that objective, you will need a higher control score if you want to keep control of it at the end of the turn."
+        }
+      ]
+    },
+    {
+      "id": "ossia",
+      "name": "Ossia",
+      "subtitle": "Shyish – The Sand Reaches",
+      "twists": [
+        {
+          "name": "Will of the Necropolis",
+          "effect": "The underdog can pick 1 of the effects below. If there is no underdog, the players roll off and the winner can pick the effect. Adaptable Defence: Pick a friendly unit on the battlefield to be the target. Ignore all modifiers to save rolls for the target (positive and negative) for the rest of the battle round. Broken Will: Pick an enemy unit on the battlefield to be the target. The target has a maximum control score of 1 for the rest of the battle round."
+        },
+        {
+          "name": "Uncompromising Invasion",
+          "effect": "Each player scores 1 extra victory point at the end of their turn if they control 2 objectives not wholly within their territory that are not contested by any enemy units. In addition, if one of the players is the underdog, they can pick a friendly unit and then roll a D6. Add the result to that unit's control score for the rest of the battle round."
+        },
+        {
+          "name": "Disciplined Conquest",
+          "effect": "The underdog picks 2 objectives. If there is no underdog, each player picks 1 objective, starting with the active player. Each player scores 2 extra victory points at the end of their turn if they control both objectives."
+        },
+        {
+          "name": "Co-ordinated Bombardment",
+          "effect": "The underdog can pick an objective. If there is no underdog, the players roll off and the winner can pick an objective. Subtract 1 from hit rolls for enemy units while they are contesting that objective for the rest of the battle round."
+        },
+        {
+          "name": "Secured Supply Lines",
+          "effect": "The underdog picks 2 terrain features. If there is no underdog, each player picks a different terrain feature. Each player scores 1 extra victory point at the end of their turn if they control both terrain features. In addition, the underdog can pick 1 friendly unit. For the rest of the battle round, while that unit contests either of the terrain features that were picked, it has Ward (5+)."
+        },
+        {
+          "name": "Invincible Redoubts",
+          "effect": "The underdog can pick 1 of the effects below. If there is no underdog, the players roll off and the winner can pick the effect. Precision Strike: Pick a friendly unit. For the rest of the battle round, while that unit is wholly within friendly territory, it has Strike-First. Dissent in the Ranks: Pick an enemy unit. For the rest of the battle round, while that unit is wholly within friendly territory, it has Strike-Last."
+        }
+      ]
+    }
+  ],
+  "battleTactics": [
+    {
+      "name": "Morbid Consecration",
+      "tactic": "Complete at the end of your turn if you control 2 objectives that were not wholly within friendly territory. It cannot be the Dais of Blood or the Dais of the Necropolis.",
+      "command": {
+        "name": "Final Breath",
+        "timingText": "Your Hero Phase",
+        "phase": "hero",
+        "turn": "yours",
+        "window": "during",
+        "effect": "Pick a friendly unit that has not been destroyed and has not already been replaced. Set up either a replacement unit with a combined Health characteristic of up to 4, or a single-model replacement unit with X damage points already allocated (where X is its Health characteristic minus 4). The unit must be set up more than 6\" from all enemy units."
+      }
+    },
+    {
+      "name": "Attack on Two Fronts",
+      "tactic": "Complete at the end of your turn if you control 2 objectives that were controlled by your opponent at the start of the turn.",
+      "command": {
+        "name": "Translucent Flesh",
+        "timingText": "Reaction: Opponent declared an Attack ability",
+        "phase": "any",
+        "turn": "any",
+        "window": "reaction",
+        "effect": "Used by a unit targeted by that Attack ability. For the rest of the phase, if the unmodified hit roll or wound roll for an attack that targets this unit is 1–3, the attack fails and the attack sequence ends."
+      }
+    },
+    {
+      "name": "War of Attrition",
+      "tactic": "Complete at the end of your turn if any enemy units were destroyed this turn and more enemy units than friendly units were destroyed this turn.",
+      "command": {
+        "name": "Speed of Death",
+        "timingText": "End of Any Turn",
+        "phase": "endOfTurn",
+        "turn": "any",
+        "window": "end",
+        "effect": "Pick a friendly unit in combat. Remove that unit from the battlefield, then set it up again on the battlefield more than 6\" from all enemy units."
+      }
+    },
+    {
+      "name": "Desolate Landscapes",
+      "tactic": "Complete at the end of your turn if a friendly unit used a Fight ability this turn and that unit is not contesting an objective and is on the battlefield.",
+      "command": {
+        "name": "Aura of Endings",
+        "timingText": "Your Hero Phase",
+        "phase": "hero",
+        "turn": "yours",
+        "window": "during",
+        "effect": "Pick a friendly Hero contesting an objective to be the target, then pick each enemy unit contesting that objective. Roll a dice for each of those enemy units. On a 4+, inflict 2 mortal damage on that enemy unit."
+      }
+    },
+    {
+      "name": "Take Without Warning",
+      "tactic": "Complete at the end of your turn if you gain control of an objective that was controlled by your opponent at the start of the turn and none of the units contesting that objective used a Fight ability this turn.",
+      "command": {
+        "name": "Monument of Living Bone",
+        "timingText": "Any Hero Phase",
+        "phase": "hero",
+        "turn": "any",
+        "window": "during",
+        "effect": "Pick a terrain feature within friendly territory to be the target. The target is also treated as an objective."
+      }
+    },
+    {
+      "name": "The Dais of Blood",
+      "tactic": "Complete this battle tactic if you control the Dais of Blood at the end of your turn.",
+      "command": {
+        "name": "Unleash Bloodlust",
+        "timingText": "Enemy Combat Phase",
+        "phase": "combat",
+        "turn": "enemy",
+        "window": "during",
+        "effect": "Pick a friendly unit to use this ability. Add 1 to the Attacks characteristic of that unit's melee weapons for the rest of the turn. However, that unit has a maximum control score of 1 for the rest of the battle round."
+      }
+    },
+    {
+      "name": "The Grip of Death",
+      "tactic": "Complete at the end of your turn if you control 2 objectives not wholly within friendly territory.",
+      "command": {
+        "name": "Re-form the Line",
+        "timingText": "Enemy Movement Phase",
+        "phase": "movement",
+        "turn": "enemy",
+        "window": "during",
+        "effect": "Pick a friendly unit to use this ability. If that unit is in combat, it can use a Retreat ability as if it were your movement phase. If that unit is not in combat: if it is not damaged, roll a dice for each slain model — on a 5+, return 1 slain model to it; if it is damaged, roll a dice for each damage point — on a 5+, Heal (1) that unit."
+      }
+    },
+    {
+      "name": "Raid",
+      "tactic": "Complete at the end of your turn if any friendly units are wholly within enemy territory and not in combat.",
+      "command": {
+        "name": "Terrifying Assault",
+        "timingText": "Any Charge Phase",
+        "phase": "charge",
+        "turn": "any",
+        "window": "during",
+        "effect": "Pick a friendly unit that is in combat to be the target, then pick an enemy unit in combat with it to be the target. Roll a dice. Subtract the roll from the target's control score for the rest of the turn."
+      }
+    },
+    {
+      "name": "Dig Two Graves",
+      "tactic": "Complete at the end of your turn if any models were slain within friendly territory and any models were slain within enemy territory.",
+      "command": {
+        "name": "Counter-charge",
+        "timingText": "Enemy Charge Phase",
+        "phase": "charge",
+        "turn": "enemy",
+        "window": "during",
+        "effect": "Pick a friendly unit that is not in combat to use this ability. That unit can use a Charge ability as if it were your charge phase."
+      }
+    },
+    {
+      "name": "Hold Ground",
+      "tactic": "Complete at the end of your turn if you control the large terrain feature within friendly territory.",
+      "command": {
+        "name": "Frantic Scramble",
+        "timingText": "Any Combat Phase",
+        "phase": "combat",
+        "turn": "any",
+        "window": "during",
+        "effect": "Pick a friendly unit that is in combat to be the target. The target can move 3\". It can move into combat."
+      }
+    },
+    {
+      "name": "Raze",
+      "tactic": "Complete at the end of your turn if there are any friendly units within 3\" of the long battlefield edge in enemy territory.",
+      "command": {
+        "name": "Determined Effort",
+        "timingText": "Any Charge Phase",
+        "phase": "charge",
+        "turn": "any",
+        "window": "during",
+        "effect": "Pick a friendly unit that is not in combat to use this ability. Add D3 to charge rolls for that unit for the rest of the turn."
+      }
+    },
+    {
+      "name": "The Dais of the Necropolis",
+      "tactic": "Complete this battle tactic if you control the Dais of the Necropolis at the end of your turn.",
+      "command": {
+        "name": "Grind Them to Dust",
+        "timingText": "Any Combat Phase",
+        "phase": "combat",
+        "turn": "any",
+        "window": "during",
+        "effect": "Pick a friendly unit to use this ability. That unit can use 2 Fight abilities this phase. After the first is used, however, inflict D3 mortal damage on that unit and it has Strike-Last for the rest of the turn."
+      }
+    }
+  ],
+  "modules": [
+    {
+      "id": "mystical-terrain",
+      "name": "Mystical Terrain",
+      "summary": "Two Mystical terrain features. The Crypt of Blood is used on certain Ossia deployment maps. The Icon of Nulahmia is deployed when the Haunted Locus twist is drawn. Each grants a gamble once per turn (army): roll a dice, +1 if underdog — on a 4+ gain a benefit, otherwise suffer a penalty.",
+      "abilities": [
+        {
+          "name": "Unholy Draught",
+          "timingText": "Once Per Turn (Army), Any Combat Phase",
+          "phase": "combat",
+          "turn": "any",
+          "window": "during",
+          "frequency": "oncePerTurnArmy",
+          "declare": "Pick a friendly unit within 6\" of the Crypt of Blood terrain feature to be the target.",
+          "effect": "Roll a dice. Add 1 to the roll if you are the underdog. On a 4+, add 1 to hit rolls for the target's combat attacks for the rest of the turn. Otherwise, inflict D3 mortal damage on the target."
+        },
+        {
+          "name": "Veiled Promises",
+          "timingText": "Once Per Turn (Army), End of Any Turn",
+          "phase": "endOfTurn",
+          "turn": "any",
+          "window": "end",
+          "frequency": "oncePerTurnArmy",
+          "declare": "Pick a friendly unit within 6\" of the Icon of Nulahmia terrain feature to be the target.",
+          "effect": "Roll a dice. Add 1 to the roll if you are the underdog. On a 4+, add 3 to the target's control score for the rest of the turn. Otherwise, subtract 3 from the target's control score for the rest of the turn."
+        }
+      ]
+    }
+  ]
+}

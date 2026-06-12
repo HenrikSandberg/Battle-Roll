@@ -39,7 +39,8 @@ struct StartOfRoundView: View {
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .padding()
-                            .background(canBegin ? Color.accentColor : Color.gray, in: RoundedRectangle(cornerRadius: 12))
+                            .background(canBegin ? AnyShapeStyle(SpearheadTheme.fireGradient) : AnyShapeStyle(Color.gray),
+                                        in: RoundedRectangle(cornerRadius: 12))
                             .foregroundStyle(.white)
                     }
                     .disabled(!canBegin)
@@ -83,6 +84,7 @@ struct StartOfRoundView: View {
             }
         } label: {
             Label(isFirstRound ? "First turn" : "Priority roll", systemImage: "dice")
+                .foregroundStyle(SpearheadTheme.gold)
         }
     }
 
@@ -111,6 +113,7 @@ struct StartOfRoundView: View {
             }
         } label: {
             Label("Underdog", systemImage: "tortoise")
+                .foregroundStyle(SpearheadTheme.flame)
         }
     }
 
@@ -147,6 +150,7 @@ struct StartOfRoundView: View {
             }
         } label: {
             Label("Twist", systemImage: "tornado")
+                .foregroundStyle(SpearheadTheme.arcane)
         }
     }
 
@@ -159,7 +163,7 @@ struct StartOfRoundView: View {
         GroupBox {
             VStack(alignment: .leading, spacing: 10) {
                 Text(isFirstRound
-                     ? "Each player draws a hand of 3 battle tactic cards."
+                     ? "Each player draws a hand of 3 battle tactic cards. If you can't see your opponent's cards, track theirs as hidden cards."
                      : "Each player may discard any cards, then draws back up to 3.")
                     .font(.callout)
                 ForEach(PlayerSide.allCases) { side in
@@ -167,6 +171,9 @@ struct StartOfRoundView: View {
                         showTactics(side)
                     } label: {
                         HStack {
+                            Circle()
+                                .fill(side.themeColor)
+                                .frame(width: 10, height: 10)
                             Text("\(state[side].name): \(state[side].handCount)/3 in hand")
                             Spacer()
                             Image(systemName: "rectangle.stack")
@@ -178,6 +185,7 @@ struct StartOfRoundView: View {
             }
         } label: {
             Label("Battle tactic cards", systemImage: "rectangle.stack")
+                .foregroundStyle(SpearheadTheme.ember)
         }
     }
 
