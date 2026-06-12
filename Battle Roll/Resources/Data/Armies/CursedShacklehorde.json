@@ -80,11 +80,11 @@
       "name": "Spectral Howl",
       "declare": "Pick an enemy unit within 12\" of your general to be the target.",
       "effect": "For the rest of the turn, subtract 1 from the number of dice rolled when making charge rolls for the target, to a minimum of 1.",
-      "timingText": "Once Per Battle, Any Hero Phase",
+      "timingText": "Your Hero Phase",
       "phase": "hero",
-      "turn": "any",
+      "turn": "yours",
       "window": "during",
-      "frequency": "oncePerBattle"
+      "frequency": "unlimited"
     }
   ],
   "units": [
@@ -178,8 +178,8 @@
       "instances": 2,
       "modelsPerUnit": 5,
       "move": "8\"",
-      "health": 1,
-      "save": "5+",
+      "health": 2,
+      "save": "6+",
       "control": 1,
       "keywords": ["Infantry", "Fly", "Ward (5+)"],
       "reinforcements": false,
@@ -206,7 +206,7 @@
       "modelsPerUnit": 2,
       "move": "12\"",
       "health": 3,
-      "save": "6+",
+      "save": "5+",
       "control": 1,
       "keywords": ["Cavalry", "Fly", "Ward (5+)"],
       "reinforcements": false,

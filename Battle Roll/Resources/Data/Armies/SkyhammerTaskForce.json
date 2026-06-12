@@ -6,6 +6,7 @@
   "battleTraits": [
     {
       "name": "Ply the Skies",
+      "declare": "Reaction: You declared a non-Charge Move ability for an Arkanaut Frigate",
       "effect": "Pick a friendly Infantry unit that is wholly within the combat range of that Arkanaut Frigate and not in combat to be transported. Remove that Infantry unit from the battlefield. Then, when the Arkanaut Frigate ends its move, set up the Infantry unit on the battlefield again, wholly within the combat range of the Arkanaut Frigate and not in combat. A unit cannot use Charge abilities if it was transported in the same turn.",
       "timingText": "Reaction: You declared a non-Charge Move ability for an Arkanaut Frigate",
       "phase": "movement",
@@ -39,6 +40,7 @@
   "enhancements": [
     {
       "name": "There's No Reward Without Risk",
+      "declare": "Reaction: You declared a Charge ability for a unit wholly within 12\" of your general",
       "effect": "You can re-roll the charge roll for that Charge ability.",
       "timingText": "Once Per Battle, Reaction: You declared a Charge ability for a unit wholly within 12\" of your general",
       "phase": "charge",
@@ -182,7 +184,7 @@
           "declare": "Pick an enemy unit in combat with this unit to be the target, then roll a dice.",
           "effect": "On a 2+, inflict 1 mortal damage on the target, and this unit can immediately use the 'Retreat' ability without any mortal damage being inflicted on it.",
           "timingText": "End of Any Turn",
-          "phase": "any",
+          "phase": "endOfTurn",
           "turn": "any",
           "window": "end",
           "frequency": "unlimited"
