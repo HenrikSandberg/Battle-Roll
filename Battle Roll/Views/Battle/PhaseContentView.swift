@@ -19,8 +19,8 @@ struct PhaseContentView: View {
                 startOfTurnChecklist
             }
 
-            abilitySection(for: active, title: "\(state[active].name) — your turn")
-            abilitySection(for: active.other, title: "\(state[active.other].name) — reactions")
+            playerAbilitySection(for: active, title: "\(state[active].name) — your turn")
+            playerAbilitySection(for: active.other, title: "\(state[active.other].name) — reactions")
 
             if state.desolationEnabled, state.phase == .hero {
                 desolationSection
@@ -30,7 +30,8 @@ struct PhaseContentView: View {
                 Section {
                     DisclosureGroup("Core abilities", isExpanded: $showCore) {
                         ForEach(PhaseEngine.coreAbilities(for: state.phase)) { core in
-                            AbilityRow(ability: core, sourceLabel: "Core", used: false, onToggleUsed: nil)
+                            AbilityRow(ability: core, style: .army, sourceLabel: "Core rules",
+                                       used: false, onToggleUsed: nil)
                         }
                     }
                 }
@@ -50,30 +51,105 @@ struct PhaseContentView: View {
     // MARK: - Sections
 
     @ViewBuilder
-    private func abilitySection(for side: PlayerSide, title: String) -> some View {
+    private func playerAbilitySection(for side: PlayerSide, title: String) -> some View {
         let items = PhaseEngine.items(for: side, session: session,
                                       phase: state.phase, includePassives: showPassives)
         if !items.isEmpty {
-            Section(title) {
-                ForEach(items) { item in
-                    abilityRow(item: item, side: side)
+            let armyItems = items.filter { if case .tacticCommand = $0.source { return false }; return true }
+            let cardItems = items.filter { if case .tacticCommand = $0.source { return true }; return false }
+
+            Section {
+                ForEach(armyItems) { item in
+                    armyAbilityRow(item: item, side: side)
                 }
+                if !cardItems.isEmpty {
+                    commandsDivider
+                    ForEach(cardItems) { item in
+                        cardCommandRow(item: item, side: side)
+                    }
+                }
+            } header: {
+                playerSectionHeader(title: title, side: side, armyCount: armyItems.count, cardCount: cardItems.count)
             }
         }
     }
 
     @ViewBuilder
-    private func abilityRow(item: AbilityItem, side: PlayerSide) -> some View {
+    private func playerSectionHeader(title: String, side: PlayerSide, armyCount: Int, cardCount: Int) -> some View {
+        HStack(spacing: 6) {
+            RoundedRectangle(cornerRadius: 2)
+                .fill(side.themeColor)
+                .frame(width: 3, height: 14)
+            Text(title)
+                .foregroundStyle(side.themeColor)
+                .fontWeight(.semibold)
+            Spacer()
+            if cardCount > 0 {
+                HStack(spacing: 3) {
+                    Image(systemName: "rectangle.stack.fill")
+                        .font(.caption2)
+                    Text("\(cardCount)")
+                        .font(.caption2.bold())
+                }
+                .foregroundStyle(SpearheadTheme.flame)
+                .padding(.horizontal, 6)
+                .padding(.vertical, 2)
+                .background(SpearheadTheme.flame.opacity(0.15), in: Capsule())
+            }
+        }
+        .textCase(nil)
+    }
+
+    @ViewBuilder
+    private var commandsDivider: some View {
+        HStack(spacing: 8) {
+            Rectangle().fill(SpearheadTheme.flame.opacity(0.35)).frame(height: 1)
+            HStack(spacing: 4) {
+                Image(systemName: "rectangle.stack.fill")
+                    .font(.caption2)
+                Text("Battle Tactic Commands")
+                    .font(.caption.bold())
+            }
+            .foregroundStyle(SpearheadTheme.flame)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 3)
+            .background(SpearheadTheme.flame.opacity(0.12), in: Capsule())
+            Rectangle().fill(SpearheadTheme.flame.opacity(0.35)).frame(height: 1)
+        }
+        .listRowBackground(Color.clear)
+        .listRowInsets(EdgeInsets(top: 6, leading: 0, bottom: 6, trailing: 0))
+    }
+
+    @ViewBuilder
+    private func armyAbilityRow(item: AbilityItem, side: PlayerSide) -> some View {
         let used = session.isUsed(key: item.usageKey, frequency: item.ability.frequency, side: side)
+        AbilityRow(
+            ability: item.ability,
+            style: .army,
+            sourceLabel: item.sourceLabel,
+            used: used,
+            onToggleUsed: item.ability.frequency == .passive || item.ability.frequency == .unlimited ? nil : {
+                if used {
+                    session.unmarkUsed(key: item.usageKey, side: side)
+                } else {
+                    session.markUsed(key: item.usageKey, frequency: item.ability.frequency, side: side)
+                }
+            }
+        )
+    }
+
+    @ViewBuilder
+    private func cardCommandRow(item: AbilityItem, side: PlayerSide) -> some View {
         if case .tacticCommand(let card) = item.source {
-            AbilityRow(ability: item.ability, sourceLabel: "Command card", used: false, onToggleUsed: nil)
+            AbilityRow(ability: item.ability, style: .tacticCard, sourceLabel: card.name,
+                       used: false, onToggleUsed: nil)
                 .swipeActions(edge: .trailing) {
                     Button {
                         session.setTactic(card.name, to: .usedAsCommand, for: side)
                     } label: {
                         Label("Use command", systemImage: "bolt.fill")
                     }
-                    .tint(.orange)
+                    .tint(SpearheadTheme.flame)
                 }
                 .contextMenu {
                     Button {
@@ -82,19 +158,10 @@ struct PhaseContentView: View {
                         Label("Use as command (discard card)", systemImage: "bolt.fill")
                     }
                 }
-        } else {
-            AbilityRow(ability: item.ability,
-                       sourceLabel: item.sourceLabel,
-                       used: used,
-                       onToggleUsed: item.ability.frequency == .passive || item.ability.frequency == .unlimited ? nil : {
-                if used {
-                    session.unmarkUsed(key: item.usageKey, side: side)
-                } else {
-                    session.markUsed(key: item.usageKey, frequency: item.ability.frequency, side: side)
-                }
-            })
         }
     }
+
+    // MARK: - Other sections
 
     private var startOfTurnChecklist: some View {
         Section("Start of turn") {
@@ -146,66 +213,158 @@ struct PhaseContentView: View {
             }
             if let module = session.desolationModule {
                 ForEach(module.abilities) { a in
-                    AbilityRow(ability: a, sourceLabel: module.name, used: false, onToggleUsed: nil)
+                    AbilityRow(ability: a, style: .army, sourceLabel: module.name, used: false, onToggleUsed: nil)
                 }
             }
         }
     }
 }
 
-/// A single ability card row.
+// MARK: - AbilityRow
+
+enum AbilityRowStyle {
+    case army       // army ability / battle trait / unit ability
+    case tacticCard // battle tactic card command
+}
+
+/// A single ability card row — styled differently for army abilities vs tactic card commands.
 struct AbilityRow: View {
     let ability: AbilityData
+    var style: AbilityRowStyle = .army
     let sourceLabel: String
     let used: Bool
     let onToggleUsed: (() -> Void)?
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            HStack(alignment: .firstTextBaseline) {
-                if ability.window == .start {
-                    Image(systemName: "bell.fill")
-                        .font(.caption)
-                        .foregroundStyle(SpearheadTheme.gold)
-                }
-                Text(ability.name)
-                    .font(.subheadline.bold())
-                    .strikethrough(used)
-                Spacer()
-                if let badge = ability.frequency.badgeText {
-                    Text(badge)
-                        .font(.caption2.bold())
-                        .padding(.horizontal, 6)
-                        .padding(.vertical, 2)
-                        .background(badgeColor.opacity(0.2), in: Capsule())
-                        .foregroundStyle(badgeColor)
-                }
-            }
-            Text(ability.timingText)
-                .font(.caption2.weight(.semibold))
-                .foregroundStyle(SpearheadTheme.arcane)
-            if let declare = ability.declare {
-                abilityDetail("Declare", declare)
-            }
-            abilityDetail("Effect", ability.effect)
-            HStack {
-                Text(sourceLabel)
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
-                Spacer()
-                if let onToggleUsed {
-                    Button(used ? "Used ✓" : "Mark used") {
-                        onToggleUsed()
+        switch style {
+        case .army:
+            armyRow
+        case .tacticCard:
+            tacticCardRow
+        }
+    }
+
+    // MARK: Army ability row
+
+    private var armyRow: some View {
+        HStack(alignment: .top, spacing: 10) {
+            // Phase-colored left accent strip
+            RoundedRectangle(cornerRadius: 2)
+                .fill(accentColor.opacity(0.7))
+                .frame(width: 3)
+                .padding(.vertical, 4)
+
+            VStack(alignment: .leading, spacing: 5) {
+                HStack(alignment: .firstTextBaseline) {
+                    if ability.window == .start {
+                        Image(systemName: "bell.fill")
+                            .font(.caption)
+                            .foregroundStyle(SpearheadTheme.gold)
                     }
-                    .font(.caption.bold())
-                    .buttonStyle(.bordered)
-                    .controlSize(.mini)
+                    Text(ability.name)
+                        .font(.subheadline.bold())
+                        .strikethrough(used)
+                    Spacer()
+                    if let badge = ability.frequency.badgeText {
+                        Text(badge)
+                            .font(.caption2.bold())
+                            .padding(.horizontal, 6)
+                            .padding(.vertical, 2)
+                            .background(badgeColor.opacity(0.18), in: Capsule())
+                            .foregroundStyle(badgeColor)
+                    }
+                }
+
+                // Timing bar
+                Text(ability.timingText)
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(SpearheadTheme.arcane)
+
+                if let declare = ability.declare {
+                    abilityDetail("Declare", declare)
+                }
+                abilityDetail("Effect", ability.effect)
+
+                HStack {
+                    Text(sourceLabel)
+                        .font(.caption2)
+                        .foregroundStyle(.tertiary)
+                    Spacer()
+                    if let onToggleUsed {
+                        Button(used ? "Used ✓" : "Mark used") {
+                            onToggleUsed()
+                        }
+                        .font(.caption.bold())
+                        .buttonStyle(.bordered)
+                        .controlSize(.mini)
+                        .tint(accentColor)
+                    }
                 }
             }
         }
         .padding(.vertical, 4)
-        .opacity(used ? 0.5 : 1)
+        .opacity(used ? 0.45 : 1)
     }
+
+    // MARK: Tactic card command row
+
+    private var tacticCardRow: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            // Card banner header
+            HStack(spacing: 7) {
+                Image(systemName: "rectangle.stack.fill")
+                    .font(.caption2.bold())
+                Text(sourceLabel)
+                    .font(.caption2.bold())
+                    .lineLimit(1)
+                Spacer()
+                Text("Swipe → to use")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+            }
+            .foregroundStyle(SpearheadTheme.flame)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(SpearheadTheme.flame.opacity(0.1))
+
+            // Ability content
+            VStack(alignment: .leading, spacing: 5) {
+                HStack(alignment: .firstTextBaseline) {
+                    Image(systemName: "bolt.fill")
+                        .font(.caption)
+                        .foregroundStyle(SpearheadTheme.flame)
+                    Text(ability.name)
+                        .font(.subheadline.bold())
+                    Spacer()
+                }
+
+                Text(ability.timingText)
+                    .font(.caption2.weight(.semibold))
+                    .foregroundStyle(SpearheadTheme.arcane)
+
+                if let declare = ability.declare {
+                    abilityDetail("Declare", declare)
+                }
+                abilityDetail("Effect", ability.effect)
+
+                Text("Using as command discards this card — it cannot be scored as a battle tactic.")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .italic()
+                    .padding(.top, 2)
+            }
+            .padding(.horizontal, 10)
+            .padding(.vertical, 8)
+        }
+        .background(
+            RoundedRectangle(cornerRadius: 8)
+                .stroke(SpearheadTheme.flame.opacity(0.35), lineWidth: 1)
+        )
+        .clipShape(RoundedRectangle(cornerRadius: 8))
+        .listRowInsets(EdgeInsets(top: 4, leading: 16, bottom: 4, trailing: 16))
+    }
+
+    // MARK: Helpers
 
     private func abilityDetail(_ label: String, _ value: String) -> some View {
         HStack(alignment: .firstTextBaseline, spacing: 0) {
@@ -214,6 +373,13 @@ struct AbilityRow: View {
             Text(value)
                 .font(.caption)
         }
+    }
+
+    private var accentColor: Color {
+        if ability.frequency == .passive { return SpearheadTheme.steel }
+        if ability.window == .start { return SpearheadTheme.gold }
+        if ability.window == .reaction { return SpearheadTheme.ember }
+        return SpearheadTheme.jade
     }
 
     private var badgeColor: Color {
