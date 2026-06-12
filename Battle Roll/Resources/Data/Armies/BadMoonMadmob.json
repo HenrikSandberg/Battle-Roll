@@ -21,7 +21,7 @@
       "phase": "movement",
       "turn": "yours",
       "window": "during",
-      "frequency": "unlimited"
+      "frequency": "oncePerBattle"
     }
   ],
   "regimentAbilities": [

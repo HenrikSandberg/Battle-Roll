@@ -29,11 +29,11 @@
       "name": "Covered in Mud",
       "declare": "Pick a friendly unit to use this ability.",
       "effect": "In this battle, that unit is not visible to enemy models that are more than 12\" away from it.",
-      "timingText": "Passive",
-      "phase": "any",
-      "turn": "any",
+      "timingText": "Once Per Battle, Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
       "window": "during",
-      "frequency": "passive"
+      "frequency": "oncePerBattle"
     }
   ],
   "enhancements": [
