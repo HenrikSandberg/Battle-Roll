@@ -1,0 +1,197 @@
+{
+  "id": "ironjawz-bigmob",
+  "name": "Ironjawz Bigmob",
+  "faction": "Orruk Warclans",
+  "grandAlliance": "Destruction",
+  "battleTraits": [
+    {
+      "name": "Mighty Destroyers",
+      "declare": "Pick a friendly unit that was not set up this turn to be the target.",
+      "effect": "The target can move up to 3\". It can move into combat. If it was in combat at the start of the move, it must end that move in combat.",
+      "timingText": "Once Per Turn (Army), Any Hero Phase",
+      "phase": "hero",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerTurnArmy"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Natural Disaster",
+      "effect": "If you make an unmodified charge roll of 8+ for a friendly unit, add 1 to the Attacks characteristic of that unit's melee weapons for the rest of the turn.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "A Proper Ruckus",
+      "effect": "All friendly units on the battlefield that were not set up this turn are the targets of that ability instead.",
+      "timingText": "Once Per Battle, Reaction: You declared the 'Mighty Destroyers' ability",
+      "phase": "hero",
+      "turn": "any",
+      "window": "reaction",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Amberbone Whetstone",
+      "effect": "The Rend characteristic of your general's melee weapons is 2.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Trophy Skulls",
+      "effect": "Your general's Control characteristic is 5.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Armour of Gork",
+      "effect": "Your general has Ward (6+).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Mega Bossy",
+      "effect": "If this unit charged this turn, for the rest of the turn, add 1 to charge rolls for friendly units while they are wholly within 12\" of this unit.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "units": [
+    {
+      "name": "Megaboss",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "4\"",
+      "health": 8,
+      "save": "3+",
+      "control": 2,
+      "keywords": ["Hero", "Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Boss-choppa", "attacks": "8", "hit": "4+", "wound": "2+", "rend": "1", "damage": "2", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Get Stuck In, Ladz!",
+          "declare": "Pick this unit or a friendly Brute unit wholly within 12\" of this unit to be the target.",
+          "effect": "Roll a dice. On a 2+, add 1 to the Attacks characteristic of the target's melee weapons until the start of your next turn.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Brute Ragerz",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "4\"",
+      "health": 3,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry", "Brute", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Rager Weapons", "attacks": "3", "hit": "4+", "wound": "2+", "rend": "1", "damage": "2", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Unleashed Rage",
+          "effect": "This unit has Strike-first if it charged in the same turn.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    },
+    {
+      "name": "Ardboyz",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 5,
+      "move": "4\"",
+      "health": 2,
+      "save": "3+",
+      "control": 1,
+      "keywords": ["Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Choppa or Stikka", "attacks": "2", "hit": "4+", "wound": "3+", "rend": "1", "damage": "1", "abilities": ["Anti-charge (+1 Rend)"] }
+      ],
+      "abilities": [
+        {
+          "name": "Shield Bash",
+          "declare": "Pick an enemy unit within 1\" of this unit to be the target.",
+          "effect": "Make a shield bash roll of D6 for each model in this unit that is within 3\" of the target. For each 6, inflict 1 mortal damage on the target.",
+          "timingText": "Any Combat Phase",
+          "phase": "combat",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Brutes",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 5,
+      "move": "4\"",
+      "health": 3,
+      "save": "3+",
+      "control": 1,
+      "keywords": ["Infantry", "Brute"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Brute Weapons", "attacks": "3", "hit": "4+", "wound": "3+", "rend": "1", "damage": "2", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "'Ere We Go!",
+          "effect": "Set up this unit anywhere on the battlefield more than 6\" from all enemy units.",
+          "timingText": "Your Movement Phase",
+          "phase": "movement",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        },
+        {
+          "name": "You Messin'?",
+          "effect": "Enemy units with a Health characteristic of 1 or 2 cannot contest objectives while they are in combat with this unit.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    }
+  ]
+}

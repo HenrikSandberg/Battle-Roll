@@ -1,0 +1,271 @@
+{
+  "id": "bleak-host",
+  "name": "Bleak Host",
+  "faction": "Maggotkin of Nurgle",
+  "grandAlliance": "Chaos",
+  "battleTraits": [
+    {
+      "name": "The Infectious Hosts",
+      "effect": "One of your Pusgoyle Blightlords and one of your Plaguebearers units are not set up during the deployment phase. Instead, from the third battle round onwards, they can use the Daemonic Summoning ability.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Diseased",
+      "effect": "Each time an attack made by a friendly model scores a critical hit, you receive 1 disease point, to a maximum of 7.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Locus of Fecundity",
+      "declare": "Pick a friendly unit.",
+      "effect": "Heal (D3) that unit.",
+      "timingText": "Once Per Phase, Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerPhase"
+    },
+    {
+      "name": "Infested with Wonders",
+      "effect": "Each time a friendly model is slain, before it is removed from play, you can pick an enemy unit within 1\" of it and roll a dice. On a 4+, inflict 1 mortal damage on that unit.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Daemonic Summoning",
+      "effect": "Set up this unit anywhere on the battlefield more than 6\" from all enemy units.",
+      "timingText": "Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Nurgle's Embrace",
+      "effect": "Spend any number of your disease points. For each disease point you spend, pick an enemy unit that is in combat with any of your units and roll a dice. On a 5+, inflict 1 mortal damage on that unit (you can pick the same enemy unit more than once).",
+      "timingText": "End of Any Turn",
+      "phase": "endOfTurn",
+      "turn": "any",
+      "window": "end",
+      "frequency": "unlimited"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Gift of Febrile Frenzy",
+      "effect": "Until the end of the phase, add 1 to the Attacks characteristic of melee weapons used by friendly units while they are wholly within 7\" of your general.",
+      "timingText": "Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Gardener of Nurgle",
+      "declare": "If your general is contesting an objective not contested by any enemy models, roll a dice.",
+      "effect": "On a 3+, that objective is considered by you to be desecrated. Friendly units have Ward (4+) while they are contesting a desecrated objective. If your opponent gains control of a desecrated objective, it is no longer desecrated.",
+      "timingText": "Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Pestilent Breath",
+      "declare": "Pick an enemy unit within 7\" of your general and roll a dice for each model in that unit.",
+      "effect": "For each 5+, inflict 1 mortal damage on that unit.",
+      "timingText": "Your Shooting Phase",
+      "phase": "shooting",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Summoner of Plaguebearers",
+      "declare": "Pick a friendly Plaguebearers unit wholly within 14\" of your general.",
+      "effect": "Return 1 slain model to that unit.",
+      "timingText": "End of Any Turn",
+      "phase": "endOfTurn",
+      "turn": "any",
+      "window": "end",
+      "frequency": "unlimited"
+    }
+  ],
+  "units": [
+    {
+      "name": "Spoilpox Scrivener",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "4\"",
+      "health": 5,
+      "save": "5+",
+      "control": 2,
+      "keywords": ["Hero", "Infantry", "Ward (5+)"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        {
+          "name": "Disgusting Sneezes",
+          "range": "7\"",
+          "attacks": "D6",
+          "hit": "2+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Shoot in Combat"]
+        }
+      ],
+      "meleeWeapons": [
+        {
+          "name": "Distended Maw",
+          "attacks": "3",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "2",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Keep Counting, I'm Watching You",
+          "declare": "Pick a friendly Plaguebearers unit wholly within 14\" of this unit to be the target.",
+          "effect": "Pick 1 of the following. The effect lasts until the start of your next turn.\n\nTally of Blows: Add 1 to the Attacks characteristic of the target unit's melee weapons.\n\nRecorded Stamina: Add 1 to save rolls for the target unit.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Pusgoyle Blightlord",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 1,
+      "move": "8\"",
+      "health": 8,
+      "save": "4+",
+      "control": 2,
+      "keywords": ["Cavalry", "Fly", "Ward (5+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Blighted Scythe",
+          "attacks": "3",
+          "hit": "3+",
+          "wound": "3+",
+          "rend": "2",
+          "damage": "1",
+          "abilities": []
+        },
+        {
+          "name": "Rot Fly's Mouthparts and Sting",
+          "attacks": "6",
+          "hit": "4+",
+          "wound": "2+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Companion"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Wrack and Ruin",
+          "declare": "If this unit charged this phase, pick an enemy unit within 1\" of it to be the target and roll a dice.",
+          "effect": "On a 2+, inflict D3 mortal damage on the target.",
+          "timingText": "Any Charge Phase",
+          "phase": "charge",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Putrid Blightkings",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 5,
+      "move": "4\"",
+      "health": 3,
+      "save": "3+",
+      "control": 1,
+      "keywords": ["Infantry", "Ward (5+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Blighted Weapon",
+          "attacks": "4",
+          "hit": "3+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Relentless Attackers",
+          "declare": "Pick an enemy Infantry unit in combat with this unit to be the target and roll a dice for each model in this unit that is within the target unit's combat range.",
+          "effect": "For each roll that exceeds the target's Health characteristic, inflict 1 mortal damage on it.",
+          "timingText": "End of Any Turn",
+          "phase": "endOfTurn",
+          "turn": "any",
+          "window": "end",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Plaguebearers",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 5,
+      "move": "4\"",
+      "health": 2,
+      "save": "6+",
+      "control": 1,
+      "keywords": ["Infantry", "Ward (5+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Plaguesword",
+          "attacks": "1",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Crit (Mortal)"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Cloud of Flies",
+          "effect": "Subtract 1 from hit rolls for shooting attacks that target this unit.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    }
+  ]
+}

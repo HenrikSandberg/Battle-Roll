@@ -1,0 +1,269 @@
+{
+  "id": "bubonic-cell",
+  "name": "Bubonic Cell",
+  "faction": "Maggotkin of Nurgle",
+  "grandAlliance": "Chaos",
+  "battleTraits": [
+    {
+      "name": "Cycle of Corruption",
+      "effect": "If it is the first battle round, roll a dice to determine which Cycle ability can be used this battle round. If you roll a 5 or 6, roll again.\n\nIf it is not the first battle round, the next Cycle ability in the sequence is used this battle round instead of any previous Cycle abilities.\n\nThe sequence is: 1 Numberless Pests, 2 Plague of Misery, 3 Burgeoning Filth, 4 Nauseous Revulsion.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Numberless Pests",
+      "effect": "Subtract 1 from hit rolls for attacks that target friendly units.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Plague of Misery",
+      "effect": "While enemy units are within 6\" of any friendly units, they cannot use abilities that heal or return slain models to a unit.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Burgeoning Filth",
+      "effect": "Subtract 3 from the control scores of enemy units while they are in combat with any friendly units.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Nauseous Revulsion",
+      "effect": "Subtract 1 from charge rolls for enemy units.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Corruption of the Land",
+      "declare": "Pick a terrain feature, then roll a dice for each enemy unit within 3\" of that terrain feature.",
+      "effect": "On a 4+, inflict D3 mortal damage on that enemy unit.",
+      "timingText": "Once Per Turn (Army), End of Your Turn",
+      "phase": "endOfTurn",
+      "turn": "yours",
+      "window": "end",
+      "frequency": "oncePerTurnArmy"
+    },
+    {
+      "name": "Putrefied Ground",
+      "effect": "For the rest of the turn:\n\n• Subtract 1 from the Move characteristic of enemy units.\n• Subtract 1 from run rolls for enemy units.",
+      "timingText": "Once Per Battle, Enemy Hero Phase",
+      "phase": "hero",
+      "turn": "enemy",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Unnatural Vitality",
+      "effect": "Your general has Ward (4+).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Subcutaneous Suppuration",
+      "effect": "Subtract 1 from wound rolls for attacks that target your general.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Gaseous Emanation",
+      "declare": "Pick an enemy unit within your general's combat range to be the target.",
+      "effect": "The target has Strike-last for the rest of the turn.",
+      "timingText": "Once Per Battle, Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Overripe Death's Heads",
+      "declare": "If your general is not in combat, pick a visible enemy unit within 7\" of them to be the target.",
+      "effect": "Roll a dice. On a 4+, inflict 1 mortal damage on the target.",
+      "timingText": "Your Shooting Phase",
+      "phase": "shooting",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    }
+  ],
+  "units": [
+    {
+      "name": "Rotbringer Sorcerer",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "4\"",
+      "health": 6,
+      "save": "5+",
+      "control": 2,
+      "keywords": ["Hero", "Wizard", "Infantry", "Ward (6+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Rotwood Staff",
+          "attacks": "3",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "D3",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Fleshy Abundance",
+          "declare": "Pick a friendly unit wholly within 12\" of this unit to be the target, then make a casting roll of 2D6.",
+          "effect": "On a 6+, subtract 1 from wound rolls for attacks that target that friendly unit until the start of your next turn.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Nurglings",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 3,
+      "move": "4\"",
+      "health": 4,
+      "save": "6+",
+      "control": 1,
+      "keywords": ["Beast", "Ward (5+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Tiny Razor-Sharp Teeth",
+          "attacks": "5",
+          "hit": "5+",
+          "wound": "5+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Crit (Auto-wound)"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Endless Swarm",
+          "effect": "Heal (D3) this unit.",
+          "timingText": "End of Any Turn",
+          "phase": "endOfTurn",
+          "turn": "any",
+          "window": "end",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Beast of Nurgle",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "7\"",
+      "health": 8,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Beast", "Ward (5+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Filthy Claws and Slobbering Maw",
+          "attacks": "5",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "D3",
+          "abilities": ["Companion"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Attention Seekers",
+          "declare": "If this unit charged this phase, pick an enemy unit in combat with it to be the target.",
+          "effect": "Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+          "timingText": "Any Charge Phase",
+          "phase": "charge",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Rotmire Creed",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 10,
+      "move": "5\"",
+      "health": 1,
+      "save": "6+",
+      "control": 1,
+      "keywords": ["Infantry", "Ward (6+)"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        {
+          "name": "Contagion Blowpipes",
+          "range": "12\"",
+          "attacks": "2",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Crit (Auto-wound)"]
+        }
+      ],
+      "meleeWeapons": [
+        {
+          "name": "Bilewood Weapons",
+          "attacks": "2",
+          "hit": "4+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Bilewood Stilts",
+          "effect": "No mortal damage is inflicted on this unit when it uses Retreat abilities.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "id": "soulraid-hunt",
+  "name": "Soulraid Hunt",
+  "faction": "Idoneth Deepkin",
+  "grandAlliance": "Order",
+  "battleTraits": [
+    {
+      "name": "Tides of Death",
+      "effect": "In each battle round, all friendly units have the Tides of Death passive ability that corresponds to the current battle round number:\n\nRound 1 – Low Tide: Subtract 1 from hit rolls for shooting attacks that target this unit.\nRound 2 – Flood Tide: This unit can use a Run ability and still use Shoot and/or Charge abilities later in the turn.\nRound 3 – High Tide: This unit has Strike-first.\nRound 4 – Ebb Tide: This unit can use a Retreat ability and still use Shoot and/or Charge abilities later in the turn.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Way of the Cresting Wave",
+      "effect": "Add 1 to the Rend characteristic of melee weapons used by friendly Namarti Thralls units that charged in the same turn.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Ethersea Predators",
+      "effect": "Pick a friendly Cavalry unit that used a Fight ability this turn. Heal (D3) that unit.",
+      "timingText": "Once Per Turn (Army), End of Any Turn",
+      "phase": "any",
+      "turn": "any",
+      "window": "end",
+      "frequency": "oncePerTurnArmy"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Mind Flare",
+      "declare": "Pick an enemy unit in combat with your general.",
+      "effect": "Until the end of the phase, attacks made by that unit only score hits on unmodified hit rolls of 6.",
+      "timingText": "Once Per Battle, Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Arch-Ritualist",
+      "effect": "Add 1 to rolls for your general's 'Ritual of the Creeping Mist' ability.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Steelshell Armour",
+      "effect": "Ignore all modifiers to save rolls for your general (positive and negative).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Delicious Morsels",
+      "effect": "Heal (1) each friendly Cavalry unit within your general's combat range.",
+      "timingText": "Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    }
+  ],
+  "units": [
+    {
+      "name": "Isharann Soulscryer",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "6\"",
+      "health": 5,
+      "save": "5+",
+      "control": 2,
+      "keywords": ["Hero", "Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        {
+          "name": "Scryfish Shoal",
+          "range": "10\"",
+          "attacks": "8",
+          "hit": "5+",
+          "wound": "5+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Shoot in Combat", "Companion"]
+        }
+      ],
+      "meleeWeapons": [
+        {
+          "name": "Abyssal Touch",
+          "attacks": "3",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "D3",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Ritual of the Creeping Mist",
+          "declare": "Pick a visible friendly unit wholly within 12\" of this unit to be the target, then roll a dice.",
+          "effect": "On a 3+, until the start of your next turn, subtract 1 from wound rolls for attacks that target that unit.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Akhelian Morrsarr Guard",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "14\"",
+      "health": 4,
+      "save": "4+",
+      "control": 1,
+      "keywords": ["Cavalry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Voltspear",
+          "attacks": "2",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "1",
+          "damage": "1",
+          "abilities": ["Charge (+1 Damage)"]
+        },
+        {
+          "name": "Fangmora's Fangs and Lashing Tail",
+          "attacks": "3",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "D3",
+          "abilities": ["Companion"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Biovoltaic Blast",
+          "declare": "If this unit charged this phase, pick an enemy unit within 1\" of it to be the target, then roll a number of dice equal to the number of models in this unit.",
+          "effect": "For each 4-5, inflict 1 mortal damage on the target. For each 6+, inflict D3 mortal damage on the target. Add 1 to each roll if there are more models in the target unit than this unit.",
+          "timingText": "Once Per Battle, Any Charge Phase",
+          "phase": "charge",
+          "turn": "any",
+          "window": "during",
+          "frequency": "oncePerBattle"
+        }
+      ]
+    },
+    {
+      "name": "Akhelian Allopex",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "12\"",
+      "health": 8,
+      "save": "4+",
+      "control": 2,
+      "keywords": ["Cavalry", "Fly", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [
+        {
+          "name": "Razorshell Harpoon Launcher",
+          "range": "18\"",
+          "attacks": "2",
+          "hit": "3+",
+          "wound": "2+",
+          "rend": "1",
+          "damage": "3",
+          "abilities": ["Anti-Monster (+1 Rend)"]
+        }
+      ],
+      "meleeWeapons": [
+        {
+          "name": "Barbed Hooks and Blades",
+          "attacks": "4",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "1",
+          "damage": "1",
+          "abilities": []
+        },
+        {
+          "name": "Allopex's Ferocious Bite",
+          "attacks": "3",
+          "hit": "4+",
+          "wound": "2+",
+          "rend": "2",
+          "damage": "2",
+          "abilities": ["Companion"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Bloodthirsty Predators",
+          "effect": "Add 1 to the Attacks characteristic of this unit's Allopex's Ferocious Bite if it is within 6\" of any damaged enemy units or if it is within 6\" of any enemy units that have had any models slain in the same turn.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    },
+    {
+      "name": "Namarti Thralls",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 5,
+      "move": "6\"",
+      "health": 1,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Lanmari",
+          "attacks": "2",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "1",
+          "damage": "1",
+          "abilities": ["Anti-Infantry (+1 Rend)"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Sweeping Blows",
+          "effect": "Add 1 to the Damage characteristic of this unit's Lanmari for attacks that target an enemy Monster.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    }
+  ]
+}

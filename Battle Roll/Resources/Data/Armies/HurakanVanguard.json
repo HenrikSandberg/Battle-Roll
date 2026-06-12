@@ -1,0 +1,226 @@
+{
+  "id": "hurakan-vanguard",
+  "name": "Hurakan Vanguard",
+  "faction": "Lumineth Realm-lords",
+  "grandAlliance": "Order",
+  "battleTraits": [
+    {
+      "name": "Storm Brewing",
+      "declare": "Pick a battlefield edge to be the target.",
+      "effect": "That battlefield edge is leeward. For the rest of the battle, each time a friendly Ride the Hurricane ability is used, after that ability has been resolved, change the leeward battlefield edge to the next edge clockwise.",
+      "timingText": "Deployment Phase",
+      "phase": "deployment",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Pulled by the Winds",
+      "declare": "Pick a friendly unit that is not in combat to be the target.",
+      "effect": "The target can move D6\" but must end that move closer to the leeward battlefield edge. It can pass through the combat ranges of enemy units but cannot end that move in combat.",
+      "timingText": "Once Per Turn (Army), Any Movement Phase",
+      "phase": "movement",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerTurnArmy"
+    },
+    {
+      "name": "Gale Force",
+      "effect": "Add 1 to hit rolls for attacks made as part of that Attack ability if the target of that ability is closer to the leeward battlefield edge than the unit using this ability.",
+      "timingText": "Once Per Turn (Army), Reaction: You declared an Attack ability",
+      "phase": "any",
+      "turn": "any",
+      "window": "reaction",
+      "frequency": "oncePerTurnArmy"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Lifted Debris",
+      "declare": "Pick an enemy unit that is closer to the leeward battlefield edge than the large terrain feature within friendly territory to be the target.",
+      "effect": "Roll a number of dice equal to the current battle round number. For each 3+, inflict 1 mortal damage on the target.",
+      "timingText": "Once Per Battle (Army), Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Roaring Headwind",
+      "declare": "Pick an enemy unit to be the target.",
+      "effect": "For the rest of the turn, each time the target uses a Move ability, it must end that move closer to the leeward battlefield edge.",
+      "timingText": "Once Per Battle (Army), Enemy Hero Phase",
+      "phase": "hero",
+      "turn": "enemy",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Wind Whisperer",
+      "declare": "Pick a battlefield edge to be the target.",
+      "effect": "Change the leeward battlefield edge to the target battlefield edge.",
+      "timingText": "Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Temple Guardians",
+      "effect": "While any friendly Infantry units are within your general's combat range, both your general and those Infantry units have Ward (5+).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Scattered to the Winds",
+      "effect": "Subtract 1 from the control scores of enemy units within 6\" of your general for each friendly Ride the Hurricane ability used this battle round.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Curved Shots",
+      "effect": "You can measure the range and visibility of your general's shooting attacks from any point on the leeward battlefield edge.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "units": [
+    {
+      "name": "Hurakan Windmage",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "12\"",
+      "health": 5,
+      "save": "5+",
+      "control": 2,
+      "keywords": ["Hero", "Wizard", "Infantry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Windblast Vortex", "range": "12\"", "attacks": "1", "hit": "2+", "wound": "3+", "rend": "2", "damage": "D3", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Aspiragillum", "attacks": "3", "hit": "3+", "wound": "4+", "rend": "1", "damage": "D3", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Guide the Gusts",
+          "declare": "Pick a visible friendly unit wholly within 12\" of this unit to be the target, then make a casting roll of 2D6.",
+          "effect": "On a 6+, for the rest of the turn: The target can use Retreat abilities and still use Shoot and/or Charge abilities later in the turn. No mortal damage is inflicted on the target by Retreat abilities.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Hurakan Windchargers",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 5,
+      "move": "14\"",
+      "health": 3,
+      "save": "4+",
+      "control": 1,
+      "keywords": ["Cavalry"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Windcharger Bow", "range": "12\"", "attacks": "3", "hit": "3+", "wound": "4+", "rend": "1", "damage": "1", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Windcharger Blade", "attacks": "1", "hit": "4+", "wound": "4+", "rend": "0", "damage": "1", "abilities": [] },
+        { "name": "Treerunner's Claws", "attacks": "2", "hit": "5+", "wound": "3+", "rend": "0", "damage": "1", "abilities": ["Companion"] }
+      ],
+      "abilities": [
+        {
+          "name": "Leap into the Storm",
+          "effect": "If this unit is not in combat, remove it from the battlefield and set it up again wholly within 3\" of the leeward battlefield edge and more than 6\" from all enemy units.",
+          "timingText": "End of Your Turn",
+          "phase": "endOfTurn",
+          "turn": "yours",
+          "window": "end",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Vanari Auralan Wardens",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 10,
+      "move": "6\"",
+      "health": 1,
+      "save": "4+",
+      "control": 1,
+      "keywords": ["Infantry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Warden Pike and Blade", "attacks": "2", "hit": "3+", "wound": "4+", "rend": "0", "damage": "1", "abilities": ["Anti-charge (+1 Rend)", "Crit (Mortal)"] }
+      ],
+      "abilities": [
+        {
+          "name": "Wall of Blades",
+          "effect": "If this unit did not charge this turn and is in combat with an enemy unit that charged this turn, roll a dice. Add 1 to the roll if that enemy unit is Cavalry. On a 3+, this unit has Strike-first for the rest of the turn.",
+          "timingText": "Any Combat Phase",
+          "phase": "combat",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Hurakan Spirit of the Wind",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "18\"",
+      "health": 8,
+      "save": "4+",
+      "control": 5,
+      "keywords": ["Monster", "Fly", "Ward (5+)"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Bow of the Wind's Vengeance", "range": "15\"", "attacks": "4", "hit": "2+", "wound": "3+", "rend": "2", "damage": "2", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Swirling Shards", "attacks": "6", "hit": "2+", "wound": "4+", "rend": "0", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Eye of the Storm",
+          "effect": "Subtract 1 from hit rolls for attacks that target friendly units while they are wholly within 6\" of this unit.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        },
+        {
+          "name": "Hurricane Winds",
+          "declare": "Pick an enemy unit that had any damage points allocated to it this turn by this unit's shooting attacks to be the target.",
+          "effect": "Roll a dice. On a 3+, the target has Strike-last for the rest of the turn.",
+          "timingText": "Any Shooting Phase",
+          "phase": "shooting",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    }
+  ]
+}

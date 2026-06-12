@@ -86,22 +86,28 @@ struct BattleView: View {
     }
 
     private var scoreboard: some View {
-        HStack(spacing: 12) {
+        HStack(spacing: 8) {
             scoreCell(.one)
-            VStack(spacing: 2) {
-                Text(state.activePlayer == .one ? "◀ turn" : "turn ▶")
+            VStack(spacing: 4) {
+                Text("R\(state.round)")
+                    .font(.caption.bold())
+                    .foregroundStyle(SpearheadTheme.gold)
+                    .padding(.horizontal, 6)
+                    .padding(.vertical, 2)
+                    .background(SpearheadTheme.gold.opacity(0.15), in: Capsule())
+                Text("vs")
                     .font(.caption2)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(.tertiary)
                 if let underdog = state.underdog {
-                    Label(state[underdog].name, systemImage: "tortoise")
-                        .font(.caption2)
+                    Image(systemName: "tortoise.fill")
+                        .font(.caption)
                         .foregroundStyle(.orange)
-                        .labelStyle(.titleAndIcon)
                 }
             }
+            .frame(width: 36)
             scoreCell(.two)
         }
-        .padding(.horizontal)
+        .padding(.horizontal, 12)
         .padding(.vertical, 8)
     }
 
@@ -109,24 +115,43 @@ struct BattleView: View {
         let p = state[side]
         let isActive = state.activePlayer == side && state.stage != .startOfRound
         let color = side.themeColor
-        return VStack(spacing: 2) {
-            Text(p.name)
-                .font(.subheadline.weight(isActive ? .bold : .regular))
-                .lineLimit(1)
-            Text("\(p.totalVP) VP")
-                .font(.title2.bold().monospacedDigit())
-                .foregroundStyle(color)
-            Text("Hand: \(p.handCount) · Tactics: \(p.scoredTacticCount)")
-                .font(.caption2)
-                .foregroundStyle(.secondary)
+        return VStack(spacing: 3) {
+            HStack(spacing: 4) {
+                if isActive {
+                    Image(systemName: "arrowtriangle.right.fill")
+                        .font(.system(size: 8))
+                        .foregroundStyle(color)
+                }
+                Text(p.name)
+                    .font(.caption.weight(isActive ? .bold : .regular))
+                    .lineLimit(1)
+            }
+            Text("\(p.totalVP)")
+                .font(.system(size: 34, weight: .heavy, design: .rounded).monospacedDigit())
+                .foregroundStyle(isActive ? color : color.opacity(0.7))
+            Text("VP")
+                .font(.caption2.bold())
+                .foregroundStyle(color.opacity(0.7))
+                .offset(y: -6)
+            HStack(spacing: 8) {
+                Label("\(p.handCount)", systemImage: "rectangle.stack")
+                Label("\(p.scoredTacticCount)", systemImage: "checkmark.seal")
+            }
+            .font(.caption2)
+            .foregroundStyle(.secondary)
         }
         .frame(maxWidth: .infinity)
-        .padding(8)
-        .background(color.opacity(isActive ? 0.18 : 0.06),
-                    in: RoundedRectangle(cornerRadius: 10))
+        .padding(.vertical, 10)
+        .padding(.horizontal, 8)
+        .background(
+            isActive
+                ? AnyShapeStyle(color.opacity(0.15))
+                : AnyShapeStyle(Color.clear),
+            in: RoundedRectangle(cornerRadius: 12)
+        )
         .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .strokeBorder(isActive ? color : Color.clear, lineWidth: 1.5)
+            RoundedRectangle(cornerRadius: 12)
+                .strokeBorder(isActive ? color.opacity(0.6) : color.opacity(0.15), lineWidth: 1.5)
         )
     }
 
