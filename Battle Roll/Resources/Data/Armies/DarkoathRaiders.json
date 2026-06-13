@@ -1,0 +1,230 @@
+{
+  "id": "darkoath-raiders",
+  "name": "Darkoath Raiders",
+  "faction": "Slaves to Darkness",
+  "grandAlliance": "Chaos",
+  "battleTraits": [
+    {
+      "name": "Oaths of Darkness",
+      "effect": "You can reveal 1 battle tactic card in your hand to your opponent. If you do so, that battle tactic card becomes your oath for the rest of the turn.\n\nWhile this battle tactic card is your oath, you can still use the command on it, or attempt to score the battle tactic on it, as normal.\n\nIf you score the battle tactic on your oath this turn, your oath is fulfilled. Instead of discarding the card, it is placed to one side but you can still use the command on it. Once you do so, the card is discarded as normal. Fulfilled oaths placed to one side in this way do not count towards the 3 battle tactic cards you can have in your hand.\n\nIf you use the command on your oath before it is scored, it is discarded as normal. At the end of the turn, if the oath is still in your hand and that oath has not been fulfilled, it ceases to be your oath.",
+      "timingText": "Once Per Turn (Army), Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerTurnArmy"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Rage of Arkhar",
+      "declare": "Pick a friendly unit in combat to be the target.",
+      "effect": "For the rest of the turn, add 1 to the Attacks and Rend characteristics of the target's melee weapons.",
+      "timingText": "Once Per Turn (Army), Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerTurnArmy"
+    },
+    {
+      "name": "Fearless Invaders",
+      "declare": "Pick a friendly unit in combat to be the target.",
+      "effect": "If the target uses a Retreat ability this turn, no mortal damage is inflicted on it and it can still use Charge abilities later in the turn.",
+      "timingText": "Once Per Turn (Army), Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerTurnArmy"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Bloodthirsty Blade",
+      "effect": "The Rend characteristic of your general's Rune-etched Axe is 2.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Godshadow Talisman",
+      "effect": "Your general has Ward (4+).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Champion of Raids",
+      "declare": "Pick another friendly unit wholly within 12\" of your general to be the target.",
+      "effect": "The target can re-roll charge rolls for the rest of the turn.",
+      "timingText": "Your Charge Phase",
+      "phase": "charge",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Fell Ritualist",
+      "effect": "Each time you draw battle tactic cards, if your general is on the battlefield, you can choose to draw 1 additional battle tactic card, then put 1 of your battle tactic cards in your hand back at the bottom of your battle tactic deck.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "units": [
+    {
+      "name": "Darkoath Warqueen",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "5\"",
+      "health": 5,
+      "save": "5+",
+      "control": 2,
+      "keywords": ["Hero", "Infantry", "Ward (5+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Rune-etched Axe",
+          "attacks": "5",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "2",
+          "abilities": ["Crit (Mortal)"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Oath of Supremacy",
+          "declare": "Pick a friendly unit wholly within 12\" of your general to be the target.",
+          "effect": "Until the start of your next turn, add 1 to hit rolls for attacks made by the target.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Darkoath Savagers",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 10,
+      "move": "5\"",
+      "health": 1,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Darkoath Weapons",
+          "attacks": "2",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Crit (Mortal)"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Visions of Glory",
+          "effect": "If this unit includes a Godspeaker, roll 8 dice. For each 4+, until the start of your next turn, you can re-roll 1 hit roll, 1 wound roll, 1 run roll or 1 save roll for this unit.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Darkoath Fellriders",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 5,
+      "move": "12\"",
+      "health": 3,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Cavalry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Fellrider Blades",
+          "attacks": "2",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Charge (+1 Damage)"]
+        },
+        {
+          "name": "Warsteed's Hooves",
+          "attacks": "2",
+          "hit": "5+",
+          "wound": "3+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Companion"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Swift Attackers",
+          "effect": "Subtract 1 from hit rolls for shooting attacks that target this unit.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    },
+    {
+      "name": "Darkoath Marauders",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 10,
+      "move": "5\"",
+      "health": 1,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Raider Weapons",
+          "attacks": "2",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Glorious Death",
+          "effect": "Each time a model in this unit is slain by a combat attack and that model was in combat with the attacking unit, roll a dice. On a 5+, inflict 1 mortal damage on the attacking unit after the Fight ability has been resolved.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    }
+  ]
+}

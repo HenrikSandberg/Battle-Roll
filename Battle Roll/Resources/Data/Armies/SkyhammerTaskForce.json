@@ -1,0 +1,345 @@
+{
+  "id": "skyhammer-task-force",
+  "name": "Skyhammer Task Force",
+  "faction": "Kharadron Overlords",
+  "grandAlliance": "Order",
+  "battleTraits": [
+    {
+      "name": "Ply the Skies",
+      "declare": "Reaction: You declared a non-Charge Move ability for an Arkanaut Frigate",
+      "effect": "Pick a friendly Infantry unit that is wholly within the combat range of that Arkanaut Frigate and not in combat to be transported. Remove that Infantry unit from the battlefield. Then, when the Arkanaut Frigate ends its move, set up the Infantry unit on the battlefield again, wholly within the combat range of the Arkanaut Frigate and not in combat. A unit cannot use Charge abilities if it was transported in the same turn.",
+      "timingText": "Reaction: You declared a non-Charge Move ability for an Arkanaut Frigate",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "reaction",
+      "frequency": "unlimited"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Assault Boat",
+      "declare": "Pick a friendly unit that was transported this turn to use this ability.",
+      "effect": "That unit can still use Charge abilities later in the turn.",
+      "timingText": "Once Per Battle, Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Disengage",
+      "declare": "Pick a friendly Arkanaut Frigate to use this ability.",
+      "effect": "If that unit uses a Retreat ability this phase, no mortal damage is inflicted on it and it can still use Shoot abilities later in the turn.",
+      "timingText": "Once Per Battle, Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "There's No Reward Without Risk",
+      "declare": "Reaction: You declared a Charge ability for a unit wholly within 12\" of your general",
+      "effect": "You can re-roll the charge roll for that Charge ability.",
+      "timingText": "Once Per Battle, Reaction: You declared a Charge ability for a unit wholly within 12\" of your general",
+      "phase": "charge",
+      "turn": "yours",
+      "window": "reaction",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Masterwrought Armour",
+      "effect": "Your general has Ward (6+).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Flask of Vintage Gorogna",
+      "effect": "Heal (D6) your general.",
+      "timingText": "Once Per Battle, Any Hero Phase",
+      "phase": "hero",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Leave No Duardin Behind",
+      "declare": "Pick a friendly Arkanaut Company unit wholly within 12\" of your general and roll a dice for each slain model from that unit.",
+      "effect": "For each 4+, you can return 1 slain model to that unit.",
+      "timingText": "Once Per Battle, Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "units": [
+    {
+      "name": "Arkanaut Admiral",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "4\"",
+      "health": 6,
+      "save": "3+",
+      "control": 2,
+      "keywords": ["Hero", "Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        {
+          "name": "Masterwork Volley Pistol",
+          "range": "10\"",
+          "attacks": "3",
+          "hit": "3+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "2",
+          "abilities": ["Shoot in Combat"]
+        }
+      ],
+      "meleeWeapons": [
+        {
+          "name": "Skalfammer",
+          "attacks": "3",
+          "hit": "3+",
+          "wound": "2+",
+          "rend": "1",
+          "damage": "3",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Always Take What You Are Owed",
+          "declare": "Pick a friendly Arkanaut Company unit wholly within 12\" of this unit to be the target.",
+          "effect": "Add D6 to the target's control score until the start of your next turn.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Skywardens",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "12\"",
+      "health": 2,
+      "save": "4+",
+      "control": 1,
+      "keywords": ["Infantry", "Fly", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [
+        {
+          "name": "Vulcaniser Pistol",
+          "range": "10\"",
+          "attacks": "3",
+          "hit": "3+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "1",
+          "abilities": ["Shoot in Combat"]
+        },
+        {
+          "name": "Aethermatic Volley Gun",
+          "range": "15\"",
+          "attacks": "2D6",
+          "hit": "4+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "meleeWeapons": [
+        {
+          "name": "Skypike",
+          "attacks": "2",
+          "hit": "3+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "2",
+          "abilities": ["Crit (Mortal)"]
+        },
+        {
+          "name": "Gun Butt",
+          "attacks": "1",
+          "hit": "4+",
+          "wound": "5+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Timed Charges",
+          "declare": "Pick an enemy unit in combat with this unit to be the target, then roll a dice.",
+          "effect": "On a 2+, inflict 1 mortal damage on the target, and this unit can immediately use the 'Retreat' ability without any mortal damage being inflicted on it.",
+          "timingText": "End of Any Turn",
+          "phase": "endOfTurn",
+          "turn": "any",
+          "window": "end",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Arkanaut Company",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 5,
+      "move": "4\"",
+      "health": 1,
+      "save": "4+",
+      "control": 1,
+      "keywords": ["Infantry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [
+        {
+          "name": "Privateer Pistol",
+          "range": "10\"",
+          "attacks": "2",
+          "hit": "4+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Shoot in Combat"]
+        },
+        {
+          "name": "Aethermatic Volley Gun",
+          "range": "15\"",
+          "attacks": "2D6",
+          "hit": "4+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": []
+        },
+        {
+          "name": "Light Skyhook",
+          "range": "15\"",
+          "attacks": "1",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "2",
+          "damage": "D3",
+          "abilities": []
+        }
+      ],
+      "meleeWeapons": [
+        {
+          "name": "Arkanaut Cutter",
+          "attacks": "2",
+          "hit": "4+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": []
+        },
+        {
+          "name": "Gun Butt",
+          "attacks": "1",
+          "hit": "4+",
+          "wound": "5+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": []
+        },
+        {
+          "name": "Skypike",
+          "attacks": "2",
+          "hit": "3+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "2",
+          "abilities": ["Crit (Mortal)"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Glory-Seekers",
+          "effect": "Add 1 to hit rolls for attacks made by this unit that target a unit contesting an objective.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    },
+    {
+      "name": "Arkanaut Frigate",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "12\"",
+      "health": 15,
+      "save": "3+",
+      "control": 5,
+      "keywords": ["War Machine", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        {
+          "name": "Heavy Skyhook",
+          "range": "24\"",
+          "attacks": "2",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "2",
+          "damage": "D6",
+          "abilities": []
+        },
+        {
+          "name": "Aethershot Carbines",
+          "range": "12\"",
+          "attacks": "4",
+          "hit": "3+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "2",
+          "abilities": ["Shoot in Combat"]
+        }
+      ],
+      "meleeWeapons": [
+        {
+          "name": "Crew's Boarding Weapons",
+          "attacks": "8",
+          "hit": "4+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Battle Damaged",
+          "effect": "While this unit has 10 or more damage points, the Attacks characteristic of its Heavy Skyhook is 1.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        },
+        {
+          "name": "Bomb Racks",
+          "declare": "Pick an enemy unit that this unit passed across this phase to be the target, then roll a dice.",
+          "effect": "On a 2+, inflict D3 mortal damage on the target.",
+          "timingText": "Once Per Battle, Your Movement Phase",
+          "phase": "movement",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "oncePerBattle"
+        }
+      ]
+    }
+  ]
+}

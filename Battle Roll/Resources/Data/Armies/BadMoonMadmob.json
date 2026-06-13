@@ -1,0 +1,205 @@
+{
+  "id": "bad-moon-madmob",
+  "name": "Bad Moon Madmob",
+  "faction": "Gloomspite Gitz",
+  "grandAlliance": "Destruction",
+  "battleTraits": [
+    {
+      "name": "Under the Light of the Bad Moon",
+      "declare": "Pick a territory (either friendly territory or enemy territory) to be under the Light of the Bad Moon. If both players can use this ability, the players roll off and the winner picks a territory to be under the Light of the Bad Moon.",
+      "effect": "The territory picked remains under the Light of the Bad Moon in the first and second battle rounds. In the third and fourth battle rounds, the other territory is under the Light of the Bad Moon. While a friendly unit is wholly within the territory that is under the Light of the Bad Moon, the appropriate effect below applies to it:\n- Frothing Zealots: If the unit is a Moonclan Stabbas unit, add 3 to its control score.\n- Lunar Squigs: If the unit is a Squig Hoppers unit, no mortal damage is inflicted on it when it uses Retreat abilities.\n- Moonlit Hide: If the unit is a Rockgut Troggoths unit, add 1 to save rolls for it.",
+      "timingText": "Once Per Battle, Start of the First Battle Round",
+      "phase": "startOfRound",
+      "turn": "any",
+      "window": "start",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Squigalanche",
+      "effect": "One of your units of Squig Hoppers is not set up during the deployment phase. Instead, from the third battle round onwards, it can use the following ability: Set up this unit wholly within your territory, wholly within 3\" of a battlefield edge and more than 6\" from all enemy units.",
+      "timingText": "Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "The Lunatic Hordes",
+      "declare": "Pick a friendly Moonclan Stabbas unit to use this ability.",
+      "effect": "You can return up to D3 slain models to that unit.",
+      "timingText": "Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "The Hand of Gork",
+      "declare": "Pick a friendly unit that is not in combat to use this ability.",
+      "effect": "Remove that unit from the battlefield and set it up again more than 9\" from all enemy units.",
+      "timingText": "Once Per Battle (Army), Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Fight Another Day",
+      "declare": "Pick your general to use this ability if they used a Fight ability this turn.",
+      "effect": "Your general can make a 2D6\" move but cannot end that move in combat.",
+      "timingText": "End of Any Turn",
+      "phase": "endOfTurn",
+      "turn": "any",
+      "window": "end",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "The Clammy Cowl",
+      "effect": "Subtract 1 from hit rolls for attacks that target your general.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Hallucinogenic Fungus Brew",
+      "effect": "Your general has Ward (4+) in the first battle round, Ward (5+) in the second battle round, and Ward (6+) in the third and fourth battle rounds.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Nightshade Mushroom",
+      "declare": "Pick a friendly unit within your general's combat range.",
+      "effect": "That unit cannot be targeted by shooting attacks in the next shooting phase.",
+      "timingText": "Once Per Battle, Enemy Movement Phase",
+      "phase": "movement",
+      "turn": "enemy",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "units": [
+    {
+      "name": "Loonboss",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "5\"",
+      "health": 5,
+      "save": "4+",
+      "control": 2,
+      "keywords": ["Hero", "Infantry", "Ward (6+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Moon-slicer", "attacks": "5", "hit": "4+", "wound": "4+", "rend": "1", "damage": "D3", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "I'm Da Boss",
+          "declare": "Pick a friendly Moonclan Stabbas unit wholly within 12\" of this unit to be the target.",
+          "effect": "Pick 1:\n- Beckon the Loonatic Hordes: If the target unit is not in combat, you can return D6 slain models to it.\n- Stab 'Em Good!: Add 1 to hit rolls for attacks made by the target unit until the start of your next turn.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Squig Hoppers",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 5,
+      "move": "D6+8\"",
+      "health": 2,
+      "save": "6+",
+      "control": 1,
+      "keywords": ["Cavalry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Slitta", "attacks": "2", "hit": "4+", "wound": "5+", "rend": "0", "damage": "1", "abilities": [] },
+        { "name": "Squig's Fang-filled Gob", "attacks": "3", "hit": "4+", "wound": "3+", "rend": "1", "damage": "1", "abilities": ["Companion"] }
+      ],
+      "abilities": [
+        {
+          "name": "Boing! Boing! Boing!",
+          "declare": "Pick an enemy unit that any models in this unit passed across this phase to be the target, then roll a dice for each model in this unit that did so.",
+          "effect": "For each 4+, inflict 1 mortal damage on the target.",
+          "timingText": "Any Movement Phase",
+          "phase": "movement",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Rockgut Troggoths",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "6\"",
+      "health": 5,
+      "save": "4+",
+      "control": 2,
+      "keywords": ["Infantry", "Ward (5+)"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Throwin' Boulders", "range": "10\"", "attacks": "1", "hit": "5+", "wound": "2+", "rend": "2", "damage": "D3", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Massive Stone Maul", "attacks": "2", "hit": "4+", "wound": "2+", "rend": "2", "damage": "3", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Regeneration",
+          "effect": "Heal (D3) this unit.",
+          "timingText": "Start of Any Turn",
+          "phase": "startOfTurn",
+          "turn": "any",
+          "window": "start",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Moonclan Stabbas",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 10,
+      "move": "5\"",
+      "health": 1,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Stabba", "attacks": "2", "hit": "4+", "wound": "5+", "rend": "0", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Netters",
+          "declare": "Pick an enemy Infantry unit in combat with this unit to be the target.",
+          "effect": "Roll a dice. On a 2+, subtract 1 from hit rolls for attacks made by the target unit this phase.",
+          "timingText": "Any Combat Phase",
+          "phase": "combat",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    }
+  ]
+}

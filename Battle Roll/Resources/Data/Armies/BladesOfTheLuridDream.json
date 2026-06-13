@@ -1,0 +1,253 @@
+{
+  "id": "blades-of-the-lurid-dream",
+  "name": "Blades of the Lurid Dream",
+  "faction": "Hedonites of Slaanesh",
+  "grandAlliance": "Chaos",
+  "battleTraits": [
+    {
+      "name": "Temptations of Slaanesh",
+      "effect": "You receive 6 temptation dice at the start of the battle round. Each time your opponent makes a failed hit roll, a failed wound roll or a failed save roll, you can offer them a temptation dice. If they accept your offer, that roll is replaced with a 6. Rolls replaced in this way cannot be re-rolled or modified.\n\nEach time your opponent accepts your offer of a temptation dice, you gain D6 depravity points. Each time your opponent rejects your offer of a temptation dice, inflict D3 mortal damage on the unit for which the roll was made.\n\nYou cannot offer your opponent a temptation dice for the same enemy unit more than once per phase. At the end of the battle round, all remaining temptation dice are lost.\n\nAll friendly units gain passive abilities from the table below based on the number of depravity points you have. These abilities are cumulative.\n\n12+ depravity points: TANTALISING TORMENT - This unit can use a Run ability and still use Charge abilities later in the turn.\n18+ depravity points: SADISTIC SPITE - This unit's melee weapons have Crit (Mortal).\n24+ depravity points: OBLIVIOUS INDULGENCE - This unit has Ward (5+).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Unparalleled Speed",
+      "declare": "Pick a friendly unit to use this ability.",
+      "effect": "That unit has Strike-first this phase.",
+      "timingText": "Once Per Battle, Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Locus of Diversion",
+      "declare": "Pick a friendly unit to use this ability.",
+      "effect": "For the rest of the turn, that unit can use a Retreat ability and still use Shoot and/or Charge abilities later in the turn.",
+      "timingText": "Once Per Turn, Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerTurn"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Sceptre of Domination",
+      "declare": "Roll a dice for each enemy unit in combat with your general.",
+      "effect": "On a 5+, the unit being rolled for has Strike-last this phase.",
+      "timingText": "Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Twisted Mirror",
+      "declare": "Pick an enemy unit within 9\" of your general and roll a dice.",
+      "effect": "On a 4+, subtract 1 from save rolls for that unit until the start of your next turn.",
+      "timingText": "Once Per Turn, Your Shooting Phase",
+      "phase": "shooting",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerTurn"
+    },
+    {
+      "name": "Cacophonic Choir",
+      "declare": "Make a casting roll of 2D6.",
+      "effect": "On a 6+, make a cacophony roll of D6. Inflict D3 mortal damage on each enemy unit (roll for each) within 6\" of your general that has a Control characteristic less than the cacophony roll.",
+      "timingText": "Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Pendant of Slaanesh",
+      "effect": "Heal (D3) your general.",
+      "timingText": "Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    }
+  ],
+  "units": [
+    {
+      "name": "Shardspeaker of Slaanesh",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "6\"",
+      "health": 5,
+      "save": "5+",
+      "control": 2,
+      "keywords": ["Hero", "Wizard", "Infantry"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Haze Staff",
+          "attacks": "3",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "1",
+          "damage": "D3",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Vision of Damnation",
+          "declare": "Make a casting roll of 2D6.",
+          "effect": "On a 6+, roll 6 dice. For each 4+, you receive 1 depravity point.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Blissbarb Archers",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 5,
+      "move": "6\"",
+      "health": 1,
+      "save": "6+",
+      "control": 1,
+      "keywords": ["Infantry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [
+        {
+          "name": "Blissbarb Bow",
+          "range": "18\"",
+          "attacks": "2",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "1",
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "meleeWeapons": [
+        {
+          "name": "Sybarite Blade",
+          "attacks": "1",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Light-Footed Killers",
+          "effect": "This unit can use Shoot abilities even if it used a Run ability in the same turn.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    },
+    {
+      "name": "Slickblade Seekers",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 5,
+      "move": "12\"",
+      "health": 4,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Cavalry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Slickblade Glaive",
+          "attacks": "3",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "1",
+          "damage": "1",
+          "abilities": ["Charge (+1 Damage)"]
+        },
+        {
+          "name": "Exalted Steed's Poisoned Tongue",
+          "attacks": "3",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": ["Companion"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Unrivalled Velocity",
+          "effect": "You can re-roll charge rolls for this unit.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    },
+    {
+      "name": "Slaangor Fiendbloods",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "6\"",
+      "health": 3,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Razor-sharp Claws",
+          "attacks": "4",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "2",
+          "abilities": []
+        },
+        {
+          "name": "Razor-sharp Claw and Gilded Weapon",
+          "attacks": "5",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "2",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Slaughter at Any Cost",
+          "declare": "This unit can use this ability if any damage points were allocated to it this turn.",
+          "effect": "This unit can use the 'Normal Move' ability as if it were your movement phase.",
+          "timingText": "Enemy Shooting Phase",
+          "phase": "shooting",
+          "turn": "enemy",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    }
+  ]
+}

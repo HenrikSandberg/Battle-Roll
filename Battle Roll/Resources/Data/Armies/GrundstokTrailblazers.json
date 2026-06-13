@@ -1,0 +1,204 @@
+{
+  "id": "grundstok-trailblazers",
+  "name": "Grundstok Trailblazers",
+  "faction": "Kharadron Overlords",
+  "grandAlliance": "Order",
+  "battleTraits": [
+    {
+      "name": "Gunhauler Escort",
+      "effect": "Subtract 1 from hit rolls for attacks that target friendly Kharadron Overlords Infantry units while they are wholly within 6\" of a friendly Grundstok Gunhauler.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Rapid Relocation",
+      "declare": "Pick a friendly unit with Fly to be the target.",
+      "effect": "Remove the target from the battlefield and set it up again anywhere on the battlefield more than 6\" from all enemy units. The target cannot use Charge abilities this turn.",
+      "timingText": "Once Per Battle (Army), Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Propeller Downdraught",
+      "effect": "Subtract 1 from charge rolls for enemy units while they are within 9\" of a friendly Grundstok Gunhauler.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Emergency Fuel Injection Pods",
+      "effect": "Your general has Strike-first for the rest of the turn.",
+      "timingText": "Once Per Battle (Army), Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Prospector and Pioneer",
+      "effect": "Add 2 to your general's control score.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Celestium-Burst Bomblets",
+      "declare": "Pick an enemy unit in combat with your general to be the target.",
+      "effect": "Roll a dice. On a 3+, ward rolls cannot be made for the target for the rest of the turn.",
+      "timingText": "Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Extraction Fail-Safes",
+      "effect": "Subtract 1 from the number of damage points inflicted on this unit when it uses a Retreat ability.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    }
+  ],
+  "units": [
+    {
+      "name": "Endrinmaster with Dirigible Suit",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "12\"",
+      "health": 8,
+      "save": "3+",
+      "control": 2,
+      "keywords": ["Hero", "Infantry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Aethercannon", "range": "18\"", "attacks": "1", "hit": "3+", "wound": "3+", "rend": "2", "damage": "3", "abilities": [] },
+        { "name": "Dirigible Suit Weapon Battery", "range": "12\"", "attacks": "6", "hit": "3+", "wound": "3+", "rend": "1", "damage": "1", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Upgraded Aethermatic Saw", "attacks": "4", "hit": "3+", "wound": "3+", "rend": "2", "damage": "2", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Endrinmaster Extraordinaire",
+          "declare": "Pick a friendly unit with the Fly keyword that is wholly within 12\" of this unit to be the target.",
+          "effect": "Roll a D3. On a 2+, Heal (X) the target where X is equal to the roll.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Grundstok Thunderers",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 5,
+      "move": "4\"",
+      "health": 2,
+      "save": "3+",
+      "control": 1,
+      "keywords": ["Infantry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [
+        { "name": "Aethershot Rifle", "range": "18\"", "attacks": "2", "hit": "3+", "wound": "4+", "rend": "1", "damage": "1", "abilities": [] },
+        { "name": "Aetheric Fumigator or Decksweeper", "range": "10\"", "attacks": "5", "hit": "3+", "wound": "4+", "rend": "0", "damage": "1", "abilities": ["Shoot in Combat"] },
+        { "name": "Grundstok Mortar or Aethercannon", "range": "18\"", "attacks": "2", "hit": "4+", "wound": "3+", "rend": "1", "damage": "2", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Gun Butt", "attacks": "1", "hit": "4+", "wound": "5+", "rend": "0", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Bewilderblast Rounds",
+          "declare": "Pick an enemy unit that had any damage points allocated to it this phase by this unit's shooting attacks to be the target.",
+          "effect": "Subtract D6 from the target's control score for the rest of the turn.",
+          "timingText": "Once Per Battle (Army), Any Shooting Phase",
+          "phase": "shooting",
+          "turn": "any",
+          "window": "during",
+          "frequency": "oncePerBattle"
+        }
+      ]
+    },
+    {
+      "name": "Grundstok Gunhauler",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "14\"",
+      "health": 10,
+      "save": "2+",
+      "control": 2,
+      "keywords": ["War Machine", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [
+        { "name": "Sky Ordnance", "range": "15\"", "attacks": "3", "hit": "4+", "wound": "3+", "rend": "2", "damage": "3", "abilities": [] }
+      ],
+      "meleeWeapons": [
+        { "name": "Boarding Weapons", "attacks": "4", "hit": "4+", "wound": "4+", "rend": "0", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Gunhauler Overwatch",
+          "declare": "Pick an enemy unit that charged this turn and is in combat with this unit to be the target.",
+          "effect": "Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+          "timingText": "Any Combat Phase",
+          "phase": "combat",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Endrinriggers",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "12\"",
+      "health": 2,
+      "save": "3+",
+      "control": 1,
+      "keywords": ["Infantry", "Fly", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [
+        { "name": "Rapid Fire Rivet Gun", "range": "10\"", "attacks": "3", "hit": "3+", "wound": "4+", "rend": "1", "damage": "1", "abilities": ["Shoot in Combat"] },
+        { "name": "Aethermatic Volley Gun", "range": "15\"", "attacks": "2D6", "hit": "4+", "wound": "4+", "rend": "0", "damage": "1", "abilities": ["Crit (2 Hits)"] },
+        { "name": "Skyrigger Heavy Weapon", "range": "15\"", "attacks": "1", "hit": "4+", "wound": "3+", "rend": "1", "damage": "D3", "abilities": ["Anti-Monster (+1 Rend)"] }
+      ],
+      "meleeWeapons": [
+        { "name": "Aethermatic Saw", "attacks": "3", "hit": "4+", "wound": "3+", "rend": "1", "damage": "2", "abilities": ["Anti-charge (+1 Rend)"] },
+        { "name": "Gun Butt", "attacks": "1", "hit": "4+", "wound": "5+", "rend": "0", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Cloudweaving Skyfarers",
+          "effect": "Roll a dice. On a 3+, this unit can use the 'Normal Move' ability as if it were your movement phase.",
+          "timingText": "Enemy Movement Phase",
+          "phase": "movement",
+          "turn": "enemy",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    }
+  ]
+}

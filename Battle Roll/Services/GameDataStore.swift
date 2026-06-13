@@ -66,4 +66,19 @@ final class GameDataStore: ObservableObject {
     var factions: [String] {
         Array(Set(armies.map(\.faction))).sorted()
     }
+
+    /// Grand alliances in canonical order, limited to those with loaded armies.
+    var grandAlliances: [String] {
+        let canonical = ["Order", "Chaos", "Death", "Destruction"]
+        let present = Set(armies.map(\.grandAlliance))
+        return canonical.filter(present.contains) + present.subtracting(canonical).sorted()
+    }
+
+    func factions(in alliance: String) -> [String] {
+        Array(Set(armies.filter { $0.grandAlliance == alliance }.map(\.faction))).sorted()
+    }
+
+    func armies(inFaction faction: String) -> [SpearheadArmy] {
+        armies.filter { $0.faction == faction }.sorted { $0.name < $1.name }
+    }
 }

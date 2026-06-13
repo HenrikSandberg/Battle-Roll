@@ -1,0 +1,271 @@
+{
+  "id": "akhelian-tide-guard",
+  "name": "Akhelian Tide Guard",
+  "faction": "Idoneth Deepkin",
+  "grandAlliance": "Order",
+  "battleTraits": [
+    {
+      "name": "Royal Imperative",
+      "effect": "You can only use this ability in the third battle round. Pick 1 of the following effects to apply for the rest of the battle round:\n\nInto Them!: Friendly units have Strike-first.\nStrike Sure: Friendly units' melee weapons have Crit (Mortal).",
+      "timingText": "Once Per Battle (Army), Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "The Spear of Asphoren",
+      "declare": "Pick a friendly unit that is not in combat to use this ability.",
+      "effect": "Add 1 to charge rolls for that unit for the rest of the turn.",
+      "timingText": "Once Per Turn (Army), Any Charge Phase",
+      "phase": "charge",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerTurnArmy"
+    },
+    {
+      "name": "The Shield of Ulchiss",
+      "declare": "Pick a friendly unit in combat to use this ability.",
+      "effect": "For the rest of the turn, each time that unit uses a Retreat ability, no mortal damage is inflicted on it.",
+      "timingText": "Once Per Turn (Army), Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerTurnArmy"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Dutiful Souls",
+      "declare": "Pick a friendly unit wholly within 12\" of your general to be the target.",
+      "effect": "You can return 1 slain model to the target unit. If the target is an Infantry unit, you can return D3 slain models to it instead.",
+      "timingText": "Once Per Battle, Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Shimmering Amulet",
+      "effect": "Your general has Ward (5+).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Voltaic Charge",
+      "effect": "Your general's Akhelian Royal Weapons have Charge (+1 Damage).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Soul Stealer",
+      "effect": "If your general is in combat, Heal (D3) your general.",
+      "timingText": "End of Any Turn",
+      "phase": "any",
+      "turn": "any",
+      "window": "end",
+      "frequency": "unlimited"
+    }
+  ],
+  "units": [
+    {
+      "name": "Akhelian King",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "12\"",
+      "health": 7,
+      "save": "3+",
+      "control": 2,
+      "keywords": ["Hero", "Cavalry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Akhelian Royal Weapons",
+          "attacks": "5",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "1",
+          "damage": "2",
+          "abilities": []
+        },
+        {
+          "name": "Deepmare's Fangs, Talons and Lashing Tails",
+          "attacks": "4",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "2",
+          "abilities": ["Companion"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Raiders' Resolve",
+          "declare": "Pick another friendly unit wholly within this unit's combat range to be the target.",
+          "effect": "Roll a dice. On a 3+, add 1 to save rolls for the target until the start of your next turn.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        },
+        {
+          "name": "Wave Rider",
+          "declare": "If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.",
+          "effect": "Roll a D3. On a 2+, inflict an amount of mortal damage on the target equal to the roll.",
+          "timingText": "Any Charge Phase",
+          "phase": "charge",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Akhelian Morrsarr Guard",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "14\"",
+      "health": 4,
+      "save": "4+",
+      "control": 1,
+      "keywords": ["Cavalry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Voltspear",
+          "attacks": "2",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "1",
+          "damage": "1",
+          "abilities": ["Charge (+1 Damage)"]
+        },
+        {
+          "name": "Fangmora's Fangs and Lashing Tail",
+          "attacks": "3",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "D3",
+          "abilities": ["Companion"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Biovoltaic Blast",
+          "declare": "If this unit charged this phase, pick an enemy unit within 1\" of it to be the target.",
+          "effect": "Roll a number of dice equal to the number of models in this unit. Add 1 to each roll if there are more models in the target unit than this unit. For each 3+, inflict 1 mortal damage on the target.",
+          "timingText": "Once Per Battle, Any Charge Phase",
+          "phase": "charge",
+          "turn": "any",
+          "window": "during",
+          "frequency": "oncePerBattle"
+        }
+      ]
+    },
+    {
+      "name": "Akhelian Ishlaen Guard",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 3,
+      "move": "14\"",
+      "health": 4,
+      "save": "4+",
+      "control": 1,
+      "keywords": ["Cavalry", "Fly"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        {
+          "name": "Helsabre",
+          "attacks": "3",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "1",
+          "damage": "1",
+          "abilities": []
+        },
+        {
+          "name": "Fangmora's Fangs and Lashing Tail",
+          "attacks": "3",
+          "hit": "4+",
+          "wound": "3+",
+          "rend": "1",
+          "damage": "D3",
+          "abilities": ["Companion"]
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Biovoltaic Barrier",
+          "declare": "Pick an enemy unit in combat with this unit to be the target.",
+          "effect": "Roll a dice. On a 3+, subtract 1 from the Attacks characteristic of the target's weapons for the rest of the turn.",
+          "timingText": "Once Per Battle, Any Combat Phase",
+          "phase": "combat",
+          "turn": "any",
+          "window": "during",
+          "frequency": "oncePerBattle"
+        }
+      ]
+    },
+    {
+      "name": "Namarti Reavers",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 10,
+      "move": "7\"",
+      "health": 1,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Infantry", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [
+        {
+          "name": "Whisperbow",
+          "range": "12\"",
+          "attacks": "2",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "1",
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "meleeWeapons": [
+        {
+          "name": "Keening Blade",
+          "attacks": "1",
+          "hit": "3+",
+          "wound": "4+",
+          "rend": "0",
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "abilities": [
+        {
+          "name": "Strike on the Move",
+          "effect": "This unit can use Shoot abilities even if it used a Run or Retreat ability in the same turn.",
+          "timingText": "Passive",
+          "phase": "any",
+          "turn": "any",
+          "window": "during",
+          "frequency": "passive"
+        }
+      ]
+    }
+  ]
+}

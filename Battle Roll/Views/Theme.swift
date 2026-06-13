@@ -55,6 +55,28 @@ enum SpearheadTheme {
         if id.contains("ossia") { return ossiaGradient }
         return fireGradient // default: Aqshy
     }
+
+    /// Identity color for a grand alliance.
+    static func allianceColor(_ alliance: String) -> Color {
+        switch alliance {
+        case "Order": return gold
+        case "Chaos": return ember
+        case "Death": return deathPurple
+        case "Destruction": return leaf
+        default: return steel
+        }
+    }
+
+    /// SF Symbol for a grand alliance.
+    static func allianceSymbol(_ alliance: String) -> String {
+        switch alliance {
+        case "Order": return "shield.lefthalf.filled"
+        case "Chaos": return "flame.fill"
+        case "Death": return "moon.stars.fill"
+        case "Destruction": return "hammer.fill"
+        default: return "questionmark.circle"
+        }
+    }
 }
 
 extension PlayerSide {

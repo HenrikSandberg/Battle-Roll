@@ -1,0 +1,174 @@
+{
+  "id": "kavalos-vanguard",
+  "name": "Kavalos Vanguard",
+  "faction": "Ossiarch Bonereapers",
+  "grandAlliance": "Death",
+  "battleTraits": [
+    {
+      "name": "Calculated Feint",
+      "effect": "No mortal damage is inflicted on friendly Cavalry units by Retreat abilities.",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Kavalos Lance",
+      "declare": "Pick a friendly unit to be the target.",
+      "effect": "For the rest of the turn, the target can pass across enemy models as if it had Fly.",
+      "timingText": "Once Per Turn (Army), Your Hero Phase",
+      "phase": "hero",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerTurnArmy"
+    }
+  ],
+  "regimentAbilities": [
+    {
+      "name": "Feigned Retreat",
+      "effect": "For the rest of the turn, friendly units can use Charge abilities even if they used a Retreat ability in the same turn.",
+      "timingText": "Once Per Battle, Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    },
+    {
+      "name": "Reinforced Constructs",
+      "declare": "Pick a friendly unit to be the target.",
+      "effect": "The target has Ward (5+) for the rest of the turn.",
+      "timingText": "Once Per Battle, Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "oncePerBattle"
+    }
+  ],
+  "enhancements": [
+    {
+      "name": "Mighty Archaeossian",
+      "effect": "Your general has Ward (5+).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Murderous Blade",
+      "effect": "Your general's Commander's Blade has Crit (2 Hits).",
+      "timingText": "Passive",
+      "phase": "any",
+      "turn": "any",
+      "window": "during",
+      "frequency": "passive"
+    },
+    {
+      "name": "Imperious Commander",
+      "declare": "Pick a visible friendly unit wholly within 12\" of your general to be the target.",
+      "effect": "Roll a dice. On a 3+, add 2\" to the target's Move characteristic for the rest of the turn.",
+      "timingText": "Your Movement Phase",
+      "phase": "movement",
+      "turn": "yours",
+      "window": "during",
+      "frequency": "unlimited"
+    },
+    {
+      "name": "Cold Savagery",
+      "declare": "If your general has not charged this turn and is in combat, pick a visible friendly unit wholly within 12\" of them to be the target.",
+      "effect": "Roll a dice. On a 3+, add 1 to the Rend characteristic of the target's melee weapons, including Companion weapons, for the rest of the turn.",
+      "timingText": "Any Combat Phase",
+      "phase": "combat",
+      "turn": "any",
+      "window": "during",
+      "frequency": "unlimited"
+    }
+  ],
+  "units": [
+    {
+      "name": "Liege-Kavalos",
+      "isGeneral": true,
+      "instances": 1,
+      "modelsPerUnit": 1,
+      "move": "10\"",
+      "health": 7,
+      "save": "3+",
+      "control": 2,
+      "keywords": ["Hero", "Cavalry", "Ward (6+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Commander's Blade", "attacks": "5", "hit": "3+", "wound": "4+", "rend": "1", "damage": "2", "abilities": ["Charge (+1 Damage)"] },
+        { "name": "Kavalos Steed's Hooves, Teeth and Barbed Tails", "attacks": "4", "hit": "5+", "wound": "3+", "rend": "0", "damage": "1", "abilities": ["Companion"] }
+      ],
+      "abilities": [
+        {
+          "name": "Signal the Advance",
+          "declare": "Pick a visible friendly unit wholly within 12\" of this unit to be the target.",
+          "effect": "Roll a dice. On a 3+, add 1 to charge rolls for the target for the rest of the turn.",
+          "timingText": "Your Hero Phase",
+          "phase": "hero",
+          "turn": "yours",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Kavalos Deathriders",
+      "isGeneral": false,
+      "instances": 2,
+      "modelsPerUnit": 5,
+      "move": "10\"",
+      "health": 3,
+      "save": "4+",
+      "control": 1,
+      "keywords": ["Cavalry", "Ward (6+)"],
+      "reinforcements": false,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Kavalos Blade", "attacks": "3", "hit": "3+", "wound": "4+", "rend": "1", "damage": "1", "abilities": [] },
+        { "name": "Kavalos Steed's Hooves and Teeth", "attacks": "2", "hit": "5+", "wound": "3+", "rend": "0", "damage": "1", "abilities": ["Companion"] }
+      ],
+      "abilities": [
+        {
+          "name": "Wheel About",
+          "effect": "If this unit charged this turn, roll a dice. On a 3+, this unit can move a distance up to its Move characteristic. It can move through the combat ranges of enemy units but cannot end that move in combat.",
+          "timingText": "Any Combat Phase",
+          "phase": "combat",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    },
+    {
+      "name": "Teratic Cohort",
+      "isGeneral": false,
+      "instances": 1,
+      "modelsPerUnit": 8,
+      "move": "7\"",
+      "health": 1,
+      "save": "5+",
+      "control": 1,
+      "keywords": ["Beast", "Ward (6+)", "Reinforcements"],
+      "reinforcements": true,
+      "rangedWeapons": [],
+      "meleeWeapons": [
+        { "name": "Cohort Weapons", "attacks": "2", "hit": "3+", "wound": "4+", "rend": "1", "damage": "1", "abilities": [] }
+      ],
+      "abilities": [
+        {
+          "name": "Bone-Deep Savagery",
+          "effect": "This unit can move 3\". If it can move into combat, it must. If it was in combat at the start of the move, it must end that move in combat.",
+          "timingText": "Any Movement Phase",
+          "phase": "movement",
+          "turn": "any",
+          "window": "during",
+          "frequency": "unlimited"
+        }
+      ]
+    }
+  ]
+}
