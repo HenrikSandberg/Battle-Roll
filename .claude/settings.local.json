@@ -42,7 +42,9 @@
       "Bash(/opt/homebrew/bin/pdftoppm -png -r 200 -f 4 -l 8 \"/Users/henrik/Downloads/armies/Stormcast Eternals Yndrasta’s.pdf\" /tmp/br_extract/scy_hi)",
       "Bash(/opt/homebrew/bin/pdftoppm -png -r 170 -f 10 -l 12 \"/Users/henrik/Downloads/armies/Stormcast Eternals Yndrasta’s.pdf\" /tmp/br_extract/vb)",
       "Bash(grep -v \"^$\")",
-      "Bash(git commit -q -m 'Extract 8 armies from PDFs: DoK, Stormcast x2, Sylvaneth, StD, Nighthaunt, Skaven x2 *)"
+      "Bash(git commit -q -m 'Extract 8 armies from PDFs: DoK, Stormcast x2, Sylvaneth, StD, Nighthaunt, Skaven x2 *)",
+      "Bash(echo \"--- exit: $?\")",
+      "Bash(git merge *)"
     ]
   }
 }
